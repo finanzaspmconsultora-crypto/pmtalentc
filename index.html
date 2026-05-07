@@ -549,8 +549,8 @@ async function procesarPDF(file){
     let jsonData;
     try {
       // Limpiar posible markdown
-      let limpio=texto.replace(/```json\n?/g,'').replace(/```\n?/g,'').trim();
-      const match=limpio.match(/\{[\s\S]*\}/);
+      let limpio=texto.replace(/`{3}json\s*/g,'').replace(/`{3}\s*/g,'').trim();
+      const match=limpio.match(/\{[\s\S]*\}/s);
       if(match)limpio=match[0];
       jsonData=JSON.parse(limpio);
     } catch(e){

@@ -517,7 +517,7 @@ async function procesarPDF(file){
         'anthropic-dangerous-direct-browser-access':'true'
       },
       body:JSON.stringify({
-       model:'claude-haiku-4-5-20251001',
+        model:'claude-sonnet-4-5-20251001',
         max_tokens:4000,
         system: PROMPT_SISTEMA,
         messages:[{
@@ -549,7 +549,9 @@ async function procesarPDF(file){
     let jsonData;
     try {
       // Limpiar posible markdown
-      const limpio=texto.replace(/```json\n?/g,'').replace(/```\n?/g,'').trim();
+      let limpio=texto.replace(/```json\n?/g,'').replace(/```\n?/g,'').trim();
+      const match=limpio.match(/\{[\s\S]*\}/);
+      if(match)limpio=match[0];
       jsonData=JSON.parse(limpio);
     } catch(e){
       throw new Error('No se pudo parsear la respuesta de la IA. Intentá de nuevo.');

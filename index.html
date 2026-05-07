@@ -569,7 +569,7 @@ async function procesarPDF(file){
     document.getElementById('imp-error-msg').innerHTML=
       `❌ <strong>Error al procesar el PDF</strong><br>${esc(err.message)}<br><br>
       <small>Verificá que tu API Key sea correcta y que tengas saldo disponible en tu cuenta Anthropic.</small>`;
-    claude-haiku-4-5-20251001;
+    console.error(err);
   }
 }
 

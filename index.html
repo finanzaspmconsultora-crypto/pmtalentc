@@ -555,7 +555,7 @@ async function procesarPDF(file){
       const jsonStr=texto.slice(inicio,fin+1);
       jsonData=JSON.parse(jsonStr);
     } catch(e){
-      throw new Error('No se pudo parsear la respuesta de la IA. Intentá de nuevo.');
+     throw new Error('Parse error: '+e.message+' | texto: '+texto.slice(0,200));
     }
 
     if(!jsonData.movimientos||!Array.isArray(jsonData.movimientos)){

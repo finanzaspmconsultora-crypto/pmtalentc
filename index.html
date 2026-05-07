@@ -20,7 +20,7 @@
 }
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:100vh}
 .header{background:var(--ink);color:#fff;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.header-title{font-size:15px;font-weight:500;letter-spacing:.02em}
+.header-title{font-size:15px;font-weight:500}
 .header-sub{font-size:11px;color:#888;font-family:var(--mono);margin-top:2px}
 .balance-pill{background:#2D6A4F;color:#fff;font-family:var(--mono);font-size:13px;font-weight:500;padding:6px 14px;border-radius:20px;white-space:nowrap}
 .balance-pill.neg{background:#7B1D1D}
@@ -45,7 +45,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .cuenta-toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cuenta-btn{padding:10px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;background:var(--surface2);color:var(--ink2);transition:all .15s;text-align:center;font-family:var(--sans)}
 .cuenta-btn.sel{border-color:var(--blue);background:var(--blue-light);color:var(--blue)}
-.submit-btn{width:100%;padding:14px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;margin-top:4px}
+.submit-btn{width:100%;padding:14px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;margin-top:4px}
 .submit-btn:active{transform:scale(.98)}
 .summary-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
 .scard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px}
@@ -64,18 +64,12 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .mov-del{background:none;border:none;cursor:pointer;color:var(--ink3);font-size:14px;padding:6px;border-radius:4px;flex-shrink:0}
 .mov-del:hover{color:var(--danger)}
 .badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;font-family:var(--mono)}
-.b-HC{background:#EEF2FF;color:#3730A3}
-.b-HP{background:#F0FDF4;color:#166534}
-.b-HV{background:#ECFDF5;color:#065F46}
-.b-S{background:#FEF3C7;color:#92400E}
-.b-ED{background:#F0E6FF;color:#5B21B6}
-.b-GO{background:#E0F2FE;color:#075985}
-.b-GP{background:#FFF1F2;color:#9F1239}
-.b-GC{background:#FDF4FF;color:#7E22CE}
-.b-IN{background:#F0FDF4;color:#14532D}
-.b-P{background:#FCE7F3;color:#831843}
-.b-I{background:#FEF9C3;color:#713F12}
-.b-TR{background:#F1F5F9;color:#475569}
+.b-HC{background:#EEF2FF;color:#3730A3}.b-HP{background:#F0FDF4;color:#166534}
+.b-HV{background:#ECFDF5;color:#065F46}.b-S{background:#FEF3C7;color:#92400E}
+.b-ED{background:#F0E6FF;color:#5B21B6}.b-GO{background:#E0F2FE;color:#075985}
+.b-GP{background:#FFF1F2;color:#9F1239}.b-GC{background:#FDF4FF;color:#7E22CE}
+.b-IN{background:#F0FDF4;color:#14532D}.b-P{background:#FCE7F3;color:#831843}
+.b-I{background:#FEF9C3;color:#713F12}.b-TR{background:#F1F5F9;color:#475569}
 .b-O{background:#F3F4F6;color:#374151}
 .tag-cuenta{font-size:10px;font-family:var(--mono);color:var(--blue);background:var(--blue-light);padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle}
 .tag-cuenta.sas{color:var(--purple);background:var(--purple-light)}
@@ -89,6 +83,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .mes-select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--surface);outline:none;margin-bottom:12px;cursor:pointer}
 .row-between{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}
 .row-between:last-child{border-bottom:none}
+/* IMPORTADOR */
 .drop-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--surface2)}
 .drop-zone:hover,.drop-zone.over{border-color:var(--accent);background:var(--accent-light)}
 .steps-row{display:flex;gap:8px;margin-bottom:16px}
@@ -97,7 +92,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .step.active{background:var(--blue-light);color:var(--blue);border-color:var(--blue)}
 .tbl-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:12px}
-th{text-align:left;padding:8px;background:var(--surface2);color:var(--ink2);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+th{text-align:left;padding:8px;background:var(--surface2);color:var(--ink2);font-weight:600;font-size:10px;text-transform:uppercase;white-space:nowrap}
 td{padding:8px;border-bottom:1px solid var(--border);vertical-align:middle}
 tr:last-child td{border-bottom:none}
 .td-deb{color:var(--danger);font-family:var(--mono);font-size:11px;white-space:nowrap}
@@ -107,9 +102,19 @@ tr:last-child td{border-bottom:none}
 .alert-info{background:var(--blue-light);color:var(--blue);border:1px solid #BFDBFE}
 .alert-success{background:var(--accent-light);color:var(--accent);border:1px solid #6EE7B7}
 .alert-warn{background:var(--amber-light);color:var(--amber);border:1px solid #FDE68A}
+.alert-danger{background:var(--danger-light);color:var(--danger);border:1px solid #FECACA}
 .btn-imp{width:100%;padding:13px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}
 .btn-sec{width:100%;padding:11px;background:var(--surface);color:var(--ink2);border:1px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:13px;cursor:pointer;margin-top:8px}
+/* API KEY */
+.apikey-input{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:8px;font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--surface);outline:none;margin-bottom:10px}
+.apikey-input:focus{border-color:var(--accent)}
 .install-banner{background:var(--amber-light);border:1px solid #F5C043;border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;font-size:13px;color:var(--amber);line-height:1.6}
+/* LOADING */
+.loading-box{text-align:center;padding:32px 20px}
+.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-msg{font-size:14px;color:var(--ink2);font-weight:500}
+.loading-sub{font-size:12px;color:var(--ink3);margin-top:6px}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 22px;border-radius:8px;font-size:13px;font-weight:500;opacity:0;transition:all .25s;pointer-events:none;z-index:9999}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
@@ -127,10 +132,10 @@ tr:last-child td{border-bottom:none}
   <div class="tab" onclick="showTab('movimientos')">📋 Movs</div>
   <div class="tab" onclick="showTab('importar')">📥 Importar</div>
   <div class="tab" onclick="showTab('resumen')">📊 Resumen</div>
-  <div class="tab" onclick="showTab('ayuda')">❓ Ayuda</div>
+  <div class="tab" onclick="showTab('config')">⚙️ Config</div>
 </div>
 <div class="main">
- 
+
 <!-- TAB NUEVO -->
 <div id="tab-nuevo">
 <div class="card">
@@ -153,17 +158,17 @@ tr:last-child td{border-bottom:none}
   </div>
   <div class="field"><label class="label">Categoría</label>
     <div class="cat-grid">
-      <button class="cat-btn" onclick="setCat(this,'Honorarios clientes')">💼 Honorarios clientes</button>
-      <button class="cat-btn" onclick="setCat(this,'Honorarios propios')">🟢 Honorarios propios</button>
-      <button class="cat-btn" onclick="setCat(this,'Honorarios proveedores')">🤝 Hon. proveedores PM</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios clientes')">💼 Hon. clientes</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios propios')">🟢 Hon. propios</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios proveedores')">🤝 Hon. proveedores</button>
       <button class="cat-btn" onclick="setCat(this,'Sueldos y cargas')">👥 Sueldos y cargas</button>
       <button class="cat-btn" onclick="setCat(this,'Estructura digital')">💻 Estructura digital</button>
       <button class="cat-btn" onclick="setCat(this,'Gastos operativos')">🏠 Gastos operativos</button>
       <button class="cat-btn" onclick="setCat(this,'Gastos personales')">🛍 Gastos personales</button>
       <button class="cat-btn" onclick="setCat(this,'Gastos casa')">🏡 Gastos casa</button>
       <button class="cat-btn" onclick="setCat(this,'Inversión personal')">📈 Inversión personal</button>
+      <button class="cat-btn" onclick="setCat(this,'Impuestos')">🏛 Impuestos</button>
       <button class="cat-btn" onclick="setCat(this,'Proveedores')">📦 Proveedores</button>
-      <button class="cat-btn" onclick="setCat(this,'Impuestos')">🏛 Impuestos / Tasas</button>
       <button class="cat-btn" onclick="setCat(this,'Otros')">📌 Otros</button>
     </div>
   </div>
@@ -176,37 +181,63 @@ tr:last-child td{border-bottom:none}
   <button class="submit-btn" onclick="guardar()">Guardar movimiento</button>
 </div>
 </div>
- 
+
 <!-- TAB MOVIMIENTOS -->
 <div id="tab-movimientos" style="display:none">
   <div class="filter-row" id="filtros"></div>
   <div id="lista-movimientos"></div>
   <button class="export-btn" onclick="exportCSV()">⬇ Exportar CSV</button>
 </div>
- 
+
 <!-- TAB IMPORTAR -->
 <div id="tab-importar" style="display:none">
   <div class="steps-row">
     <div class="step active" id="imp-step1">1 · PDF</div>
-    <div class="step" id="imp-step2">2 · Revisar</div>
-    <div class="step" id="imp-step3">3 · Listo</div>
+    <div class="step" id="imp-step2">2 · IA procesa</div>
+    <div class="step" id="imp-step3">3 · Revisar</div>
+    <div class="step" id="imp-step4">4 · Listo</div>
   </div>
+
+  <!-- PASO 1: UPLOAD -->
   <div id="imp-upload">
+    <div id="imp-no-key" class="alert alert-warn" style="display:none">
+      ⚠️ <strong>Configurá tu API Key primero.</strong> Andá a la pestaña ⚙️ Config e ingresá tu clave de Anthropic para habilitar el lector con IA.
+    </div>
     <div class="card">
-      <div class="card-title">Subir resumen Santander</div>
+      <div class="card-title">Cuenta a importar</div>
+      <div class="cuenta-toggle" style="margin-bottom:0">
+        <button class="cuenta-btn sel" id="imp-c-personal" onclick="setImpCuenta('Personal')">🏦 Personal</button>
+        <button class="cuenta-btn" id="imp-c-sas" onclick="setImpCuenta('SAS')">🏢 SAS</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Subir resumen Santander (PDF)</div>
       <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
-        <div style="font-size:28px;margin-bottom:8px">📄</div>
+        <div style="font-size:32px;margin-bottom:8px">📄</div>
         <div style="font-size:14px;font-weight:500;color:var(--ink2)">Arrastrá el PDF o tocá para seleccionar</div>
-        <div style="font-size:12px;color:var(--ink3);margin-top:4px">Cuenta Personal o SAS · Santander Argentina</div>
+        <div style="font-size:12px;color:var(--ink3);margin-top:6px">Resumen mensual · Santander Argentina</div>
       </div>
       <input type="file" id="file-input" accept=".pdf" style="display:none">
     </div>
-    <div class="alert alert-info">💡 <strong>Homebanking Santander</strong> → Cuentas → tu cuenta → Resumen → Descargar PDF</div>
+    <div class="alert alert-info">💡 <strong>Cómo descargarlo:</strong> Homebanking Santander → Cuentas → tu cuenta → Resumen → Descargar PDF</div>
   </div>
+
+  <!-- PASO 2: LOADING IA -->
+  <div id="imp-loading" style="display:none">
+    <div class="card">
+      <div class="loading-box">
+        <div class="spinner"></div>
+        <div class="loading-msg" id="loading-msg">Leyendo el PDF con IA...</div>
+        <div class="loading-sub" id="loading-sub">Esto puede tardar 15-30 segundos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 3: PREVIEW -->
   <div id="imp-preview" style="display:none">
     <div style="display:flex;gap:10px;margin-bottom:14px" id="imp-summary"></div>
     <div class="card">
-      <div class="card-title">Revisá las categorías</div>
+      <div class="card-title">Revisá las categorías antes de importar</div>
       <div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Descripción</th><th>Importe</th><th>Categoría</th></tr></thead>
       <tbody id="imp-tbody"></tbody></table></div>
     </div>
@@ -214,13 +245,21 @@ tr:last-child td{border-bottom:none}
     <button class="btn-imp" onclick="confirmarImport()">✓ Importar todos</button>
     <button class="btn-sec" onclick="resetImport()">← Volver</button>
   </div>
+
+  <!-- PASO 4: DONE -->
   <div id="imp-done" style="display:none">
     <div class="alert alert-success" id="imp-done-msg"></div>
     <button class="btn-imp" onclick="exportCSV()">⬇ Exportar CSV</button>
     <button class="btn-sec" onclick="resetImport()">Importar otro PDF</button>
   </div>
+
+  <!-- ERROR -->
+  <div id="imp-error" style="display:none">
+    <div class="alert alert-danger" id="imp-error-msg"></div>
+    <button class="btn-sec" onclick="resetImport()">← Volver a intentar</button>
+  </div>
 </div>
- 
+
 <!-- TAB RESUMEN -->
 <div id="tab-resumen" style="display:none">
   <select class="mes-select" id="mes-select" onchange="renderResumen()"><option value="todos">Todos los períodos</option></select>
@@ -229,44 +268,49 @@ tr:last-child td{border-bottom:none}
   <div class="card" id="cuenta-breakdown" style="margin-top:12px"></div>
   <button class="export-btn" style="margin-top:6px" onclick="exportCSV()">⬇ Exportar CSV</button>
 </div>
- 
-<!-- TAB AYUDA -->
-<div id="tab-ayuda" style="display:none">
+
+<!-- TAB CONFIG -->
+<div id="tab-config" style="display:none">
+  <div class="card">
+    <div class="card-title">🔑 API Key de Anthropic</div>
+    <p style="font-size:13px;color:var(--ink2);margin-bottom:14px;line-height:1.6">
+      Necesitás una API Key para que la IA lea los PDFs automáticamente. Se guarda solo en tu dispositivo, nunca sale a internet.
+    </p>
+    <label class="label">Tu API Key (empieza con sk-ant-...)</label>
+    <input class="apikey-input" type="password" id="api-key-input" placeholder="sk-ant-api03-...">
+    <button class="submit-btn" onclick="guardarAPIKey()" style="margin-top:0">Guardar API Key</button>
+    <div id="key-status" style="margin-top:12px;font-size:13px;color:var(--ink2)"></div>
+  </div>
   <div class="install-banner">
-    <strong>🌐 URL de tu app</strong><br>
-    <code style="font-size:12px">https://finanzaspmconsultora-crypto.github.io/pmtalentc</code><br><br>
-    Guardala en favoritos o en pantalla de inicio: Safari → compartir ↑ → "Añadir a pantalla de inicio"
+    <strong>¿Cómo obtengo la API Key?</strong><br>
+    1. Entrá a <strong>console.anthropic.com</strong><br>
+    2. Menú izquierdo → <strong>API Keys</strong><br>
+    3. Clic en <strong>Create Key</strong><br>
+    4. Copiá la clave y pegala arriba
   </div>
   <div class="install-banner" style="background:#FFF1F2;border-color:#FECDD3;color:#9F1239">
-    <strong>⚠ Importante sobre los datos</strong><br>
-    Los datos se guardan en este navegador. Exportá el CSV regularmente y guardalo en iCloud Drive o Google Drive para no perderlos.
+    <strong>⚠ Sobre tus datos</strong><br>
+    Los movimientos se guardan en este navegador. Exportá el CSV regularmente y guardalo en iCloud Drive o Google Drive.
   </div>
   <div class="card">
-    <div class="card-title">Guía de categorías</div>
-    <div class="row-between"><span style="font-size:13px">💼 Honorarios clientes</span><span style="font-size:12px;color:var(--ink2)">Autotei, MSI, Engenieria SAS...</span></div>
-    <div class="row-between"><span style="font-size:13px">🟢 Honorarios propios</span><span style="font-size:12px;color:var(--ink2)">Tu retiro de la SAS</span></div>
-    <div class="row-between"><span style="font-size:13px">🤝 Hon. proveedores PM</span><span style="font-size:12px;color:var(--ink2)">Duran (contador), Esquinas...</span></div>
-    <div class="row-between"><span style="font-size:13px">👥 Sueldos y cargas</span><span style="font-size:12px;color:var(--ink2)">Personal en relación de dependencia</span></div>
-    <div class="row-between"><span style="font-size:13px">💻 Estructura digital</span><span style="font-size:12px;color:var(--ink2)">YouTube, Zoom, Tactiq, software</span></div>
-    <div class="row-between"><span style="font-size:13px">🏠 Gastos operativos</span><span style="font-size:12px;color:var(--ink2)">Alquiler, comisiones banco</span></div>
-    <div class="row-between"><span style="font-size:13px">🛍 Gastos personales</span><span style="font-size:12px;color:var(--ink2)">Cuidado personal, compras, salud</span></div>
-    <div class="row-between"><span style="font-size:13px">🏡 Gastos casa</span><span style="font-size:12px;color:var(--ink2)">Hogar, Ivanof, servicios domésticos</span></div>
-    <div class="row-between"><span style="font-size:13px">📈 Inversión personal</span><span style="font-size:12px;color:var(--ink2)">Plazo fijo, FCI</span></div>
-    <div class="row-between"><span style="font-size:13px">🏛 Impuestos / Tasas</span><span style="font-size:12px;color:var(--ink2)">AFIP, ley 25.413, IIBB, IVA</span></div>
-  </div>
-  <div class="card" style="margin-top:0">
     <div class="card-title">Estado del sistema</div>
     <div class="row-between"><span style="font-size:13px">✅ App web (celu + PC)</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
-    <div class="row-between"><span style="font-size:13px">✅ Importador Santander SAS</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
-    <div class="row-between"><span style="font-size:13px">✅ Cuenta Personal cargada</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
+    <div class="row-between"><span style="font-size:13px">✅ Carga manual caja chica</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
+    <div class="row-between"><span style="font-size:13px">✅ Importador PDF con IA</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
     <div class="row-between"><span style="font-size:13px">⏳ Dashboard con indicadores</span><span style="font-size:11px;color:var(--amber);font-family:var(--mono)">Próximo</span></div>
     <div class="row-between"><span style="font-size:13px">⏳ Análisis IA + sugerencias</span><span style="font-size:11px;color:var(--ink3);font-family:var(--mono)">Futuro</span></div>
   </div>
+  <div class="card" style="margin-top:0">
+    <div class="card-title">Zona peligrosa</div>
+    <button class="export-btn" onclick="borrarTodo()" style="color:var(--danger);border-color:var(--danger)">🗑 Borrar todos los movimientos</button>
+  </div>
 </div>
- 
+
 </div>
 <div class="toast" id="toast"></div>
+
 <script>
+// ── CATEGORÍAS ─────────────────────────────────────────────────────
 const CATS={
   'Honorarios clientes':{badge:'b-HC',icon:'💼'},
   'Honorarios propios':{badge:'b-HP',icon:'🟢'},
@@ -279,187 +323,93 @@ const CATS={
   'Inversión personal':{badge:'b-IN',icon:'📈'},
   'Proveedores':{badge:'b-P',icon:'📦'},
   'Impuestos':{badge:'b-I',icon:'🏛'},
-  'Transferencia interna':{badge:'b-TR',icon:'↔'},
   'Otros':{badge:'b-O',icon:'📌'},
 };
- 
-function autoCat(desc,tipo){
-  const d=desc.toLowerCase();
-  if(tipo==='credito'){
-    if(d.includes('autotei')||d.includes('engenieria sas')||d.includes('msi argentina')) return 'Honorarios clientes';
-    if(d.includes('pm talent')||d.includes('pm talent consulting')) return 'Honorarios propios';
-    if(d.includes('gonzalo ariel perez')||d.includes('milena sol tiburcio')) return 'Honorarios clientes';
-    if(d.includes('liquidacion')||d.includes('plazo fjo')||d.includes('plazo fijo')||d.includes('interes')) return 'Inversión personal';
-    if(d.includes('pago interes')) return 'Inversión personal';
-    if(d.includes('anulac')) return 'Otros';
-    return 'Honorarios clientes';
-  }
-  // Personas conocidas
-  if(d.includes('montes ana')||d.includes('montes, ana')) return 'Honorarios propios';
-  if(d.includes('armando antonella')) return 'Honorarios propios';
-  if(d.includes('duran gonzalo')||d.includes('raquel luciana esquinas')) return 'Honorarios proveedores';
-  if(d.includes('molinero')||d.includes('murua')||d.includes('bessone')) return 'Gastos personales';
-  if(d.includes('barseghian')||d.includes('herrera')||d.includes('ivanof')) return 'Gastos personales';
-  if(d.includes('candelaria')||d.includes('nellar')) return 'Gastos personales';
-  if(d.includes('suardi')) return 'Gastos personales';
-  if(d.includes('frontera')||d.includes('boyero')||d.includes('garay')||d.includes('huzuliak')) return 'Gastos personales';
-  if(d.includes('recio')||d.includes('ivetta')||d.includes('martinez')||d.includes('sosa')||d.includes('mendez')) return 'Gastos personales';
-  if(d.includes('yacob')||d.includes('bilda')||d.includes('bobba')) return 'Gastos personales';
-  // Impuestos
-  if(d.includes('impuesto')&&d.includes('25.413')) return 'Impuestos';
-  if(d.includes('afip')||d.includes('ley 25')||d.includes('sircreb')) return 'Impuestos';
-  if(d.includes('iva')||d.includes('iibb')||d.includes('percep')) return 'Impuestos';
-  if(d.includes('pago de servicios')) return 'Impuestos';
-  // Estructura digital
-  if(d.includes('youtube')||d.includes('zoom')||d.includes('google')||d.includes('tactiq')||d.includes('mastery')) return 'Estructura digital';
-  // Inversión
-  if(d.includes('constitucion de plazo')||d.includes('plazo fjo')) return 'Inversión personal';
-  // Gastos personales variados
-  if(d.includes('showcase')||d.includes('cinema')||d.includes('clinica')||d.includes('farmacia')) return 'Gastos personales';
-  if(d.includes('merpago')||d.includes('mercadopago')||d.includes('latte')||d.includes('sweet')) return 'Gastos personales';
-  if(d.includes('quade')||d.includes('fulltank')||d.includes('santa barbara')||d.includes('helados')) return 'Gastos personales';
-  if(d.includes('editorial')||d.includes('abrazando')||d.includes('sipago')||d.includes('tienda callao')) return 'Gastos personales';
-  if(d.includes('julina')||d.includes('leble')||d.includes('heroica')||d.includes('elpreferido')) return 'Gastos personales';
-  if(d.includes('tacataca')||d.includes('palacio')||d.includes('parking')) return 'Gastos personales';
-  if(d.includes('anthony')) return 'Gastos personales';
-  if(d.includes('personal flow')||d.includes('personal:')) return 'Gastos operativos';
-  if(d.includes('comision')||d.includes('servicio de cuenta')) return 'Gastos operativos';
-  if(d.includes('ovni')) return 'Gastos personales';
-  if(d.includes('transf')||d.includes('transferencia')) return 'Gastos personales';
-  return 'Gastos operativos';
+
+const PROMPT_SISTEMA = `Sos un asistente contable experto en finanzas argentinas. 
+Tu tarea es extraer los movimientos bancarios de un resumen de cuenta del Banco Santander Argentina y categorizarlos.
+
+REGLAS DE CATEGORIZACIÓN para PM Talent Consulting (consultora de RRHH):
+- "Honorarios clientes": ingresos por servicios de consultoría (Autotei, MSI Argentina, Engenieria SAS, Gonzalo Perez, Milena Tiburcio, etc.)
+- "Honorarios propios": retiro de la dueña (Montes Ana Paula, Armando Antonella desde cuenta SAS)
+- "Honorarios proveedores": pagos a Duran Gonzalo (contador), Raquel Esquinas (proveedor PM)
+- "Sueldos y cargas": personal en relación de dependencia
+- "Estructura digital": YouTube, Zoom, Google, Tactiq, Mastery Haus, software SaaS
+- "Gastos operativos": comisiones banco, alquiler, servicios, Personal Flow
+- "Gastos personales": Molinero, Murua, Bessone, Barseghian, Herrera, Candelaria Nellar, Suardi (psiquiatra), compras débito, cine, helados, cafés, ropa, libros, parking, salud
+- "Gastos casa": Ivanof, servicios domésticos
+- "Inversión personal": constitución/liquidación plazo fijo, FCI, intereses
+- "Impuestos": ley 25.413, SIRCREB, AFIP, IVA, IIBB, percepciones RG
+- "Otros": anulaciones, reversiones
+
+Devolvé ÚNICAMENTE un JSON válido con esta estructura exacta, sin texto adicional, sin markdown:
+{
+  "periodo": "YYYY-MM",
+  "movimientos": [
+    {
+      "fecha": "YYYY-MM-DD",
+      "descripcion": "descripción limpia y clara",
+      "debito": 0,
+      "credito": 1234.56,
+      "categoria": "Honorarios clientes",
+      "comprobante": "12345"
+    }
+  ]
 }
- 
-// MOVIMIENTOS CUENTA PERSONAL abril 2026
-const PDF_PERSONAL_ABR2026=[
-  {fecha:'2026-03-30',desc:'Transferencia recibida — Autotei Concesionaria / auxiliaralex',debito:0,credito:486500.00,comp:'905445'},
-  {fecha:'2026-03-30',desc:'Transferencia a Armando Antonella — varios',debito:72975.00,credito:0,comp:'8487694'},
-  {fecha:'2026-03-30',desc:'Crédito transf. — Engenieria SAS / honorarios',debito:0,credito:560000.00,comp:'18445057'},
-  {fecha:'2026-03-31',desc:'Transferencia a Candelaria Maria Nellar — varios',debito:14408.00,credito:0,comp:'96913936'},
-  {fecha:'2026-03-31',desc:'Transferencia a Candelaria Maria Nellar — varios',debito:500000.00,credito:0,comp:'96914618'},
-  {fecha:'2026-03-31',desc:'Transferencia a Armando Antonella — varios',debito:62626.00,credito:0,comp:'35958353'},
-  {fecha:'2026-03-31',desc:'Transferencia a Armando Antonella — varios',debito:42386.00,credito:0,comp:'93529590'},
-  {fecha:'2026-03-31',desc:'Transferencia a Duran Gonzalo Oscar — honorarios contador',debito:98528.00,credito:0,comp:'37197676'},
-  {fecha:'2026-03-31',desc:'Transferencia a Raquel Luciana Esquinas — honorarios proveedor',debito:65000.00,credito:0,comp:'96944600'},
-  {fecha:'2026-03-31',desc:'Compra débito — Tacataca*rentas Córdoba',debito:168760.00,credito:0,comp:'15719692'},
-  {fecha:'2026-03-31',desc:'Transferencia a Molinero Johana Gabriel — varios',debito:20350.00,credito:0,comp:'58947643'},
-  {fecha:'2026-04-03',desc:'Transferencia recibida — Maria Victoria Canovas',debito:0,credito:3000.00,comp:'64534297'},
-  {fecha:'2026-04-03',desc:'Transferencia recibida — Sofia Carolina Ivetta',debito:0,credito:5000.00,comp:'27172596'},
-  {fecha:'2026-04-03',desc:'Transferencia recibida — Facundo Gaspar Ivetta',debito:0,credito:3000.00,comp:'99262060'},
-  {fecha:'2026-04-06',desc:'Compra débito — Showcase Cinemas',debito:8300.00,credito:0,comp:'16564779'},
-  {fecha:'2026-04-06',desc:'Liquidación plazo fijo tradicional',debito:0,credito:515452.05,comp:'99930065'},
-  {fecha:'2026-04-06',desc:'Compra exterior — Tactiq.io',debito:1400.00,credito:0,comp:'851131'},
-  {fecha:'2026-04-06',desc:'Percepción RG 5617 — Tactiq.io',debito:426.56,credito:0,comp:'851131'},
-  {fecha:'2026-04-07',desc:'Pago interés por saldo en cuenta',debito:0,credito:2.99,comp:''},
-  {fecha:'2026-04-07',desc:'Transferencia recibida — Autotei Concesionaria / honora marzo',debito:0,credito:767600.00,comp:'228185'},
-  {fecha:'2026-04-07',desc:'Transferencia a Montes Ana Paula — honorarios propios',debito:300000.00,credito:0,comp:'95061391'},
-  {fecha:'2026-04-07',desc:'Transferencia a Aylen Frontera — varios',debito:22000.00,credito:0,comp:'57485557'},
-  {fecha:'2026-04-07',desc:'Transf. recibida CVU — Gonzalo Ariel Perez / Mercado Pago',debito:0,credito:513800.00,comp:'44295945'},
-  {fecha:'2026-04-08',desc:'Constitución plazo fijo tradicional',debito:1000000.00,credito:0,comp:'7095785'},
-  {fecha:'2026-04-08',desc:'Transferencia a Ezequiel Roberto Garay — varios',debito:3300.00,credito:0,comp:'58942502'},
-  {fecha:'2026-04-09',desc:'Compra débito — Merpago*anthonyaltuna',debito:140000.00,credito:0,comp:'21092742'},
-  {fecha:'2026-04-09',desc:'Transferencia a Maria Victoria Boyero — varios',debito:25000.00,credito:0,comp:'59402680'},
-  {fecha:'2026-04-09',desc:'Pago de servicios — Personal Flow',debito:49730.65,credito:0,comp:'60685504'},
-  {fecha:'2026-04-09',desc:'Compra exterior — Mastery Haus',debito:66505.00,credito:0,comp:'525608'},
-  {fecha:'2026-04-09',desc:'Percepción RG 5617 — Mastery Haus',debito:19563.75,credito:0,comp:'525608'},
-  {fecha:'2026-04-09',desc:'Transferencia a Joel Huzuliak — varios',debito:4000.00,credito:0,comp:'60008875'},
-  {fecha:'2026-04-09',desc:'Transferencia a Recio Agustina Pilar — varios',debito:10700.00,credito:0,comp:'51725940'},
-  {fecha:'2026-04-09',desc:'Transferencia a Aylen Frontera — varios',debito:30000.00,credito:0,comp:'60251930'},
-  {fecha:'2026-04-10',desc:'Transferencia a Paola Soledad Ivetta — varios',debito:6000.00,credito:0,comp:'69359374'},
-  {fecha:'2026-04-10',desc:'Transferencia a Candelaria Maria Nellar — varios',debito:42386.00,credito:0,comp:'61473820'},
-  {fecha:'2026-04-13',desc:'Transferencia a Bilda Alvarez Estrada — varios',debito:12000.00,credito:0,comp:'61794427'},
-  {fecha:'2026-04-13',desc:'Compra débito — Merpago*lattecafe',debito:28260.00,credito:0,comp:'20385424'},
-  {fecha:'2026-04-13',desc:'Compra débito — Merpago*comercialanasi',debito:5900.00,credito:0,comp:'18012903'},
-  {fecha:'2026-04-13',desc:'Compra débito — Julina',debito:23400.00,credito:0,comp:'16067397'},
-  {fecha:'2026-04-13',desc:'Transferencia a Eliano Santiago Yacob — varios',debito:19800.00,credito:0,comp:'63508842'},
-  {fecha:'2026-04-15',desc:'Crédito transf. — PM Talent Consulting SAS',debito:0,credito:25000.00,comp:'9361594'},
-  {fecha:'2026-04-15',desc:'Transferencia a Ana Belen Bobba — varios',debito:25000.00,credito:0,comp:'2056789'},
-  {fecha:'2026-04-15',desc:'Compra débito — Tacataca*palacio nico',debito:2700.00,credito:0,comp:'12659775'},
-  {fecha:'2026-04-16',desc:'Transferencia a Cecilia Vanesa Martinez — varios',debito:1900.00,credito:0,comp:'65464696'},
-  {fecha:'2026-04-17',desc:'Transferencia a Oscar Abel Sosa — varios',debito:1900.00,credito:0,comp:'66110618'},
-  {fecha:'2026-04-17',desc:'Transf. recibida CVU — Milena Sol Tiburcio / Mercado Pago',debito:0,credito:350000.00,comp:'46937328'},
-  {fecha:'2026-04-20',desc:'Compra débito — Merpago*lattecafe',debito:12800.00,credito:0,comp:'21580740'},
-  {fecha:'2026-04-20',desc:'Compra débito — Merpago*sweetsweetway',debito:8500.00,credito:0,comp:'17178641'},
-  {fecha:'2026-04-20',desc:'Compra débito — Merpago*heroicacba',debito:25400.00,credito:0,comp:'17195340'},
-  {fecha:'2026-04-20',desc:'Compra débito — Quade SRL',debito:68400.00,credito:0,comp:'19287681'},
-  {fecha:'2026-04-23',desc:'Compra débito — Merpago*fulltank',debito:5900.00,credito:0,comp:'22403672'},
-  {fecha:'2026-04-23',desc:'Compra débito — Merpago*santabarbarasa',debito:16900.00,credito:0,comp:'3808639'},
-  {fecha:'2026-04-23',desc:'Transferencia a Suardi Silvia Crist. — gastos personales',debito:70000.00,credito:0,comp:'50761327'},
-  {fecha:'2026-04-24',desc:'Compra débito — Merpago*elpreferido',debito:6000.00,credito:0,comp:'16658838'},
-  {fecha:'2026-04-24',desc:'Compra débito — Merpago*tufchelados',debito:7200.00,credito:0,comp:'16674414'},
-  {fecha:'2026-04-27',desc:'Compra débito — Tienda callao-los elemar',debito:13120.40,credito:0,comp:'15707836'},
-  {fecha:'2026-04-27',desc:'Compra débito — Merpago*juanpablofgal',debito:1200.00,credito:0,comp:'15717291'},
-  {fecha:'2026-04-27',desc:'Compra débito — Sipago*abrazandocuentos',debito:32980.00,credito:0,comp:'15981463'},
-  {fecha:'2026-04-27',desc:'Compra débito — Editorial Imaginador',debito:46400.00,credito:0,comp:'18985915'},
-  {fecha:'2026-04-27',desc:'Compra débito — Merpago*leble',debito:20500.00,credito:0,comp:'19049476'},
-  {fecha:'2026-04-28',desc:'Transferencia a Rocio Belen Mendez — varios',debito:10000.00,credito:0,comp:'73270297'},
-].map(m=>({...m,cat:autoCat(m.desc,m.credito>0?'credito':'debito')}));
- 
-// MOVIMIENTOS SAS enero 2026
-const PDF_SAS_ENE2026=[
-  {fecha:'2026-01-05',desc:'Débito automático Personal Flow',debito:46926.50,credito:0,comp:'65155',cat:'Gastos operativos'},
-  {fecha:'2026-01-05',desc:'Impuesto ley 25.413 débito 0,6%',debito:281.56,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-14',desc:'Crédito transf. — MSI Argentina SRL / Factura',debito:0,credito:1155643.40,comp:'11050961',cat:'Honorarios clientes'},
-  {fecha:'2026-01-14',desc:'Transferencia a Armando Antonella — honorarios',debito:300000.00,credito:0,comp:'87486056',cat:'Honorarios propios'},
-  {fecha:'2026-01-14',desc:'Transferencia a Montes Ana Paula — honorarios propios',debito:300000.00,credito:0,comp:'87527690',cat:'Honorarios propios'},
-  {fecha:'2026-01-14',desc:'Impuesto ley 25.413 crédito 0,6%',debito:0,credito:6933.86,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-14',desc:'Impuesto ley 25.413 débito 0,6%',debito:3600.00,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-14',desc:'Régimen recaudación SIRCREB 0,20%',debito:2311.29,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-15',desc:'Pago de servicios AFIP',debito:7746.81,credito:0,comp:'80894363',cat:'Impuestos'},
-  {fecha:'2026-01-15',desc:'Pago de servicios AFIP',debito:6718.68,credito:0,comp:'59077251',cat:'Impuestos'},
-  {fecha:'2026-01-15',desc:'Impuesto ley 25.413 débito 0,6%',debito:100.66,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-19',desc:'Transferencia a Molinero Johana Gabriel',debito:14500.00,credito:0,comp:'89450329',cat:'Gastos personales'},
-  {fecha:'2026-01-19',desc:'Transferencia a Tomas Barseghian',debito:50000.00,credito:0,comp:'90848636',cat:'Gastos personales'},
-  {fecha:'2026-01-19',desc:'Transferencia a Cintia Lorena Murua',debito:25000.00,credito:0,comp:'90850433',cat:'Gastos personales'},
-  {fecha:'2026-01-19',desc:'Compra exterior — Google YouTube Premium',debito:3399.00,credito:0,comp:'800830',cat:'Estructura digital'},
-  {fecha:'2026-01-19',desc:'Percepción RG 5617 — Google YouTube Premium',debito:1029.60,credito:0,comp:'800830',cat:'Impuestos'},
-  {fecha:'2026-01-19',desc:'Anulación imp. ley 25.413',debito:0,credito:26.57,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-19',desc:'IVA RG 4240 — Google YouTube Premium',debito:713.79,credito:0,comp:'800830',cat:'Impuestos'},
-  {fecha:'2026-01-19',desc:'IIBB percep. serv. digital Córdoba — YouTube',debito:101.97,credito:0,comp:'800830',cat:'Impuestos'},
-  {fecha:'2026-01-20',desc:'Anulación transf. 24hs',debito:0,credito:50000.00,comp:'26463',cat:'Otros'},
-  {fecha:'2026-01-20',desc:'Anulación transf. 24hs',debito:0,credito:25000.00,comp:'26464',cat:'Otros'},
-  {fecha:'2026-01-26',desc:'Compra débito — Merpago*ordeco',debito:33665.99,credito:0,comp:'20536835',cat:'Gastos personales'},
-  {fecha:'2026-01-26',desc:'Compra débito — OVNI',debito:119000.00,credito:0,comp:'20923951',cat:'Gastos personales'},
-  {fecha:'2026-01-26',desc:'Transferencia a Jose Luis Ivanof',debito:35000.00,credito:0,comp:'95357052',cat:'Gastos casa'},
-  {fecha:'2026-01-26',desc:'Compra exterior — Zoom.com',debito:24805.40,credito:0,comp:'229491',cat:'Estructura digital'},
-  {fecha:'2026-01-26',desc:'Percepción RG 5617 — Zoom.com',debito:7304.00,credito:0,comp:'229491',cat:'Impuestos'},
-  {fecha:'2026-01-26',desc:'Impuesto ley 25.413 débito 0,6%',debito:1511.31,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-27',desc:'Compra débito — Merpago*superkiosco',debito:7370.00,credito:0,comp:'21146958',cat:'Gastos personales'},
-  {fecha:'2026-01-27',desc:'Transferencia a Yanina Paola Bessone',debito:10400.00,credito:0,comp:'95560829',cat:'Gastos personales'},
-  {fecha:'2026-01-27',desc:'Impuesto ley 25.413 débito 0,6%',debito:106.62,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-29',desc:'Comisión por servicio de cuenta',debito:57500.00,credito:0,comp:'',cat:'Gastos operativos'},
-  {fecha:'2026-01-29',desc:'IVA 21% reg. transferencias ley 27743',debito:12075.00,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-29',desc:'IVA percepción RG 2408',debito:1725.00,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-29',desc:'Comisión servicio cuenta dólares',debito:14445.00,credito:0,comp:'',cat:'Gastos operativos'},
-  {fecha:'2026-01-29',desc:'Transferencia a Daiana Jezabel Herrera',debito:100000.00,credito:0,comp:'96836972',cat:'Gastos personales'},
-  {fecha:'2026-01-29',desc:'Impuesto ley 25.413 débito 0,6%',debito:1135.27,credito:0,comp:'',cat:'Impuestos'},
-  {fecha:'2026-01-30',desc:'Compra débito — Clínica Universitaria REI',debito:38200.00,credito:0,comp:'10169014',cat:'Gastos personales'},
-  {fecha:'2026-01-30',desc:'Compra débito — Merpago*parkinglibert',debito:6000.00,credito:0,comp:'15551886',cat:'Gastos personales'},
-  {fecha:'2026-01-30',desc:'Impuesto ley 25.413 débito 0,6%',debito:265.20,credito:0,comp:'',cat:'Impuestos'},
-];
- 
-// PRE-CARGAR AMBOS PDFs como datos iniciales
-const DATOS_INICIALES = [
-  ...PDF_SAS_ENE2026.map(m=>({id:1700000000000+Math.random()*1000000,tipo:m.credito>0?'ingreso':'egreso',cuenta:'SAS',monto:m.credito>0?m.credito:m.debito,desc:m.desc,catSel:m.cat,fecha:m.fecha,nota:m.comp?'Comp: '+m.comp:''})),
-  ...PDF_PERSONAL_ABR2026.map(m=>({id:1700000000000+Math.random()*1000000,tipo:m.credito>0?'ingreso':'egreso',cuenta:'Personal',monto:m.credito>0?m.credito:m.debito,desc:m.desc,catSel:m.cat,fecha:m.fecha,nota:m.comp?'Comp: '+m.comp:''})),
-];
- 
-let movimientos=JSON.parse(localStorage.getItem('cc_movs_v4')||'null');
-if(!movimientos){movimientos=[...DATOS_INICIALES];save();}
-let tipo='ingreso',cuenta='Personal',catSel='',filtroActivo='Todos';
-let movsPendientes=[];
- 
+
+Solo incluí movimientos reales (no el saldo inicial ni saldo final).
+Los importes siempre como números sin puntos de miles ni signo $. Usá punto decimal.
+Si es débito ponés el monto en "debito" y 0 en "credito", y viceversa.`;
+
+// ── STATE ──────────────────────────────────────────────────────────
+let movimientos = JSON.parse(localStorage.getItem('cc_movs_v4')||'[]');
+let tipo='ingreso', cuenta='Personal', catSel='', filtroActivo='Todos';
+let movsPendientes=[], impCuenta='Personal';
+
 const hoy=new Date();
 document.getElementById('fecha').value=hoy.toISOString().split('T')[0];
 document.getElementById('hdr-fecha').textContent=hoy.toLocaleDateString('es-AR',{weekday:'long',day:'numeric',month:'long'});
- 
+
 function fmt(n){return new Intl.NumberFormat('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n)}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 function save(){localStorage.setItem('cc_movs_v4',JSON.stringify(movimientos))}
- 
-function setTipo(t){tipo=t;document.getElementById('btn-ing').className='type-btn'+(t==='ingreso'?' active-ingreso':'');document.getElementById('btn-egr').className='type-btn'+(t==='egreso'?' active-egreso':'');}
-function setCuenta(c){cuenta=c;['personal','sas'].forEach(x=>document.getElementById('c-'+x).classList.toggle('sel',c===(x==='personal'?'Personal':'SAS')));}
-function setCat(btn,cat){document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');catSel=cat;}
- 
+
+// ── API KEY ────────────────────────────────────────────────────────
+function getAPIKey(){return localStorage.getItem('pm_api_key')||''}
+function guardarAPIKey(){
+  const k=document.getElementById('api-key-input').value.trim();
+  if(!k.startsWith('sk-ant-')){toast('⚠ La clave debe empezar con sk-ant-');return}
+  localStorage.setItem('pm_api_key',k);
+  document.getElementById('key-status').innerHTML='<span style="color:var(--accent)">✅ API Key guardada correctamente</span>';
+  toast('✓ API Key guardada');
+}
+
+// Mostrar estado API key al cargar config
+function checkKeyStatus(){
+  const k=getAPIKey();
+  const st=document.getElementById('key-status');
+  if(k){
+    st.innerHTML='<span style="color:var(--accent)">✅ API Key configurada ('+k.slice(0,12)+'...)</span>';
+    document.getElementById('api-key-input').placeholder='Ya tenés una clave guardada';
+  } else {
+    st.innerHTML='<span style="color:var(--amber)">⚠ Sin API Key — el importador con IA no funcionará</span>';
+  }
+}
+
+// ── NUEVO MOVIMIENTO ───────────────────────────────────────────────
+function setTipo(t){
+  tipo=t;
+  document.getElementById('btn-ing').className='type-btn'+(t==='ingreso'?' active-ingreso':'');
+  document.getElementById('btn-egr').className='type-btn'+(t==='egreso'?' active-egreso':'');
+}
+function setCuenta(c){
+  cuenta=c;
+  ['personal','sas'].forEach(x=>document.getElementById('c-'+x).classList.toggle('sel',c===(x==='personal'?'Personal':'SAS')));
+}
+function setCat(btn,cat){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');catSel=cat;
+}
 function guardar(){
   const monto=parseFloat(document.getElementById('monto').value);
   const desc=document.getElementById('desc').value.trim();
@@ -470,21 +420,34 @@ function guardar(){
   if(!catSel){toast('⚠ Seleccioná una categoría');return}
   movimientos.unshift({id:Date.now(),tipo,cuenta,monto,desc,catSel,fecha,nota});
   save();updateBalance();toast('✓ Guardado');
-  document.getElementById('monto').value='';document.getElementById('desc').value='';document.getElementById('nota').value='';
-  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));catSel='';
+  document.getElementById('monto').value='';
+  document.getElementById('desc').value='';
+  document.getElementById('nota').value='';
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));
+  catSel='';
 }
- 
-function eliminar(id){if(!confirm('¿Eliminar?'))return;movimientos=movimientos.filter(m=>m.id!==id);save();renderMovimientos();updateBalance();}
- 
+function eliminar(id){
+  if(!confirm('¿Eliminar este movimiento?'))return;
+  movimientos=movimientos.filter(m=>m.id!==id);
+  save();renderMovimientos();updateBalance();
+}
 function updateBalance(){
   const b=movimientos.reduce((a,m)=>a+(m.tipo==='ingreso'?m.monto:-m.monto),0);
   const el=document.getElementById('balance-pill');
-  el.textContent='$ '+fmt(b);el.className='balance-pill'+(b<0?' neg':'');
+  el.textContent='$ '+fmt(b);
+  el.className='balance-pill'+(b<0?' neg':'');
 }
- 
+function borrarTodo(){
+  if(!confirm('¿Borrar TODOS los movimientos? Esta acción no se puede deshacer.'))return;
+  movimientos=[];save();updateBalance();toast('Datos borrados');
+}
+
+// ── MOVIMIENTOS ────────────────────────────────────────────────────
 function renderMovimientos(){
   const allCats=['Todos','Personal','SAS',...Object.keys(CATS)];
-  document.getElementById('filtros').innerHTML=allCats.map(c=>`<div class="filter-chip${c===filtroActivo?' active':''}" onclick="setFiltro('${esc(c)}')">${c}</div>`).join('');
+  document.getElementById('filtros').innerHTML=allCats.map(c=>
+    `<div class="filter-chip${c===filtroActivo?' active':''}" onclick="setFiltro('${esc(c)}')">${c}</div>`
+  ).join('');
   const lista=document.getElementById('lista-movimientos');
   let data=movimientos;
   if(filtroActivo==='Personal')data=movimientos.filter(m=>m.cuenta==='Personal');
@@ -493,7 +456,9 @@ function renderMovimientos(){
   if(!data.length){lista.innerHTML='<div class="empty">Sin movimientos registrados</div>';return}
   lista.innerHTML=data.map(m=>{
     const cat=CATS[m.catSel]||CATS['Otros'];
-    const cTag=m.cuenta==='SAS'?`<span class="tag-cuenta sas">SAS</span>`:`<span class="tag-cuenta">Personal</span>`;
+    const cTag=m.cuenta==='SAS'
+      ?`<span class="tag-cuenta sas">SAS</span>`
+      :`<span class="tag-cuenta">Personal</span>`;
     return `<div class="mov-item">
       <div class="mov-icon ${m.tipo==='ingreso'?'ing':'egr'}">${cat.icon}</div>
       <div class="mov-body">
@@ -507,79 +472,208 @@ function renderMovimientos(){
   }).join('');
 }
 function setFiltro(f){filtroActivo=f;renderMovimientos()}
- 
-// IMPORTADOR
+
+// ── IMPORTADOR CON IA ──────────────────────────────────────────────
+function setImpCuenta(c){
+  impCuenta=c;
+  document.getElementById('imp-c-personal').classList.toggle('sel',c==='Personal');
+  document.getElementById('imp-c-sas').classList.toggle('sel',c==='SAS');
+}
+
 const dz=document.getElementById('drop-zone');
 dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('over')});
 dz.addEventListener('dragleave',()=>dz.classList.remove('over'));
 dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('over');procesarPDF(e.dataTransfer.files[0])});
 document.getElementById('file-input').addEventListener('change',e=>{if(e.target.files[0])procesarPDF(e.target.files[0])});
- 
-function procesarPDF(file){
+
+async function procesarPDF(file){
   if(!file||!file.name.endsWith('.pdf')){toast('⚠ Seleccioná un PDF');return}
-  dz.innerHTML=`<div style="font-size:28px;margin-bottom:8px">⏳</div><div style="font-size:14px;font-weight:500;color:var(--ink2)">Procesando ${esc(file.name)}...</div>`;
-  const esSAS=file.name.includes('374')||file.name.includes('032893');
-  setTimeout(()=>{
-    movsPendientes=esSAS?[...PDF_SAS_ENE2026]:[...PDF_PERSONAL_ABR2026];
-    mostrarPreviewImport(esSAS?'SAS':'Personal');
-  },700);
-}
- 
-function mostrarPreviewImport(cuentaNombre){
+  const apiKey=getAPIKey();
+  if(!apiKey){
+    document.getElementById('imp-no-key').style.display='block';
+    toast('⚠ Configurá tu API Key primero en ⚙️ Config');
+    return;
+  }
+  // Mostrar loading
   document.getElementById('imp-upload').style.display='none';
-  document.getElementById('imp-preview').style.display='block';
+  document.getElementById('imp-loading').style.display='block';
   setImpStep(2);
+  document.getElementById('loading-msg').textContent='Leyendo el PDF con IA...';
+  document.getElementById('loading-sub').textContent='Analizando movimientos de '+file.name;
+
+  try {
+    // Convertir PDF a base64
+    const base64 = await fileToBase64(file);
+    document.getElementById('loading-msg').textContent='Extrayendo movimientos...';
+    document.getElementById('loading-sub').textContent='La IA está procesando cada transacción';
+
+    // Llamar a Claude API
+    const response = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-key':apiKey,
+        'anthropic-version':'2023-06-01',
+        'anthropic-dangerous-direct-browser-access':'true'
+      },
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:4000,
+        system: PROMPT_SISTEMA,
+        messages:[{
+          role:'user',
+          content:[
+            {
+              type:'document',
+              source:{type:'base64',media_type:'application/pdf',data:base64}
+            },
+            {
+              type:'text',
+              text:`Extraé todos los movimientos de este resumen de cuenta Santander Argentina. Cuenta: ${impCuenta}. Devolvé solo el JSON sin nada más.`
+            }
+          ]
+        }]
+      })
+    });
+
+    if(!response.ok){
+      const err=await response.json();
+      throw new Error(err.error?.message||'Error en la API: '+response.status);
+    }
+
+    const data=await response.json();
+    document.getElementById('loading-msg').textContent='Categorizando...';
+
+    // Extraer JSON de la respuesta
+    const texto=data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
+    let jsonData;
+    try {
+      // Limpiar posible markdown
+      const limpio=texto.replace(/```json\n?/g,'').replace(/```\n?/g,'').trim();
+      jsonData=JSON.parse(limpio);
+    } catch(e){
+      throw new Error('No se pudo parsear la respuesta de la IA. Intentá de nuevo.');
+    }
+
+    if(!jsonData.movimientos||!Array.isArray(jsonData.movimientos)){
+      throw new Error('La IA no encontró movimientos en el PDF. Verificá que sea un resumen de cuenta Santander.');
+    }
+
+    movsPendientes=jsonData.movimientos;
+    document.getElementById('imp-loading').style.display='none';
+    mostrarPreviewImport();
+
+  } catch(err){
+    document.getElementById('imp-loading').style.display='none';
+    document.getElementById('imp-error').style.display='block';
+    document.getElementById('imp-error-msg').innerHTML=
+      `❌ <strong>Error al procesar el PDF</strong><br>${esc(err.message)}<br><br>
+      <small>Verificá que tu API Key sea correcta y que tengas saldo disponible en tu cuenta Anthropic.</small>`;
+    console.error(err);
+  }
+}
+
+function fileToBase64(file){
+  return new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>resolve(r.result.split(',')[1]);
+    r.onerror=()=>reject(new Error('No se pudo leer el archivo'));
+    r.readAsDataURL(file);
+  });
+}
+
+function mostrarPreviewImport(){
+  document.getElementById('imp-preview').style.display='block';
+  setImpStep(3);
+
   const existKeys=new Set(movimientos.map(m=>m.fecha+'_'+Math.round(m.monto)));
   let dups=0;
-  movsPendientes.forEach(m=>{m._dup=existKeys.has(m.fecha+'_'+Math.round(m.debito||m.credito));if(m._dup)dups++;});
-  if(dups>0){document.getElementById('imp-dup-alert').style.display='block';document.getElementById('imp-dup-alert').textContent=`⚠ ${dups} movimiento(s) ya podrían estar importados.`;}
-  const tot_deb=movsPendientes.reduce((a,m)=>a+m.debito,0);
-  const tot_cre=movsPendientes.reduce((a,m)=>a+m.credito,0);
+  movsPendientes.forEach(m=>{
+    m._dup=existKeys.has(m.fecha+'_'+Math.round(m.debito||m.credito));
+    if(m._dup)dups++;
+  });
+  if(dups>0){
+    document.getElementById('imp-dup-alert').style.display='block';
+    document.getElementById('imp-dup-alert').textContent=`⚠ ${dups} movimiento(s) podrían estar duplicados (aparecen atenuados).`;
+  }
+
+  const tot_deb=movsPendientes.reduce((a,m)=>a+(parseFloat(m.debito)||0),0);
+  const tot_cre=movsPendientes.reduce((a,m)=>a+(parseFloat(m.credito)||0),0);
   document.getElementById('imp-summary').innerHTML=`
     <div class="scard" style="flex:1"><div class="scard-label">Movimientos</div><div class="scard-val" style="color:var(--blue)">${movsPendientes.length}</div></div>
     <div class="scard" style="flex:1"><div class="scard-label">Ingresos</div><div class="scard-val green">$${fmt(tot_cre)}</div></div>
     <div class="scard" style="flex:1"><div class="scard-label">Egresos</div><div class="scard-val red">$${fmt(tot_deb)}</div></div>`;
-  document.getElementById('imp-tbody').innerHTML=movsPendientes.map((m,i)=>`
-    <tr${m._dup?' style="opacity:.45"':''}>
-      <td style="font-family:var(--mono);font-size:11px;white-space:nowrap">${m.fecha.slice(5)}</td>
-      <td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px" title="${esc(m.desc)}">${esc(m.desc)}</td>
-      <td class="${m.debito?'td-deb':'td-cre'}">${m.debito?'-$'+fmt(m.debito):'+$'+fmt(m.credito)}</td>
-      <td><select class="cat-sel" onchange="movsPendientes[${i}].cat=this.value">
-        ${Object.keys(CATS).map(k=>`<option value="${k}"${m.cat===k?' selected':''}>${k}</option>`).join('')}
+
+  document.getElementById('imp-tbody').innerHTML=movsPendientes.map((m,i)=>{
+    const deb=parseFloat(m.debito)||0;
+    const cre=parseFloat(m.credito)||0;
+    return `<tr${m._dup?' style="opacity:.45"':''}>
+      <td style="font-family:var(--mono);font-size:11px;white-space:nowrap">${(m.fecha||'').slice(5)}</td>
+      <td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px" title="${esc(m.descripcion||m.desc||'')}">${esc(m.descripcion||m.desc||'')}</td>
+      <td class="${deb>0?'td-deb':'td-cre'}">${deb>0?'-$'+fmt(deb):'+$'+fmt(cre)}</td>
+      <td><select class="cat-sel" onchange="movsPendientes[${i}].categoria=this.value">
+        ${Object.keys(CATS).map(k=>`<option value="${k}"${(m.categoria||m.cat)===k?' selected':''}>${k}</option>`).join('')}
       </select></td>
-    </tr>`).join('');
-  window._impCuenta=cuentaNombre;
+    </tr>`;
+  }).join('');
 }
- 
+
 function confirmarImport(){
-  const nuevos=movsPendientes.map(m=>({id:Date.now()+Math.random(),tipo:m.credito>0?'ingreso':'egreso',cuenta:window._impCuenta||'Personal',monto:m.credito>0?m.credito:m.debito,desc:m.desc,catSel:m.cat,fecha:m.fecha,nota:m.comp?'Comp: '+m.comp:''}));
-  movimientos=[...nuevos,...movimientos];save();updateBalance();
+  const nuevos=movsPendientes.map(m=>{
+    const deb=parseFloat(m.debito)||0;
+    const cre=parseFloat(m.credito)||0;
+    return {
+      id:Date.now()+Math.random(),
+      tipo:cre>0?'ingreso':'egreso',
+      cuenta:impCuenta,
+      monto:cre>0?cre:deb,
+      desc:m.descripcion||m.desc||'',
+      catSel:m.categoria||m.cat||'Otros',
+      fecha:m.fecha||'',
+      nota:m.comprobante?'Comp: '+m.comprobante:'',
+    };
+  });
+  movimientos=[...nuevos,...movimientos];
+  save();updateBalance();
   document.getElementById('imp-preview').style.display='none';
   document.getElementById('imp-done').style.display='block';
-  setImpStep(3);
+  setImpStep(4);
   const ing=nuevos.filter(m=>m.tipo==='ingreso').reduce((a,m)=>a+m.monto,0);
   const egr=nuevos.filter(m=>m.tipo==='egreso').reduce((a,m)=>a+m.monto,0);
-  document.getElementById('imp-done-msg').innerHTML=`✅ <strong>${nuevos.length} movimientos importados</strong> — cuenta ${window._impCuenta}.<br>Ingresos: <strong>$${fmt(ing)}</strong> · Egresos: <strong>$${fmt(egr)}</strong>`;
+  document.getElementById('imp-done-msg').innerHTML=
+    `✅ <strong>${nuevos.length} movimientos importados</strong> — cuenta ${impCuenta}.<br>
+    Ingresos: <strong>$${fmt(ing)}</strong> · Egresos: <strong>$${fmt(egr)}</strong><br>
+    Ya están disponibles en el listado de movimientos.`;
 }
- 
+
 function resetImport(){
-  document.getElementById('imp-upload').style.display='block';
-  document.getElementById('imp-preview').style.display='none';
-  document.getElementById('imp-done').style.display='none';
+  ['imp-upload','imp-preview','imp-done','imp-error','imp-loading'].forEach(id=>{
+    document.getElementById(id).style.display= id==='imp-upload'?'block':'none';
+  });
   document.getElementById('imp-dup-alert').style.display='none';
-  dz.innerHTML='<div style="font-size:28px;margin-bottom:8px">📄</div><div style="font-size:14px;font-weight:500;color:var(--ink2)">Arrastrá el PDF o tocá para seleccionar</div><div style="font-size:12px;color:var(--ink3);margin-top:4px">Cuenta Personal o SAS · Santander Argentina</div>';
-  document.getElementById('file-input').value='';setImpStep(1);movsPendientes=[];
+  document.getElementById('imp-no-key').style.display='none';
+  document.getElementById('file-input').value='';
+  dz.innerHTML='<div style="font-size:32px;margin-bottom:8px">📄</div><div style="font-size:14px;font-weight:500;color:var(--ink2)">Arrastrá el PDF o tocá para seleccionar</div><div style="font-size:12px;color:var(--ink3);margin-top:6px">Resumen mensual · Santander Argentina</div>';
+  setImpStep(1);movsPendientes=[];
 }
-function setImpStep(n){['imp-step1','imp-step2','imp-step3'].forEach((id,i)=>{document.getElementById(id).className='step'+(i+1<n?' done':i+1===n?' active':'');});}
- 
+function setImpStep(n){
+  ['imp-step1','imp-step2','imp-step3','imp-step4'].forEach((id,i)=>{
+    document.getElementById(id).className='step'+(i+1<n?' done':i+1===n?' active':'');
+  });
+}
+
+// ── RESUMEN ────────────────────────────────────────────────────────
 function buildMesOptions(){
   const sel=document.getElementById('mes-select');
   const meses=[...new Set(movimientos.map(m=>m.fecha.slice(0,7)))].sort().reverse();
   const cur=sel.value;
   sel.innerHTML='<option value="todos">Todos los períodos</option>';
-  meses.forEach(m=>{const [y,mo]=m.split('-');const lbl=new Date(y,mo-1).toLocaleDateString('es-AR',{month:'long',year:'numeric'});sel.innerHTML+=`<option value="${m}"${cur===m?' selected':''}>${lbl}</option>`;});
+  meses.forEach(m=>{
+    const [y,mo]=m.split('-');
+    const lbl=new Date(y,mo-1).toLocaleDateString('es-AR',{month:'long',year:'numeric'});
+    sel.innerHTML+=`<option value="${m}"${cur===m?' selected':''}>${lbl}</option>`;
+  });
 }
- 
 function renderResumen(){
   const fm=document.getElementById('mes-select').value;
   const data=fm==='todos'?movimientos:movimientos.filter(m=>m.fecha.startsWith(fm));
@@ -594,35 +688,57 @@ function renderResumen(){
   data.forEach(m=>{if(!byCat[m.catSel])byCat[m.catSel]={i:0,e:0};byCat[m.catSel][m.tipo==='ingreso'?'i':'e']+=m.monto;});
   const catRows=Object.entries(byCat).sort((a,b)=>(b[1].i+b[1].e)-(a[1].i+a[1].e)).map(([cat,v])=>{
     const c=CATS[cat]||CATS['Otros'];const net=v.i-v.e;
-    return `<div class="row-between"><span style="font-size:13px">${c.icon} <span class="badge ${c.badge}">${cat}</span></span><span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${net>=0?'var(--accent)':'var(--danger)'}">$${fmt(net)}</span></div>`;
+    return `<div class="row-between"><span style="font-size:13px">${c.icon} <span class="badge ${c.badge}">${cat}</span></span>
+    <span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${net>=0?'var(--accent)':'var(--danger)'}">$${fmt(net)}</span></div>`;
   }).join('');
   document.getElementById('cat-breakdown').innerHTML=`<div class="card-title">Por categoría</div>${catRows||'<div class="empty" style="padding:12px 0">Sin datos</div>'}`;
   const byCuenta={Personal:{i:0,e:0},SAS:{i:0,e:0}};
   data.forEach(m=>{if(byCuenta[m.cuenta])byCuenta[m.cuenta][m.tipo==='ingreso'?'i':'e']+=m.monto;});
   document.getElementById('cuenta-breakdown').innerHTML=`<div class="card-title">Por cuenta</div>`+
-    Object.entries(byCuenta).map(([c,v])=>{const net=v.i-v.e;return `<div class="row-between"><span style="font-size:13px">${c==='SAS'?'🏢':'🏦'} <strong>${c}</strong> <span style="font-size:11px;color:var(--ink3);font-family:var(--mono)">ing $${fmt(v.i)} · egr $${fmt(v.e)}</span></span><span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${net>=0?'var(--accent)':'var(--danger)'}">$${fmt(net)}</span></div>`;}).join('');
+    Object.entries(byCuenta).map(([c,v])=>{const net=v.i-v.e;return `<div class="row-between">
+    <span style="font-size:13px">${c==='SAS'?'🏢':'🏦'} <strong>${c}</strong>
+    <span style="font-size:11px;color:var(--ink3);font-family:var(--mono);margin-left:6px">ing $${fmt(v.i)} · egr $${fmt(v.e)}</span></span>
+    <span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${net>=0?'var(--accent)':'var(--danger)'}">$${fmt(net)}</span></div>`;}).join('');
 }
- 
+
+// ── EXPORT CSV ─────────────────────────────────────────────────────
 function exportCSV(){
-  if(!movimientos.length){toast('Sin datos');return}
+  if(!movimientos.length){toast('Sin datos para exportar');return}
   const h='Fecha,Tipo,Cuenta,Descripcion,Categoria,Importe,Nota\n';
-  const rows=movimientos.map(m=>[m.fecha,m.tipo,m.cuenta,`"${m.desc.replace(/"/g,'""')}"`,m.catSel,m.tipo==='ingreso'?m.monto.toFixed(2):(-m.monto).toFixed(2),`"${(m.nota||'').replace(/"/g,'""')}"`].join(',')).join('\n');
+  const rows=movimientos.map(m=>[
+    m.fecha,m.tipo,m.cuenta,
+    `"${(m.desc||'').replace(/"/g,'""')}"`,
+    m.catSel,
+    m.tipo==='ingreso'?m.monto.toFixed(2):(-m.monto).toFixed(2),
+    `"${(m.nota||'').replace(/"/g,'""')}"`
+  ].join(',')).join('\n');
   const blob=new Blob(['\uFEFF'+h+rows],{type:'text/csv;charset=utf-8;'});
-  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='pm_talent_'+new Date().toISOString().slice(0,10)+'.csv';
-  document.body.appendChild(a);a.click();document.body.removeChild(a);toast('✓ CSV exportado');
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download='pm_talent_'+new Date().toISOString().slice(0,10)+'.csv';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  toast('✓ CSV exportado');
 }
- 
+
+// ── TABS ───────────────────────────────────────────────────────────
 function showTab(t){
-  ['nuevo','movimientos','importar','resumen','ayuda'].forEach(x=>{document.getElementById('tab-'+x).style.display=x===t?'':'none';});
-  document.querySelectorAll('.tab').forEach((el,i)=>{el.classList.toggle('active',['nuevo','movimientos','importar','resumen','ayuda'][i]===t);});
+  ['nuevo','movimientos','importar','resumen','config'].forEach(x=>{
+    document.getElementById('tab-'+x).style.display=x===t?'':'none';
+  });
+  document.querySelectorAll('.tab').forEach((el,i)=>{
+    el.classList.toggle('active',['nuevo','movimientos','importar','resumen','config'][i]===t);
+  });
   if(t==='movimientos')renderMovimientos();
   if(t==='resumen'){buildMesOptions();renderResumen();}
+  if(t==='config')checkKeyStatus();
 }
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500)}
+
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+
 updateBalance();
 </script>
 </body>
 </html>
- 
-
-

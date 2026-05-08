@@ -264,9 +264,53 @@ tr:last-child td{border-bottom:none}
 <div id="tab-resumen" style="display:none">
   <select class="mes-select" id="mes-select" onchange="renderResumen()"><option value="todos">Todos los períodos</option></select>
   <div class="summary-grid" id="summary-cards"></div>
+
+  <!-- CHARTS DASHBOARD -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="card-title">Ingresos vs egresos por mes</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;font-size:11px;color:var(--ink2)">
+      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1D9E75"></span>Ingresos</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#D85A30"></span>Egresos</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#378ADD"></span>Balance</span>
+    </div>
+    <div style="position:relative;width:100%;height:220px">
+      <canvas id="chart-ing-egr" role="img" aria-label="Ingresos vs egresos mensuales">Ingresos vs egresos por mes.</canvas>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+    <div class="card">
+      <div class="card-title">Egresos por categoría</div>
+      <div id="legend-cat" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;font-size:10px;color:var(--ink2)"></div>
+      <div style="position:relative;width:100%;height:180px">
+        <canvas id="chart-cat" role="img" aria-label="Distribución de egresos por categoría">Egresos por categoría.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Saldo acumulado</div>
+      <div style="position:relative;width:100%;height:210px">
+        <canvas id="chart-saldo" role="img" aria-label="Evolución del saldo acumulado">Saldo acumulado.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICADORES TABLA -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="card-title">Indicadores por mes</div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px" id="tabla-kpi"></table>
+    </div>
+  </div>
+
+  <!-- INSIGHTS IA -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="card-title">Análisis automático</div>
+    <div id="insights-box" style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--ink2)"></div>
+  </div>
+
   <div class="card" id="cat-breakdown"></div>
   <div class="card" id="cuenta-breakdown" style="margin-top:12px"></div>
-  <button class="export-btn" style="margin-top:6px" onclick="exportCSV()">⬇ Exportar CSV</button>
+  <button class="export-btn" style="margin-top:12px" onclick="exportCSV()">⬇ Exportar CSV</button>
 </div>
 
 <!-- TAB CONFIG -->
@@ -555,7 +599,7 @@ async function procesarPDF(file){
       const jsonStr=texto.slice(inicio,fin+1);
       jsonData=JSON.parse(jsonStr);
     } catch(e){
-     throw new Error('No se pudo parsear la respuesta de la IA. Intentá de nuevo.'));
+      throw new Error('No se pudo parsear la respuesta de la IA. Intentá de nuevo.');
     }
 
     if(!jsonData.movimientos||!Array.isArray(jsonData.movimientos)){
@@ -683,25 +727,170 @@ function renderResumen(){
   const ing=data.filter(m=>m.tipo==='ingreso').reduce((a,m)=>a+m.monto,0);
   const egr=data.filter(m=>m.tipo==='egreso').reduce((a,m)=>a+m.monto,0);
   const bal=ing-egr;
+  const margen=ing>0?Math.round(bal/ing*100):0;
+
+  // Cards resumen
   document.getElementById('summary-cards').innerHTML=`
     <div class="scard"><div class="scard-label">Ingresos</div><div class="scard-val green">$${fmt(ing)}</div></div>
     <div class="scard"><div class="scard-label">Egresos</div><div class="scard-val red">$${fmt(egr)}</div></div>
-    <div class="scard"><div class="scard-label">Balance</div><div class="scard-val ${bal>=0?'green':'red'}">$${fmt(bal)}</div></div>`;
+    <div class="scard"><div class="scard-label">Balance</div><div class="scard-val ${bal>=0?'green':'red'}">$${fmt(bal)}</div></div>
+    <div class="scard" style="display:${fm==='todos'?'none':'block'}"><div class="scard-label">Margen</div><div class="scard-val ${margen>=15?'green':margen>=0?'':'red'}">${margen}%</div></div>`;
+
+  // Por categoría
   const byCat={};
   data.forEach(m=>{if(!byCat[m.catSel])byCat[m.catSel]={i:0,e:0};byCat[m.catSel][m.tipo==='ingreso'?'i':'e']+=m.monto;});
   const catRows=Object.entries(byCat).sort((a,b)=>(b[1].i+b[1].e)-(a[1].i+a[1].e)).map(([cat,v])=>{
     const c=CATS[cat]||CATS['Otros'];const net=v.i-v.e;
-    return `<div class="row-between"><span style="font-size:13px">${c.icon} <span class="badge ${c.badge}">${cat}</span></span>
-    <span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${net>=0?'var(--accent)':'var(--danger)'}">$${fmt(net)}</span></div>`;
+    return '<div class="row-between"><span style="font-size:13px">'+c.icon+' <span class="badge '+c.badge+'">'+cat+'</span></span>'
+      +'<span style="font-family:var(--mono);font-size:13px;font-weight:500;color:'+(net>=0?'var(--accent)':'var(--danger)')+'">$'+fmt(net)+'</span></div>';
   }).join('');
-  document.getElementById('cat-breakdown').innerHTML=`<div class="card-title">Por categoría</div>${catRows||'<div class="empty" style="padding:12px 0">Sin datos</div>'}`;
+  document.getElementById('cat-breakdown').innerHTML='<div class="card-title">Por categoría</div>'+(catRows||'<div class="empty" style="padding:12px 0">Sin datos</div>');
   const byCuenta={Personal:{i:0,e:0},SAS:{i:0,e:0}};
   data.forEach(m=>{if(byCuenta[m.cuenta])byCuenta[m.cuenta][m.tipo==='ingreso'?'i':'e']+=m.monto;});
-  document.getElementById('cuenta-breakdown').innerHTML=`<div class="card-title">Por cuenta</div>`+
-    Object.entries(byCuenta).map(([c,v])=>{const net=v.i-v.e;return `<div class="row-between">
-    <span style="font-size:13px">${c==='SAS'?'🏢':'🏦'} <strong>${c}</strong>
-    <span style="font-size:11px;color:var(--ink3);font-family:var(--mono);margin-left:6px">ing $${fmt(v.i)} · egr $${fmt(v.e)}</span></span>
-    <span style="font-family:var(--mono);font-size:13px;font-weight:500;color:${net>=0?'var(--accent)':'var(--danger)'}">$${fmt(net)}</span></div>`;}).join('');
+  document.getElementById('cuenta-breakdown').innerHTML='<div class="card-title">Por cuenta</div>'+
+    Object.entries(byCuenta).map(([c,v])=>{const net=v.i-v.e;return '<div class="row-between">'
+      +'<span style="font-size:13px">'+(c==='SAS'?'🏢':'🏦')+' <strong>'+c+'</strong>'
+      +' <span style="font-size:11px;color:var(--ink3);font-family:var(--mono);margin-left:6px">ing $'+fmt(v.i)+' · egr $'+fmt(v.e)+'</span></span>'
+      +'<span style="font-family:var(--mono);font-size:13px;font-weight:500;color:'+(net>=0?'var(--accent)':'var(--danger)')+'">$'+fmt(net)+'</span></div>';}).join('');
+
+  // CHARTS
+  renderCharts(data, fm);
+
+  // TABLA KPI
+  renderTablaKPI();
+
+  // INSIGHTS
+  renderInsights(data, ing, egr, bal, margen);
+}
+
+function renderCharts(data, fm){
+  // Destruir charts anteriores si existen
+  ['chart-ing-egr','chart-cat','chart-saldo'].forEach(id=>{
+    const canvas=document.getElementById(id);
+    if(!canvas)return;
+    const existing=Chart.getChart(canvas);
+    if(existing)existing.destroy();
+  });
+
+  // Obtener meses únicos del dataset
+  const meses=[...new Set(movimientos.map(m=>m.fecha.slice(0,7)))].sort();
+  if(!meses.length)return;
+
+  const labels=meses.map(m=>{
+    const [y,mo]=m.split('-');
+    return new Date(y,mo-1).toLocaleDateString('es-AR',{month:'short',year:'2-digit'});
+  });
+  const ingPorMes=meses.map(m=>movimientos.filter(x=>x.fecha.startsWith(m)&&x.tipo==='ingreso').reduce((a,x)=>a+x.monto,0));
+  const egrPorMes=meses.map(m=>movimientos.filter(x=>x.fecha.startsWith(m)&&x.tipo==='egreso').reduce((a,x)=>a+x.monto,0));
+  const balPorMes=ingPorMes.map((v,i)=>v-egrPorMes[i]);
+
+  const acum=[];let acc=0;
+  balPorMes.forEach(b=>{acc+=b;acum.push(acc);});
+
+  const grid='rgba(128,128,128,0.1)';
+  const fmtTick=v=>{if(Math.abs(v)>=1000000)return '$'+(v/1000000).toFixed(1)+'M';if(Math.abs(v)>=1000)return '$'+Math.round(v/1000)+'K';return '$'+v;};
+
+  // Chart 1: barras + línea balance
+  new Chart(document.getElementById('chart-ing-egr'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Ingresos',data:ingPorMes,backgroundColor:'#1D9E75',borderRadius:4},
+      {label:'Egresos',data:egrPorMes,backgroundColor:'#D85A30',borderRadius:4},
+      {label:'Balance',data:balPorMes,type:'line',borderColor:'#378ADD',backgroundColor:'rgba(55,138,221,0.05)',
+       borderDash:[5,3],pointRadius:4,pointBackgroundColor:'#378ADD',fill:false,tension:0.3}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:grid},ticks:{autoSkip:false,maxRotation:45}},
+              y:{grid:{color:grid},ticks:{callback:fmtTick}}}}
+  });
+
+  // Chart 2: donut categorías
+  const byCatEgr={};
+  data.filter(m=>m.tipo==='egreso').forEach(m=>{byCatEgr[m.catSel]=(byCatEgr[m.catSel]||0)+m.monto;});
+  const catLabels=Object.keys(byCatEgr).sort((a,b)=>byCatEgr[b]-byCatEgr[a]).slice(0,6);
+  const catVals=catLabels.map(k=>byCatEgr[k]);
+  const catColors=['#7F77DD','#D85A30','#E24B4A','#378ADD','#639922','#888780'];
+  const totalEgr=catVals.reduce((a,b)=>a+b,0);
+  const legend=document.getElementById('legend-cat');
+  if(legend){legend.innerHTML=catLabels.map((l,i)=>'<span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:'+catColors[i]+'"></span>'+l+'</span>').join('');}
+  new Chart(document.getElementById('chart-cat'),{
+    type:'doughnut',
+    data:{labels:catLabels,datasets:[{data:catVals,backgroundColor:catColors,borderWidth:2,borderColor:'transparent'}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' $'+fmt(ctx.raw)+' ('+Math.round(ctx.raw/totalEgr*100)+'%)'}}}}
+  });
+
+  // Chart 3: saldo acumulado
+  new Chart(document.getElementById('chart-saldo'),{
+    type:'line',
+    data:{labels,datasets:[{label:'Saldo',data:acum,borderColor:'#1D9E75',
+      backgroundColor:'rgba(29,158,117,0.08)',fill:true,pointRadius:4,
+      pointBackgroundColor:'#1D9E75',tension:0.3}]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:grid},ticks:{autoSkip:false,maxRotation:45}},
+              y:{grid:{color:grid},ticks:{callback:fmtTick}}}}
+  });
+}
+
+function renderTablaKPI(){
+  const meses=[...new Set(movimientos.map(m=>m.fecha.slice(0,7)))].sort();
+  const tabla=document.getElementById('tabla-kpi');
+  if(!tabla)return;
+  tabla.innerHTML='<thead><tr style="border-bottom:1px solid var(--border)">'
+    +'<th style="text-align:left;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Mes</th>'
+    +'<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Ingresos</th>'
+    +'<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Egresos</th>'
+    +'<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Balance</th>'
+    +'<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Margen</th>'
+    +'</tr></thead><tbody>';
+  meses.forEach(m=>{
+    const movMes=movimientos.filter(x=>x.fecha.startsWith(m));
+    const ing=movMes.filter(x=>x.tipo==='ingreso').reduce((a,x)=>a+x.monto,0);
+    const egr=movMes.filter(x=>x.tipo==='egreso').reduce((a,x)=>a+x.monto,0);
+    const bal=ing-egr;
+    const margen=ing>0?Math.round(bal/ing*100):0;
+    const [y,mo]=m.split('-');
+    const label=new Date(y,mo-1).toLocaleDateString('es-AR',{month:'long',year:'numeric'});
+    const balColor=bal>=0?'var(--accent)':'var(--danger)';
+    const mColor=margen>=15?'var(--accent)':margen>=0?'var(--amber)':'var(--danger)';
+    tabla.innerHTML+='<tr style="border-bottom:1px solid var(--border)">'
+      +'<td style="padding:8px;font-weight:500;font-size:12px">'+label+'</td>'
+      +'<td style="padding:8px;text-align:right;color:var(--accent);font-family:var(--mono);font-size:12px">$'+fmt(ing)+'</td>'
+      +'<td style="padding:8px;text-align:right;color:var(--danger);font-family:var(--mono);font-size:12px">$'+fmt(egr)+'</td>'
+      +'<td style="padding:8px;text-align:right;font-weight:500;font-family:var(--mono);font-size:12px;color:'+balColor+'">'+(bal>=0?'+':'')+'$'+fmt(bal)+'</td>'
+      +'<td style="padding:8px;text-align:right;font-family:var(--mono);font-size:12px;color:'+mColor+'">'+margen+'%</td>'
+      +'</tr>';
+  });
+  tabla.innerHTML+='</tbody>';
+}
+
+function renderInsights(data,ing,egr,bal,margen){
+  const box=document.getElementById('insights-box');
+  if(!box)return;
+  const insights=[];
+  const gp=data.filter(m=>m.tipo==='egreso'&&m.catSel==='Gastos personales').reduce((a,m)=>a+m.monto,0);
+  const pctGP=egr>0?Math.round(gp/egr*100):0;
+  const imp=data.filter(m=>m.tipo==='egreso'&&m.catSel==='Impuestos').reduce((a,m)=>a+m.monto,0);
+  const inv=data.filter(m=>m.catSel==='Inversión personal').reduce((a,m)=>a+(m.tipo==='ingreso'?m.monto:-m.monto),0);
+
+  if(margen>=15)insights.push({e:'📈',t:'Margen del '+margen+'% — por encima del umbral saludable (15%). Buen resultado.'});
+  else if(margen>=0)insights.push({e:'⚠️',t:'Margen del '+margen+'% — por debajo del 15% recomendado para consultoras. Revisá la estructura de costos.'});
+  else insights.push({e:'🔴',t:'Balance negativo este período. Ingresaron $'+fmt(ing)+' y se gastaron $'+fmt(egr)+'.'});
+
+  if(pctGP>25)insights.push({e:'💡',t:'Los gastos personales representan el '+pctGP+'% de los egresos. Considerar separar más los gastos personales de los de la empresa.'});
+
+  if(imp>0)insights.push({e:'🏛',t:'Impuestos y retenciones: $'+fmt(imp)+'. Verificá con tu contador qué porcentaje es computable contra otros tributos.'});
+
+  if(inv>0)insights.push({e:'📊',t:'Plazo fijo activo por $'+fmt(inv)+'. Bien capitalizado fuera del flujo operativo.'});
+  else if(inv<0)insights.push({e:'📊',t:'Liquidación de plazo fijo: $'+fmt(Math.abs(inv))+' disponibles en el período.'});
+
+  if(!insights.length)insights.push({e:'ℹ️',t:'Importá más meses para ver análisis comparativos y tendencias.'});
+
+  box.innerHTML=insights.map(a=>'<div style="display:flex;gap:10px;align-items:flex-start">'
+    +'<span style="font-size:15px;flex-shrink:0">'+a.e+'</span>'
+    +'<span>'+a.t+'</span></div>').join('');
 }
 
 // ── EXPORT CSV ─────────────────────────────────────────────────────
@@ -743,5 +932,6 @@ function toast(msg){
 
 updateBalance();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 </body>
 </html>

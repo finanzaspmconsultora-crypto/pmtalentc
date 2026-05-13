@@ -338,6 +338,12 @@ tr:last-child td{border-bottom:none}
     <div class="row-between"><span style="font-size:13px">Sincronizacion en la nube</span><span style="font-size:11px;color:var(--amber);font-family:var(--mono)">Proximo</span></div>
   </div>
   <div class="card" style="margin-top:0">
+    <div class="card-title">Sincronizacion Google Sheets</div>
+    <p style="font-size:13px;color:var(--ink2);margin-bottom:12px;line-height:1.6">Tus datos se sincronizan con tu planilla de Google Sheets. Usalo para compartir datos entre el celu y la PC.</p>
+    <button class="submit-btn" onclick="cargarDesdeSheets()" style="margin-bottom:8px;background:var(--accent)">Cargar datos desde Sheets</button>
+    <button class="export-btn" onclick="sincronizarTodoASheets()">Subir todos los datos a Sheets</button>
+  </div>
+  <div class="card" style="margin-top:0">
     <div class="card-title">Zona peligrosa</div>
     <button class="export-btn" onclick="borrarTodo()" style="color:var(--danger);border-color:var(--danger)">Borrar todos los movimientos</button>
   </div>
@@ -995,7 +1001,104 @@ function toast(msg) {
   setTimeout(function() { t.classList.remove('show'); }, 2500);
 }
 
+// ── GOOGLE SHEETS SYNC ────────────────────────────────────────────
+var SHEETS_ID = '11U1rURZsMt4T78oNeNGq5wWmIrb-4AAd8C9PQq5g9_4';
+var SHEETS_KEY = 'AIzaSyBvFvjmq-0mbroLlyYrh-QxluHxGIZQndc';
+var SHEETS_RANGE = 'Sheet1!A:H';
+var syncInProgress = false;
+
+function getSheetsURL(range) {
+  return 'https://sheets.googleapis.com/v4/spreadsheets/' + SHEETS_ID + '/values/' + range + '?key=' + SHEETS_KEY;
+}
+
+function getSheetsWriteURL() {
+  return 'https://sheets.googleapis.com/v4/spreadsheets/' + SHEETS_ID + '/values/' + SHEETS_RANGE + ':append?valueInputOption=RAW&key=' + SHEETS_KEY;
+}
+
+function cargarDesdeSheets() {
+  if (syncInProgress) return;
+  syncInProgress = true;
+  toast('Sincronizando con Google Sheets...');
+  fetch(getSheetsURL(SHEETS_RANGE))
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data.values || data.values.length <= 1) {
+        syncInProgress = false;
+        toast('Planilla vacia - empezando desde cero');
+        return;
+      }
+      var rows = data.values.slice(1);
+      var loaded = rows.filter(function(r) { return r[0]; }).map(function(r) {
+        return {
+          id: parseFloat(r[0]) || Date.now(),
+          fecha: r[1] || '',
+          tipo: r[2] || 'egreso',
+          cuenta: r[3] || 'Personal',
+          monto: parseFloat(r[4]) || 0,
+          desc: r[5] || '',
+          catSel: r[6] || 'Otros',
+          nota: r[7] || ''
+        };
+      });
+      movimientos = loaded;
+      save();
+      updateBalance();
+      syncInProgress = false;
+      toast('Sincronizado: ' + loaded.length + ' movimientos cargados');
+    })
+    .catch(function(err) {
+      syncInProgress = false;
+      toast('Error al sincronizar: ' + err.message);
+      console.error(err);
+    });
+}
+
+function guardarEnSheets(mov) {
+  var apiKey = getAPIKey();
+  if (!apiKey) return;
+  var row = [[mov.id, mov.fecha, mov.tipo, mov.cuenta, mov.monto, mov.desc, mov.catSel, mov.nota || '']];
+  fetch('https://sheets.googleapis.com/v4/spreadsheets/' + SHEETS_ID + '/values/' + SHEETS_RANGE + ':append?valueInputOption=RAW',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + apiKey
+      },
+      body: JSON.stringify({values: row})
+    }
+  ).catch(function(err) { console.error('Error guardando en Sheets:', err); });
+}
+
+function sincronizarTodoASheets() {
+  var apiKey = getAPIKey();
+  if (!apiKey) { toast('Configura tu API Key de Anthropic primero'); return; }
+  if (!movimientos.length) { toast('No hay movimientos para sincronizar'); return; }
+  toast('Subiendo ' + movimientos.length + ' movimientos a Sheets...');
+  var values = [['id','fecha','tipo','cuenta','monto','desc','catSel','nota']].concat(
+    movimientos.map(function(m) {
+      return [m.id, m.fecha, m.tipo, m.cuenta, m.monto, m.desc, m.catSel, m.nota || ''];
+    })
+  );
+  fetch('https://sheets.googleapis.com/v4/spreadsheets/' + SHEETS_ID + '/values/' + SHEETS_RANGE + '?valueInputOption=RAW',
+    {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({values: values})
+    }
+  ).then(function(r) {
+    if (r.ok) {
+      toast('Sincronizado correctamente en Google Sheets');
+    } else {
+      return r.json().then(function(e) { throw new Error(e.error ? e.error.message : 'Error ' + r.status); });
+    }
+  }).catch(function(err) {
+    toast('Error: ' + err.message);
+    console.error(err);
+  });
+}
+
 updateBalance();
+cargarDesdeSheets();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 </body>

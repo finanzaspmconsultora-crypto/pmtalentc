@@ -1029,15 +1029,12 @@ function getContextoFinanciero(fm){
     const movMes = data.filter(m=>m.fecha.startsWith(mes));
     const i = movMes.filter(m=>m.tipo==='ingreso').reduce((a,m)=>a+m.monto,0);
     const e = movMes.filter(m=>m.tipo==='egreso').reduce((a,m)=>a+m.monto,0);
-    return `${mes}: ingresos $${Math.round(i/1000)}K, egresos $${Math.round(e/1000)}K, balance ${i-e>=0?'+':''} $${Math.round((i-e)/1000)}K`;
-  }).join('
-');
-
+        return mes+': ingresos $'+Math.round(i/1000)+'K, egresos $'+Math.round(e/1000)+'K, balance '+(i-e>=0?'+':'')+' $'+Math.round((i-e)/1000)+'K';
+  }).join('\n');
   const catResumen = Object.entries(byCat)
     .sort((a,b)=>(b[1].i+b[1].e)-(a[1].i+a[1].e))
-    .map(([cat,v])=>`  ${cat}: ingresos $${Math.round(v.i/1000)}K, egresos $${Math.round(v.e/1000)}K`)
-    .join('
-');
+        .map(([cat,v])=>'  '+cat+': ingresos $'+Math.round(v.i/1000)+'K, egresos $'+Math.round(v.e/1000)+'K')
+    .join('\n');;
 
   const periodo = fm==='todos' ? 'todos los períodos disponibles' : fm;
 

@@ -25,7 +25,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .balance-pill{background:#2D6A4F;color:#fff;font-family:var(--mono);font-size:13px;font-weight:500;padding:6px 14px;border-radius:20px;white-space:nowrap}
 .balance-pill.neg{background:#7B1D1D}
 .tabs{display:flex;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:57px;z-index:99;overflow-x:auto}
-.tab{flex:1;min-width:60px;padding:13px 6px;text-align:center;font-size:12px;font-weight:500;color:var(--ink2);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;user-select:none;white-space:nowrap}
+.tab{flex:1;min-width:52px;padding:12px 4px;text-align:center;font-size:11px;font-weight:500;color:var(--ink2);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;user-select:none;white-space:nowrap}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .main{padding:16px;max-width:560px;margin:0 auto}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px}
@@ -69,8 +69,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .b-ED{background:#F0E6FF;color:#5B21B6}.b-GO{background:#E0F2FE;color:#075985}
 .b-GP{background:#FFF1F2;color:#9F1239}.b-GC{background:#FDF4FF;color:#7E22CE}
 .b-IN{background:#F0FDF4;color:#14532D}.b-P{background:#FCE7F3;color:#831843}
-.b-I{background:#FEF9C3;color:#713F12}.b-TR{background:#F1F5F9;color:#475569}
-.b-O{background:#F3F4F6;color:#374151}
+.b-I{background:#FEF9C3;color:#713F12}.b-O{background:#F3F4F6;color:#374151}
 .tag-cuenta{font-size:10px;font-family:var(--mono);color:var(--blue);background:var(--blue-light);padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle}
 .tag-cuenta.sas{color:var(--purple);background:var(--purple-light)}
 .empty{text-align:center;padding:48px 20px;color:var(--ink3);font-size:14px}
@@ -79,11 +78,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:10
 .filter-chip{white-space:nowrap;padding:7px 13px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;background:var(--surface);color:var(--ink2);transition:all .12s;user-select:none}
 .filter-chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
 .export-btn{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;color:var(--ink2);margin-bottom:8px}
-.export-btn:hover{background:var(--surface2)}
 .mes-select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:14px;color:var(--ink);background:var(--surface);outline:none;margin-bottom:12px;cursor:pointer}
 .row-between{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}
 .row-between:last-child{border-bottom:none}
-/* IMPORTADOR */
 .drop-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--surface2)}
 .drop-zone:hover,.drop-zone.over{border-color:var(--accent);background:var(--accent-light)}
 .steps-row{display:flex;gap:8px;margin-bottom:16px}
@@ -105,16 +102,16 @@ tr:last-child td{border-bottom:none}
 .alert-danger{background:var(--danger-light);color:var(--danger);border:1px solid #FECACA}
 .btn-imp{width:100%;padding:13px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;margin-top:4px}
 .btn-sec{width:100%;padding:11px;background:var(--surface);color:var(--ink2);border:1px solid var(--border);border-radius:8px;font-family:var(--sans);font-size:13px;cursor:pointer;margin-top:8px}
-/* API KEY */
 .apikey-input{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:8px;font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--surface);outline:none;margin-bottom:10px}
 .apikey-input:focus{border-color:var(--accent)}
 .install-banner{background:var(--amber-light);border:1px solid #F5C043;border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;font-size:13px;color:var(--amber);line-height:1.6}
-/* LOADING */
 .loading-box{text-align:center;padding:32px 20px}
 .spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading-msg{font-size:14px;color:var(--ink2);font-weight:500}
 .loading-sub{font-size:12px;color:var(--ink3);margin-top:6px}
+.chat-msg-user{max-width:85%;padding:10px 14px;border-radius:12px;border-bottom-right-radius:4px;font-size:13px;line-height:1.6;align-self:flex-end;background:var(--ink);color:#fff;word-break:break-word}
+.chat-msg-ai{max-width:85%;padding:10px 14px;border-radius:12px;border-bottom-left-radius:4px;font-size:13px;line-height:1.6;align-self:flex-start;background:var(--surface2);color:var(--ink);word-break:break-word;white-space:pre-wrap}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 22px;border-radius:8px;font-size:13px;font-weight:500;opacity:0;transition:all .25s;pointer-events:none;z-index:9999}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 </style>
@@ -142,42 +139,42 @@ tr:last-child td{border-bottom:none}
 <div class="card">
   <div class="card-title">Tipo</div>
   <div class="type-toggle">
-    <button class="type-btn active-ingreso" id="btn-ing" onclick="setTipo('ingreso')">⬆ Ingreso</button>
-    <button class="type-btn" id="btn-egr" onclick="setTipo('egreso')">⬇ Egreso</button>
+    <button class="type-btn active-ingreso" id="btn-ing" onclick="setTipo('ingreso')">&#11014; Ingreso</button>
+    <button class="type-btn" id="btn-egr" onclick="setTipo('egreso')">&#11015; Egreso</button>
   </div>
   <div class="field"><label class="label">Cuenta</label>
     <div class="cuenta-toggle">
-      <button class="cuenta-btn sel" id="c-personal" onclick="setCuenta('Personal')">🏦 Personal</button>
-      <button class="cuenta-btn" id="c-sas" onclick="setCuenta('SAS')">🏢 SAS</button>
+      <button class="cuenta-btn sel" id="c-personal" onclick="setCuenta('Personal')">&#127970; Personal</button>
+      <button class="cuenta-btn" id="c-sas" onclick="setCuenta('SAS')">&#127970; SAS</button>
     </div>
   </div>
   <div class="field"><label class="label">Importe ($)</label>
     <input class="input input-amount" type="number" id="monto" placeholder="0.00" min="0" step="0.01" inputmode="decimal">
   </div>
-  <div class="field"><label class="label">Descripción</label>
+  <div class="field"><label class="label">Descripcion</label>
     <input class="input" type="text" id="desc" placeholder="Ej: Honorario cliente X">
   </div>
-  <div class="field"><label class="label">Categoría</label>
+  <div class="field"><label class="label">Categoria</label>
     <div class="cat-grid">
-      <button class="cat-btn" onclick="setCat(this,'Honorarios clientes')">💼 Hon. clientes</button>
-      <button class="cat-btn" onclick="setCat(this,'Honorarios propios')">🟢 Hon. propios</button>
-      <button class="cat-btn" onclick="setCat(this,'Honorarios proveedores')">🤝 Hon. proveedores</button>
-      <button class="cat-btn" onclick="setCat(this,'Sueldos y cargas')">👥 Sueldos y cargas</button>
-      <button class="cat-btn" onclick="setCat(this,'Estructura digital')">💻 Estructura digital</button>
-      <button class="cat-btn" onclick="setCat(this,'Gastos operativos')">🏠 Gastos operativos</button>
-      <button class="cat-btn" onclick="setCat(this,'Gastos personales')">🛍 Gastos personales</button>
-      <button class="cat-btn" onclick="setCat(this,'Gastos casa')">🏡 Gastos casa</button>
-      <button class="cat-btn" onclick="setCat(this,'Inversión personal')">📈 Inversión personal</button>
-      <button class="cat-btn" onclick="setCat(this,'Impuestos')">🏛 Impuestos</button>
-      <button class="cat-btn" onclick="setCat(this,'Proveedores')">📦 Proveedores</button>
-      <button class="cat-btn" onclick="setCat(this,'Otros')">📌 Otros</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios clientes')">Honorarios clientes</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios propios')">Honorarios propios</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios proveedores')">Hon. proveedores PM</button>
+      <button class="cat-btn" onclick="setCat(this,'Sueldos y cargas')">Sueldos y cargas</button>
+      <button class="cat-btn" onclick="setCat(this,'Estructura digital')">Estructura digital</button>
+      <button class="cat-btn" onclick="setCat(this,'Gastos operativos')">Gastos operativos</button>
+      <button class="cat-btn" onclick="setCat(this,'Gastos personales')">Gastos personales</button>
+      <button class="cat-btn" onclick="setCat(this,'Gastos casa')">Gastos casa</button>
+      <button class="cat-btn" onclick="setCat(this,'Inversion personal')">Inversion personal</button>
+      <button class="cat-btn" onclick="setCat(this,'Impuestos')">Impuestos</button>
+      <button class="cat-btn" onclick="setCat(this,'Proveedores')">Proveedores</button>
+      <button class="cat-btn" onclick="setCat(this,'Otros')">Otros</button>
     </div>
   </div>
   <div class="field"><label class="label">Fecha</label>
     <input class="input" type="date" id="fecha">
   </div>
   <div class="field"><label class="label">Nota (opcional)</label>
-    <input class="input" type="text" id="nota" placeholder="Nº factura, referencia...">
+    <input class="input" type="text" id="nota" placeholder="Factura, referencia...">
   </div>
   <button class="submit-btn" onclick="guardar()">Guardar movimiento</button>
 </div>
@@ -187,215 +184,162 @@ tr:last-child td{border-bottom:none}
 <div id="tab-movimientos" style="display:none">
   <div class="filter-row" id="filtros"></div>
   <div id="lista-movimientos"></div>
-  <button class="export-btn" onclick="exportCSV()">⬇ Exportar CSV</button>
+  <button class="export-btn" onclick="exportCSV()">Exportar CSV</button>
 </div>
 
 <!-- TAB IMPORTAR -->
 <div id="tab-importar" style="display:none">
   <div class="steps-row">
-    <div class="step active" id="imp-step1">1 · PDF</div>
-    <div class="step" id="imp-step2">2 · IA procesa</div>
-    <div class="step" id="imp-step3">3 · Revisar</div>
-    <div class="step" id="imp-step4">4 · Listo</div>
+    <div class="step active" id="imp-step1">1 PDF</div>
+    <div class="step" id="imp-step2">2 IA procesa</div>
+    <div class="step" id="imp-step3">3 Revisar</div>
+    <div class="step" id="imp-step4">4 Listo</div>
   </div>
-
-  <!-- PASO 1: UPLOAD -->
   <div id="imp-upload">
     <div id="imp-no-key" class="alert alert-warn" style="display:none">
-      ⚠️ <strong>Configurá tu API Key primero.</strong> Andá a la pestaña ⚙️ Config e ingresá tu clave de Anthropic para habilitar el lector con IA.
+      Configura tu API Key en Config para usar el importador con IA.
     </div>
     <div class="card">
       <div class="card-title">Cuenta a importar</div>
-      <div class="cuenta-toggle" style="margin-bottom:0">
-        <button class="cuenta-btn sel" id="imp-c-personal" onclick="setImpCuenta('Personal')">🏦 Personal</button>
-        <button class="cuenta-btn" id="imp-c-sas" onclick="setImpCuenta('SAS')">🏢 SAS</button>
+      <div class="cuenta-toggle">
+        <button class="cuenta-btn sel" id="imp-c-personal" onclick="setImpCuenta('Personal')">Personal</button>
+        <button class="cuenta-btn" id="imp-c-sas" onclick="setImpCuenta('SAS')">SAS</button>
       </div>
     </div>
     <div class="card">
       <div class="card-title">Subir resumen Santander (PDF)</div>
       <div class="drop-zone" id="drop-zone" onclick="document.getElementById('file-input').click()">
-        <div style="font-size:32px;margin-bottom:8px">📄</div>
-        <div style="font-size:14px;font-weight:500;color:var(--ink2)">Arrastrá el PDF o tocá para seleccionar</div>
-        <div style="font-size:12px;color:var(--ink3);margin-top:6px">Resumen mensual · Santander Argentina</div>
+        <div style="font-size:28px;margin-bottom:8px">&#128196;</div>
+        <div style="font-size:14px;font-weight:500;color:var(--ink2)">Arrastra el PDF o toca para seleccionar</div>
+        <div style="font-size:12px;color:var(--ink3);margin-top:4px">Resumen mensual Santander Argentina</div>
       </div>
       <input type="file" id="file-input" accept=".pdf" style="display:none">
     </div>
-    <div class="alert alert-info">💡 <strong>Cómo descargarlo:</strong> Homebanking Santander → Cuentas → tu cuenta → Resumen → Descargar PDF</div>
+    <div class="alert alert-info">Homebanking Santander > Cuentas > tu cuenta > Resumen > Descargar PDF</div>
   </div>
-
-  <!-- PASO 2: LOADING IA -->
   <div id="imp-loading" style="display:none">
     <div class="card">
       <div class="loading-box">
         <div class="spinner"></div>
         <div class="loading-msg" id="loading-msg">Leyendo el PDF con IA...</div>
-        <div class="loading-sub" id="loading-sub">Esto puede tardar 15-30 segundos</div>
+        <div class="loading-sub">Esto puede tardar 20-30 segundos</div>
       </div>
     </div>
   </div>
-
-  <!-- PASO 3: PREVIEW -->
   <div id="imp-preview" style="display:none">
     <div style="display:flex;gap:10px;margin-bottom:14px" id="imp-summary"></div>
     <div class="card">
-      <div class="card-title">Revisá las categorías antes de importar</div>
-      <div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Descripción</th><th>Importe</th><th>Categoría</th></tr></thead>
+      <div class="card-title">Revisa las categorias</div>
+      <div class="tbl-wrap"><table><thead><tr><th>Fecha</th><th>Descripcion</th><th>Importe</th><th>Categoria</th></tr></thead>
       <tbody id="imp-tbody"></tbody></table></div>
     </div>
     <div class="alert alert-warn" id="imp-dup-alert" style="display:none"></div>
-    <button class="btn-imp" onclick="confirmarImport()">✓ Importar todos</button>
-    <button class="btn-sec" onclick="resetImport()">← Volver</button>
+    <button class="btn-imp" onclick="confirmarImport()">Importar todos</button>
+    <button class="btn-sec" onclick="resetImport()">Volver</button>
   </div>
-
-  <!-- PASO 4: DONE -->
   <div id="imp-done" style="display:none">
     <div class="alert alert-success" id="imp-done-msg"></div>
-    <button class="btn-imp" onclick="exportCSV()">⬇ Exportar CSV</button>
+    <button class="btn-imp" onclick="exportCSV()">Exportar CSV</button>
     <button class="btn-sec" onclick="resetImport()">Importar otro PDF</button>
   </div>
-
-  <!-- ERROR -->
   <div id="imp-error" style="display:none">
     <div class="alert alert-danger" id="imp-error-msg"></div>
-    <button class="btn-sec" onclick="resetImport()">← Volver a intentar</button>
+    <button class="btn-sec" onclick="resetImport()">Volver a intentar</button>
   </div>
 </div>
 
 <!-- TAB RESUMEN -->
 <div id="tab-resumen" style="display:none">
-  <select class="mes-select" id="mes-select" onchange="renderResumen()"><option value="todos">Todos los períodos</option></select>
+  <select class="mes-select" id="mes-select" onchange="renderResumen()"><option value="todos">Todos los periodos</option></select>
   <div class="summary-grid" id="summary-cards"></div>
-
-  <!-- CHARTS DASHBOARD -->
   <div class="card" style="margin-bottom:14px">
     <div class="card-title">Ingresos vs egresos por mes</div>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;font-size:11px;color:var(--ink2)">
-      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1D9E75"></span>Ingresos</span>
-      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#D85A30"></span>Egresos</span>
-      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#378ADD"></span>Balance</span>
-    </div>
     <div style="position:relative;width:100%;height:220px">
-      <canvas id="chart-ing-egr" role="img" aria-label="Ingresos vs egresos mensuales">Ingresos vs egresos por mes.</canvas>
+      <canvas id="chart-ing-egr"></canvas>
     </div>
   </div>
-
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
     <div class="card">
-      <div class="card-title">Egresos por categoría</div>
-      <div id="legend-cat" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;font-size:10px;color:var(--ink2)"></div>
-      <div style="position:relative;width:100%;height:180px">
-        <canvas id="chart-cat" role="img" aria-label="Distribución de egresos por categoría">Egresos por categoría.</canvas>
-      </div>
+      <div class="card-title">Egresos por categoria</div>
+      <div id="legend-cat" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;font-size:10px;color:var(--ink2)"></div>
+      <div style="position:relative;width:100%;height:180px"><canvas id="chart-cat"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">Saldo acumulado</div>
-      <div style="position:relative;width:100%;height:210px">
-        <canvas id="chart-saldo" role="img" aria-label="Evolución del saldo acumulado">Saldo acumulado.</canvas>
-      </div>
+      <div style="position:relative;width:100%;height:210px"><canvas id="chart-saldo"></canvas></div>
     </div>
   </div>
-
-  <!-- INDICADORES TABLA -->
   <div class="card" style="margin-bottom:14px">
     <div class="card-title">Indicadores por mes</div>
-    <div style="overflow-x:auto">
-      <table style="width:100%;border-collapse:collapse;font-size:12px" id="tabla-kpi"></table>
-    </div>
+    <div style="overflow-x:auto"><table id="tabla-kpi"></table></div>
   </div>
-
-  <!-- INSIGHTS IA -->
   <div class="card" style="margin-bottom:14px">
-    <div class="card-title">Análisis automático</div>
+    <div class="card-title">Analisis automatico</div>
     <div id="insights-box" style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--ink2)"></div>
   </div>
-
   <div class="card" id="cat-breakdown"></div>
   <div class="card" id="cuenta-breakdown" style="margin-top:12px"></div>
-  <button class="export-btn" style="margin-top:12px" onclick="exportCSV()">⬇ Exportar CSV</button>
+  <button class="export-btn" style="margin-top:12px" onclick="exportCSV()">Exportar CSV</button>
 </div>
 
 <!-- TAB IA -->
 <div id="tab-ia" style="display:none">
-
-  <!-- SELECTOR MES -->
   <div class="card" style="margin-bottom:14px">
-    <div class="card-title">Período a analizar</div>
-    <select class="mes-select" id="ia-mes-select" style="margin-bottom:0"><option value="todos">Todos los períodos</option></select>
+    <div class="card-title">Periodo a analizar</div>
+    <select class="mes-select" id="ia-mes-select" style="margin-bottom:0"><option value="todos">Todos los periodos</option></select>
   </div>
-
-  <!-- BOTÓN ANALIZAR -->
-  <button class="submit-btn" id="btn-analizar" onclick="analizarMes()" style="margin-bottom:14px">
-    🤖 Analizar período completo
-  </button>
-
-  <!-- RESULTADO ANÁLISIS -->
-  <div id="ia-analisis" style="display:none">
-    <div class="card" style="margin-bottom:14px">
-      <div class="card-title">📋 Análisis financiero</div>
-      <div id="ia-resultado" style="font-size:13px;line-height:1.8;color:var(--ink2);white-space:pre-wrap"></div>
-    </div>
-  </div>
-
-  <!-- LOADING ANÁLISIS -->
+  <button class="submit-btn" id="btn-analizar" onclick="analizarMes()" style="margin-bottom:14px">Analizar periodo completo con IA</button>
   <div id="ia-loading" style="display:none">
     <div class="card">
       <div class="loading-box">
         <div class="spinner"></div>
         <div class="loading-msg">Analizando tus finanzas...</div>
-        <div class="loading-sub">La IA está revisando todos tus movimientos</div>
+        <div class="loading-sub">La IA esta revisando todos tus movimientos</div>
       </div>
     </div>
   </div>
-
-  <!-- CHAT FINANCIERO -->
-  <div class="card" style="margin-top:4px">
-    <div class="card-title">💬 Chat financiero</div>
-    <p style="font-size:12px;color:var(--ink3);margin-bottom:12px">Preguntale lo que quieras sobre tus números</p>
+  <div id="ia-analisis" style="display:none">
+    <div class="card" style="margin-bottom:14px">
+      <div class="card-title">Analisis financiero</div>
+      <div id="ia-resultado" style="font-size:13px;line-height:1.8;color:var(--ink2);white-space:pre-wrap"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Chat financiero</div>
+    <p style="font-size:12px;color:var(--ink3);margin-bottom:12px">Preguntale lo que quieras sobre tus numeros</p>
     <div id="chat-messages" style="min-height:80px;max-height:340px;overflow-y:auto;margin-bottom:12px;display:flex;flex-direction:column;gap:10px"></div>
     <div style="display:flex;gap:8px">
-      <input class="input" type="text" id="chat-input" placeholder="Ej: ¿Cuánto gasté en impuestos en marzo?" style="flex:1;padding:10px 12px"
-        onkeydown="if(event.key==='Enter')enviarChat()">
+      <input class="input" type="text" id="chat-input" placeholder="Ej: Cuanto gaste en impuestos en marzo?" style="flex:1;padding:10px 12px" onkeydown="if(event.key==='Enter')enviarChat()">
       <button class="submit-btn" onclick="enviarChat()" style="width:auto;padding:10px 16px;margin:0">Enviar</button>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px" id="sugerencias-chat"></div>
   </div>
-
 </div>
 
 <!-- TAB CONFIG -->
 <div id="tab-config" style="display:none">
   <div class="card">
-    <div class="card-title">🔑 API Key de Anthropic</div>
-    <p style="font-size:13px;color:var(--ink2);margin-bottom:14px;line-height:1.6">
-      Necesitás una API Key para que la IA lea los PDFs automáticamente. Se guarda solo en tu dispositivo, nunca sale a internet.
-    </p>
+    <div class="card-title">API Key de Anthropic</div>
+    <p style="font-size:13px;color:var(--ink2);margin-bottom:14px;line-height:1.6">Necesitas una API Key para que la IA lea los PDFs y analice tus finanzas. Se guarda solo en tu dispositivo.</p>
     <label class="label">Tu API Key (empieza con sk-ant-...)</label>
     <input class="apikey-input" type="password" id="api-key-input" placeholder="sk-ant-api03-...">
     <button class="submit-btn" onclick="guardarAPIKey()" style="margin-top:0">Guardar API Key</button>
     <div id="key-status" style="margin-top:12px;font-size:13px;color:var(--ink2)"></div>
   </div>
   <div class="install-banner">
-    <strong>¿Cómo obtengo la API Key?</strong><br>
-    1. Entrá a <strong>console.anthropic.com</strong><br>
-    2. Menú izquierdo → <strong>API Keys</strong><br>
-    3. Clic en <strong>Create Key</strong><br>
-    4. Copiá la clave y pegala arriba
-  </div>
-  <div class="install-banner" style="background:#FFF1F2;border-color:#FECDD3;color:#9F1239">
-    <strong>⚠ Sobre tus datos</strong><br>
-    Los movimientos se guardan en este navegador. Exportá el CSV regularmente y guardalo en iCloud Drive o Google Drive.
+    Como obtener la API Key: entra a console.anthropic.com, menu API Keys, crea una nueva clave y pegala arriba.
   </div>
   <div class="card">
     <div class="card-title">Estado del sistema</div>
-    <div class="row-between"><span style="font-size:13px">✅ App web (celu + PC)</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
-    <div class="row-between"><span style="font-size:13px">✅ Carga manual caja chica</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
-    <div class="row-between"><span style="font-size:13px">✅ Importador PDF con IA</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
-    <div class="row-between"><span style="font-size:13px">⏳ Dashboard con indicadores</span><span style="font-size:11px;color:var(--amber);font-family:var(--mono)">Próximo</span></div>
-    <div class="row-between"><span style="font-size:13px">⏳ Análisis IA + sugerencias</span><span style="font-size:11px;color:var(--ink3);font-family:var(--mono)">Futuro</span></div>
+    <div class="row-between"><span style="font-size:13px">App web funcionando</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
+    <div class="row-between"><span style="font-size:13px">Importador PDF con IA</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
+    <div class="row-between"><span style="font-size:13px">Dashboard con graficos</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
+    <div class="row-between"><span style="font-size:13px">Analisis y chat con IA</span><span style="font-size:11px;color:var(--accent);font-family:var(--mono)">Listo</span></div>
+    <div class="row-between"><span style="font-size:13px">Sincronizacion en la nube</span><span style="font-size:11px;color:var(--amber);font-family:var(--mono)">Proximo</span></div>
   </div>
   <div class="card" style="margin-top:0">
     <div class="card-title">Zona peligrosa</div>
-    <button class="export-btn" onclick="borrarTodo()" style="color:var(--danger);border-color:var(--danger)">🗑 Borrar todos los movimientos</button>
+    <button class="export-btn" onclick="borrarTodo()" style="color:var(--danger);border-color:var(--danger)">Borrar todos los movimientos</button>
   </div>
 </div>
 
@@ -403,8 +347,7 @@ tr:last-child td{border-bottom:none}
 <div class="toast" id="toast"></div>
 
 <script>
-// ── CATEGORÍAS ─────────────────────────────────────────────────────
-const CATS={
+var CATS = {
   'Honorarios clientes':{badge:'b-HC',icon:'💼'},
   'Honorarios propios':{badge:'b-HP',icon:'🟢'},
   'Honorarios proveedores':{badge:'b-HV',icon:'🤝'},
@@ -413,789 +356,643 @@ const CATS={
   'Gastos operativos':{badge:'b-GO',icon:'🏠'},
   'Gastos personales':{badge:'b-GP',icon:'🛍'},
   'Gastos casa':{badge:'b-GC',icon:'🏡'},
-  'Inversión personal':{badge:'b-IN',icon:'📈'},
+  'Inversion personal':{badge:'b-IN',icon:'📈'},
   'Proveedores':{badge:'b-P',icon:'📦'},
   'Impuestos':{badge:'b-I',icon:'🏛'},
-  'Otros':{badge:'b-O',icon:'📌'},
+  'Otros':{badge:'b-O',icon:'📌'}
 };
 
-const PROMPT_SISTEMA = `Sos un asistente contable experto en finanzas argentinas. 
-Tu tarea es extraer los movimientos bancarios de un resumen de cuenta del Banco Santander Argentina y categorizarlos.
+var PROMPT_SISTEMA = 'Sos un asistente contable experto en finanzas argentinas. Tu tarea es extraer los movimientos bancarios de un resumen de cuenta del Banco Santander Argentina y categorizarlos. CATEGORIAS: Honorarios clientes (ingresos por servicios: Autotei, MSI Argentina, Engenieria SAS), Honorarios propios (retiro duena: Montes Ana Paula, Armando Antonella), Honorarios proveedores (Duran Gonzalo contador, Raquel Esquinas), Sueldos y cargas (personal dependencia), Estructura digital (YouTube, Zoom, Google, Tactiq, software), Gastos operativos (comisiones banco, alquiler, Personal Flow), Gastos personales (Molinero, Murua, Bessone, Barseghian, Herrera, Nellar, Suardi, compras debito, cine, salud), Gastos casa (Ivanof, servicios domesticos), Inversion personal (plazo fijo, FCI, intereses), Impuestos (ley 25413, SIRCREB, AFIP, IVA, IIBB, percepciones), Otros (anulaciones). Devuelve UNICAMENTE un JSON valido sin texto adicional ni markdown: {"periodo":"YYYY-MM","movimientos":[{"fecha":"YYYY-MM-DD","descripcion":"descripcion limpia","debito":0,"credito":1234.56,"categoria":"Honorarios clientes","comprobante":"12345"}]}. Solo movimientos reales. Importes como numeros sin puntos de miles.';
 
-REGLAS DE CATEGORIZACIÓN para PM Talent Consulting (consultora de RRHH):
-- "Honorarios clientes": ingresos por servicios de consultoría (Autotei, MSI Argentina, Engenieria SAS, Gonzalo Perez, Milena Tiburcio, etc.)
-- "Honorarios propios": retiro de la dueña (Montes Ana Paula, Armando Antonella desde cuenta SAS)
-- "Honorarios proveedores": pagos a Duran Gonzalo (contador), Raquel Esquinas (proveedor PM)
-- "Sueldos y cargas": personal en relación de dependencia
-- "Estructura digital": YouTube, Zoom, Google, Tactiq, Mastery Haus, software SaaS
-- "Gastos operativos": comisiones banco, alquiler, servicios, Personal Flow
-- "Gastos personales": Molinero, Murua, Bessone, Barseghian, Herrera, Candelaria Nellar, Suardi (psiquiatra), compras débito, cine, helados, cafés, ropa, libros, parking, salud
-- "Gastos casa": Ivanof, servicios domésticos
-- "Inversión personal": constitución/liquidación plazo fijo, FCI, intereses
-- "Impuestos": ley 25.413, SIRCREB, AFIP, IVA, IIBB, percepciones RG
-- "Otros": anulaciones, reversiones
+var movimientos = JSON.parse(localStorage.getItem('cc_movs_v4') || '[]');
+var tipo = 'ingreso';
+var cuenta = 'Personal';
+var catSel = '';
+var filtroActivo = 'Todos';
+var movsPendientes = [];
+var impCuenta = 'Personal';
+var chatHistory = [];
 
-Devolvé ÚNICAMENTE un JSON válido con esta estructura exacta, sin texto adicional, sin markdown:
-{
-  "periodo": "YYYY-MM",
-  "movimientos": [
-    {
-      "fecha": "YYYY-MM-DD",
-      "descripcion": "descripción limpia y clara",
-      "debito": 0,
-      "credito": 1234.56,
-      "categoria": "Honorarios clientes",
-      "comprobante": "12345"
-    }
-  ]
+var hoy = new Date();
+document.getElementById('fecha').value = hoy.toISOString().split('T')[0];
+document.getElementById('hdr-fecha').textContent = hoy.toLocaleDateString('es-AR', {weekday:'long', day:'numeric', month:'long'});
+
+function fmt(n) {
+  return new Intl.NumberFormat('es-AR', {minimumFractionDigits:2, maximumFractionDigits:2}).format(n);
 }
-
-Solo incluí movimientos reales (no el saldo inicial ni saldo final).
-Los importes siempre como números sin puntos de miles ni signo $. Usá punto decimal.
-Si es débito ponés el monto en "debito" y 0 en "credito", y viceversa.`;
-
-// ── STATE ──────────────────────────────────────────────────────────
-let movimientos = JSON.parse(localStorage.getItem('cc_movs_v4')||'[]');
-let tipo='ingreso', cuenta='Personal', catSel='', filtroActivo='Todos';
-let movsPendientes=[], impCuenta='Personal';
-
-const hoy=new Date();
-document.getElementById('fecha').value=hoy.toISOString().split('T')[0];
-document.getElementById('hdr-fecha').textContent=hoy.toLocaleDateString('es-AR',{weekday:'long',day:'numeric',month:'long'});
-
-function fmt(n){return new Intl.NumberFormat('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n)}
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-function save(){localStorage.setItem('cc_movs_v4',JSON.stringify(movimientos))}
-
-// ── API KEY ────────────────────────────────────────────────────────
-function getAPIKey(){return localStorage.getItem('pm_api_key')||''}
-function guardarAPIKey(){
-  const k=document.getElementById('api-key-input').value.trim();
-  if(!k.startsWith('sk-ant-')){toast('⚠ La clave debe empezar con sk-ant-');return}
-  localStorage.setItem('pm_api_key',k);
-  document.getElementById('key-status').innerHTML='<span style="color:var(--accent)">✅ API Key guardada correctamente</span>';
-  toast('✓ API Key guardada');
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
-
-// Mostrar estado API key al cargar config
-function checkKeyStatus(){
-  const k=getAPIKey();
-  const st=document.getElementById('key-status');
-  if(k){
-    st.innerHTML='<span style="color:var(--accent)">✅ API Key configurada ('+k.slice(0,12)+'...)</span>';
-    document.getElementById('api-key-input').placeholder='Ya tenés una clave guardada';
+function save() {
+  localStorage.setItem('cc_movs_v4', JSON.stringify(movimientos));
+}
+function getAPIKey() {
+  return localStorage.getItem('pm_api_key') || '';
+}
+function guardarAPIKey() {
+  var k = document.getElementById('api-key-input').value.trim();
+  if (!k.startsWith('sk-ant-')) { toast('La clave debe empezar con sk-ant-'); return; }
+  localStorage.setItem('pm_api_key', k);
+  document.getElementById('key-status').innerHTML = '<span style="color:var(--accent)">API Key guardada correctamente</span>';
+  toast('API Key guardada');
+}
+function checkKeyStatus() {
+  var k = getAPIKey();
+  var st = document.getElementById('key-status');
+  if (k) {
+    st.innerHTML = '<span style="color:var(--accent)">API Key configurada (' + k.slice(0,12) + '...)</span>';
   } else {
-    st.innerHTML='<span style="color:var(--amber)">⚠ Sin API Key — el importador con IA no funcionará</span>';
+    st.innerHTML = '<span style="color:var(--amber)">Sin API Key configurada</span>';
   }
 }
-
-// ── NUEVO MOVIMIENTO ───────────────────────────────────────────────
-function setTipo(t){
-  tipo=t;
-  document.getElementById('btn-ing').className='type-btn'+(t==='ingreso'?' active-ingreso':'');
-  document.getElementById('btn-egr').className='type-btn'+(t==='egreso'?' active-egreso':'');
+function setTipo(t) {
+  tipo = t;
+  document.getElementById('btn-ing').className = 'type-btn' + (t === 'ingreso' ? ' active-ingreso' : '');
+  document.getElementById('btn-egr').className = 'type-btn' + (t === 'egreso' ? ' active-egreso' : '');
 }
-function setCuenta(c){
-  cuenta=c;
-  ['personal','sas'].forEach(x=>document.getElementById('c-'+x).classList.toggle('sel',c===(x==='personal'?'Personal':'SAS')));
+function setCuenta(c) {
+  cuenta = c;
+  document.getElementById('c-personal').classList.toggle('sel', c === 'Personal');
+  document.getElementById('c-sas').classList.toggle('sel', c === 'SAS');
 }
-function setCat(btn,cat){
-  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel');catSel=cat;
+function setCat(btn, cat) {
+  document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('sel'); });
+  btn.classList.add('sel');
+  catSel = cat;
 }
-function guardar(){
-  const monto=parseFloat(document.getElementById('monto').value);
-  const desc=document.getElementById('desc').value.trim();
-  const fecha=document.getElementById('fecha').value;
-  const nota=document.getElementById('nota').value.trim();
-  if(!monto||monto<=0){toast('⚠ Ingresá un importe válido');return}
-  if(!desc){toast('⚠ Agregá una descripción');return}
-  if(!catSel){toast('⚠ Seleccioná una categoría');return}
-  movimientos.unshift({id:Date.now(),tipo,cuenta,monto,desc,catSel,fecha,nota});
-  save();updateBalance();toast('✓ Guardado');
-  document.getElementById('monto').value='';
-  document.getElementById('desc').value='';
-  document.getElementById('nota').value='';
-  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('sel'));
-  catSel='';
+function guardar() {
+  var monto = parseFloat(document.getElementById('monto').value);
+  var desc = document.getElementById('desc').value.trim();
+  var fecha = document.getElementById('fecha').value;
+  var nota = document.getElementById('nota').value.trim();
+  if (!monto || monto <= 0) { toast('Ingresa un importe valido'); return; }
+  if (!desc) { toast('Agrega una descripcion'); return; }
+  if (!catSel) { toast('Selecciona una categoria'); return; }
+  movimientos.unshift({id:Date.now(), tipo:tipo, cuenta:cuenta, monto:monto, desc:desc, catSel:catSel, fecha:fecha, nota:nota});
+  save();
+  updateBalance();
+  toast('Guardado');
+  document.getElementById('monto').value = '';
+  document.getElementById('desc').value = '';
+  document.getElementById('nota').value = '';
+  document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('sel'); });
+  catSel = '';
 }
-function eliminar(id){
-  if(!confirm('¿Eliminar este movimiento?'))return;
-  movimientos=movimientos.filter(m=>m.id!==id);
-  save();renderMovimientos();updateBalance();
+function eliminar(id) {
+  if (!confirm('Eliminar este movimiento?')) return;
+  movimientos = movimientos.filter(function(m) { return m.id !== id; });
+  save();
+  renderMovimientos();
+  updateBalance();
 }
-function updateBalance(){
-  const b=movimientos.reduce((a,m)=>a+(m.tipo==='ingreso'?m.monto:-m.monto),0);
-  const el=document.getElementById('balance-pill');
-  el.textContent='$ '+fmt(b);
-  el.className='balance-pill'+(b<0?' neg':'');
+function borrarTodo() {
+  if (!confirm('Borrar TODOS los movimientos? Esta accion no se puede deshacer.')) return;
+  movimientos = [];
+  save();
+  updateBalance();
+  toast('Datos borrados');
 }
-function borrarTodo(){
-  if(!confirm('¿Borrar TODOS los movimientos? Esta acción no se puede deshacer.'))return;
-  movimientos=[];save();updateBalance();toast('Datos borrados');
+function updateBalance() {
+  var b = movimientos.reduce(function(a, m) { return a + (m.tipo === 'ingreso' ? m.monto : -m.monto); }, 0);
+  var el = document.getElementById('balance-pill');
+  el.textContent = '$ ' + fmt(b);
+  el.className = 'balance-pill' + (b < 0 ? ' neg' : '');
 }
-
-// ── MOVIMIENTOS ────────────────────────────────────────────────────
-function renderMovimientos(){
-  const allCats=['Todos','Personal','SAS',...Object.keys(CATS)];
-  document.getElementById('filtros').innerHTML=allCats.map(c=>
-    `<div class="filter-chip${c===filtroActivo?' active':''}" onclick="setFiltro('${esc(c)}')">${c}</div>`
-  ).join('');
-  const lista=document.getElementById('lista-movimientos');
-  let data=movimientos;
-  if(filtroActivo==='Personal')data=movimientos.filter(m=>m.cuenta==='Personal');
-  else if(filtroActivo==='SAS')data=movimientos.filter(m=>m.cuenta==='SAS');
-  else if(filtroActivo!=='Todos')data=movimientos.filter(m=>m.catSel===filtroActivo);
-  if(!data.length){lista.innerHTML='<div class="empty">Sin movimientos registrados</div>';return}
-  lista.innerHTML=data.map(m=>{
-    const cat=CATS[m.catSel]||CATS['Otros'];
-    const cTag=m.cuenta==='SAS'
-      ?`<span class="tag-cuenta sas">SAS</span>`
-      :`<span class="tag-cuenta">Personal</span>`;
-    return `<div class="mov-item">
-      <div class="mov-icon ${m.tipo==='ingreso'?'ing':'egr'}">${cat.icon}</div>
-      <div class="mov-body">
-        <div class="mov-desc">${esc(m.desc)}${cTag}</div>
-        <div class="mov-meta">${m.fecha} · <span class="badge ${cat.badge}">${m.catSel}</span></div>
-        ${m.nota?`<div class="mov-meta" style="color:#bbb;margin-top:1px">${esc(m.nota)}</div>`:''}
-      </div>
-      <div class="mov-amount ${m.tipo==='ingreso'?'ing':'egr'}">${m.tipo==='ingreso'?'+':'-'}$${fmt(m.monto)}</div>
-      <button class="mov-del" onclick="eliminar(${m.id})">✕</button>
-    </div>`;
+function renderMovimientos() {
+  var allCats = ['Todos', 'Personal', 'SAS'].concat(Object.keys(CATS));
+  document.getElementById('filtros').innerHTML = allCats.map(function(c) {
+    return '<div class="filter-chip' + (c === filtroActivo ? ' active' : '') + '" onclick="setFiltro(\'' + esc(c) + '\')">' + c + '</div>';
+  }).join('');
+  var lista = document.getElementById('lista-movimientos');
+  var data = movimientos;
+  if (filtroActivo === 'Personal') data = movimientos.filter(function(m) { return m.cuenta === 'Personal'; });
+  else if (filtroActivo === 'SAS') data = movimientos.filter(function(m) { return m.cuenta === 'SAS'; });
+  else if (filtroActivo !== 'Todos') data = movimientos.filter(function(m) { return m.catSel === filtroActivo; });
+  if (!data.length) { lista.innerHTML = '<div class="empty">Sin movimientos registrados</div>'; return; }
+  lista.innerHTML = data.map(function(m) {
+    var cat = CATS[m.catSel] || CATS['Otros'];
+    var cTag = m.cuenta === 'SAS' ? '<span class="tag-cuenta sas">SAS</span>' : '<span class="tag-cuenta">Personal</span>';
+    return '<div class="mov-item">'
+      + '<div class="mov-icon ' + (m.tipo === 'ingreso' ? 'ing' : 'egr') + '">' + cat.icon + '</div>'
+      + '<div class="mov-body">'
+      + '<div class="mov-desc">' + esc(m.desc) + cTag + '</div>'
+      + '<div class="mov-meta">' + m.fecha + ' · <span class="badge ' + cat.badge + '">' + m.catSel + '</span></div>'
+      + (m.nota ? '<div class="mov-meta" style="color:#bbb;margin-top:1px">' + esc(m.nota) + '</div>' : '')
+      + '</div>'
+      + '<div class="mov-amount ' + (m.tipo === 'ingreso' ? 'ing' : 'egr') + '">' + (m.tipo === 'ingreso' ? '+' : '-') + '$' + fmt(m.monto) + '</div>'
+      + '<button class="mov-del" onclick="eliminar(' + m.id + ')">✕</button>'
+      + '</div>';
   }).join('');
 }
-function setFiltro(f){filtroActivo=f;renderMovimientos()}
+function setFiltro(f) { filtroActivo = f; renderMovimientos(); }
 
-// ── IMPORTADOR CON IA ──────────────────────────────────────────────
-function setImpCuenta(c){
-  impCuenta=c;
-  document.getElementById('imp-c-personal').classList.toggle('sel',c==='Personal');
-  document.getElementById('imp-c-sas').classList.toggle('sel',c==='SAS');
+function setImpCuenta(c) {
+  impCuenta = c;
+  document.getElementById('imp-c-personal').classList.toggle('sel', c === 'Personal');
+  document.getElementById('imp-c-sas').classList.toggle('sel', c === 'SAS');
 }
 
-const dz=document.getElementById('drop-zone');
-dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('over')});
-dz.addEventListener('dragleave',()=>dz.classList.remove('over'));
-dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('over');procesarPDF(e.dataTransfer.files[0])});
-document.getElementById('file-input').addEventListener('change',e=>{if(e.target.files[0])procesarPDF(e.target.files[0])});
+var dz = document.getElementById('drop-zone');
+dz.addEventListener('dragover', function(e) { e.preventDefault(); dz.classList.add('over'); });
+dz.addEventListener('dragleave', function() { dz.classList.remove('over'); });
+dz.addEventListener('drop', function(e) { e.preventDefault(); dz.classList.remove('over'); procesarPDF(e.dataTransfer.files[0]); });
+document.getElementById('file-input').addEventListener('change', function(e) { if (e.target.files[0]) procesarPDF(e.target.files[0]); });
 
-async function procesarPDF(file){
-  if(!file||!file.name.endsWith('.pdf')){toast('⚠ Seleccioná un PDF');return}
-  const apiKey=getAPIKey();
-  if(!apiKey){
-    document.getElementById('imp-no-key').style.display='block';
-    toast('⚠ Configurá tu API Key primero en ⚙️ Config');
-    return;
-  }
-  // Mostrar loading
-  document.getElementById('imp-upload').style.display='none';
-  document.getElementById('imp-loading').style.display='block';
+function procesarPDF(file) {
+  if (!file || !file.name.endsWith('.pdf')) { toast('Selecciona un PDF'); return; }
+  var apiKey = getAPIKey();
+  if (!apiKey) { document.getElementById('imp-no-key').style.display = 'block'; toast('Configura tu API Key primero en Config'); return; }
+  document.getElementById('imp-upload').style.display = 'none';
+  document.getElementById('imp-loading').style.display = 'block';
   setImpStep(2);
-  document.getElementById('loading-msg').textContent='Leyendo el PDF con IA...';
-  document.getElementById('loading-sub').textContent='Analizando movimientos de '+file.name;
-
-  try {
-    // Convertir PDF a base64
-    const base64 = await fileToBase64(file);
-    document.getElementById('loading-msg').textContent='Extrayendo movimientos...';
-    document.getElementById('loading-sub').textContent='La IA está procesando cada transacción';
-
-    // Llamar a Claude API
-    const response = await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':apiKey,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
+  document.getElementById('loading-msg').textContent = 'Leyendo el PDF con IA...';
+  fileToBase64(file).then(function(base64) {
+    document.getElementById('loading-msg').textContent = 'Extrayendo movimientos...';
+    return fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
       },
-      body:JSON.stringify({
-        model:'claude-haiku-4-5-20251001',
-        max_tokens:16000,
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 16000,
         system: PROMPT_SISTEMA,
-        messages:[{
-          role:'user',
-          content:[
-            {
-              type:'document',
-              source:{type:'base64',media_type:'application/pdf',data:base64}
-            },
-            {
-              type:'text',
-              text:`Extraé todos los movimientos de este resumen de cuenta Santander Argentina. Cuenta: ${impCuenta}. Devolvé solo el JSON sin nada más.`
-            }
+        messages: [{
+          role: 'user',
+          content: [
+            {type: 'document', source: {type: 'base64', media_type: 'application/pdf', data: base64}},
+            {type: 'text', text: 'Extrae todos los movimientos de este resumen de cuenta Santander Argentina. Cuenta: ' + impCuenta + '. Devuelve solo el JSON.'}
           ]
         }]
       })
     });
-
-    if(!response.ok){
-      const err=await response.json();
-      throw new Error(err.error?.message||'Error en la API: '+response.status);
+  }).then(function(response) {
+    if (!response.ok) {
+      return response.json().then(function(err) { throw new Error(err.error ? err.error.message : 'Error API ' + response.status); });
     }
-
-    const data=await response.json();
-    document.getElementById('loading-msg').textContent='Categorizando...';
-
-    // Extraer JSON de la respuesta
-    const texto=data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
-    let jsonData;
-    try {
-      // Estrategia robusta: buscar primer { y último }
-      const inicio=texto.indexOf('{');
-      const fin=texto.lastIndexOf('}');
-      if(inicio===-1||fin===-1)throw new Error('sin JSON');
-      const jsonStr=texto.slice(inicio,fin+1);
-      jsonData=JSON.parse(jsonStr);
-    } catch(e){
-      throw new Error('No se pudo parsear la respuesta de la IA. Intentá de nuevo.');
-    }
-
-    if(!jsonData.movimientos||!Array.isArray(jsonData.movimientos)){
-      throw new Error('La IA no encontró movimientos en el PDF. Verificá que sea un resumen de cuenta Santander.');
-    }
-
-    movsPendientes=jsonData.movimientos;
-    document.getElementById('imp-loading').style.display='none';
+    return response.json();
+  }).then(function(data) {
+    document.getElementById('loading-msg').textContent = 'Categorizando...';
+    var texto = data.content.filter(function(b) { return b.type === 'text'; }).map(function(b) { return b.text; }).join('');
+    var inicio = texto.indexOf('{');
+    var fin = texto.lastIndexOf('}');
+    if (inicio === -1 || fin === -1) throw new Error('La IA no devolvio un JSON valido');
+    var jsonData = JSON.parse(texto.slice(inicio, fin + 1));
+    if (!jsonData.movimientos || !Array.isArray(jsonData.movimientos)) throw new Error('No se encontraron movimientos en el PDF');
+    movsPendientes = jsonData.movimientos;
+    document.getElementById('imp-loading').style.display = 'none';
     mostrarPreviewImport();
-
-  } catch(err){
-    document.getElementById('imp-loading').style.display='none';
-    document.getElementById('imp-error').style.display='block';
-    document.getElementById('imp-error-msg').innerHTML=
-      `❌ <strong>Error al procesar el PDF</strong><br>${esc(err.message)}<br><br>
-      <small>Verificá que tu API Key sea correcta y que tengas saldo disponible en tu cuenta Anthropic.</small>`;
+  }).catch(function(err) {
+    document.getElementById('imp-loading').style.display = 'none';
+    document.getElementById('imp-error').style.display = 'block';
+    document.getElementById('imp-error-msg').innerHTML = '<strong>Error al procesar el PDF</strong><br>' + esc(err.message);
     console.error(err);
-  }
+  });
 }
 
-function fileToBase64(file){
-  return new Promise((resolve,reject)=>{
-    const r=new FileReader();
-    r.onload=()=>resolve(r.result.split(',')[1]);
-    r.onerror=()=>reject(new Error('No se pudo leer el archivo'));
+function fileToBase64(file) {
+  return new Promise(function(resolve, reject) {
+    var r = new FileReader();
+    r.onload = function() { resolve(r.result.split(',')[1]); };
+    r.onerror = function() { reject(new Error('No se pudo leer el archivo')); };
     r.readAsDataURL(file);
   });
 }
 
-function mostrarPreviewImport(){
-  document.getElementById('imp-preview').style.display='block';
+function mostrarPreviewImport() {
+  document.getElementById('imp-preview').style.display = 'block';
   setImpStep(3);
-
-  const existKeys=new Set(movimientos.map(m=>m.fecha+'_'+Math.round(m.monto)));
-  let dups=0;
-  movsPendientes.forEach(m=>{
-    m._dup=existKeys.has(m.fecha+'_'+Math.round(m.debito||m.credito));
-    if(m._dup)dups++;
+  var existKeys = new Set(movimientos.map(function(m) { return m.fecha + '_' + Math.round(m.monto); }));
+  var dups = 0;
+  movsPendientes.forEach(function(m) {
+    m._dup = existKeys.has(m.fecha + '_' + Math.round(parseFloat(m.debito) || parseFloat(m.credito)));
+    if (m._dup) dups++;
   });
-  if(dups>0){
-    document.getElementById('imp-dup-alert').style.display='block';
-    document.getElementById('imp-dup-alert').textContent=`⚠ ${dups} movimiento(s) podrían estar duplicados (aparecen atenuados).`;
+  if (dups > 0) {
+    document.getElementById('imp-dup-alert').style.display = 'block';
+    document.getElementById('imp-dup-alert').textContent = dups + ' movimiento(s) podrian estar duplicados.';
   }
-
-  const tot_deb=movsPendientes.reduce((a,m)=>a+(parseFloat(m.debito)||0),0);
-  const tot_cre=movsPendientes.reduce((a,m)=>a+(parseFloat(m.credito)||0),0);
-  document.getElementById('imp-summary').innerHTML=`
-    <div class="scard" style="flex:1"><div class="scard-label">Movimientos</div><div class="scard-val" style="color:var(--blue)">${movsPendientes.length}</div></div>
-    <div class="scard" style="flex:1"><div class="scard-label">Ingresos</div><div class="scard-val green">$${fmt(tot_cre)}</div></div>
-    <div class="scard" style="flex:1"><div class="scard-label">Egresos</div><div class="scard-val red">$${fmt(tot_deb)}</div></div>`;
-
-  document.getElementById('imp-tbody').innerHTML=movsPendientes.map((m,i)=>{
-    const deb=parseFloat(m.debito)||0;
-    const cre=parseFloat(m.credito)||0;
-    return `<tr${m._dup?' style="opacity:.45"':''}>
-      <td style="font-family:var(--mono);font-size:11px;white-space:nowrap">${(m.fecha||'').slice(5)}</td>
-      <td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px" title="${esc(m.descripcion||m.desc||'')}">${esc(m.descripcion||m.desc||'')}</td>
-      <td class="${deb>0?'td-deb':'td-cre'}">${deb>0?'-$'+fmt(deb):'+$'+fmt(cre)}</td>
-      <td><select class="cat-sel" onchange="movsPendientes[${i}].categoria=this.value">
-        ${Object.keys(CATS).map(k=>`<option value="${k}"${(m.categoria||m.cat)===k?' selected':''}>${k}</option>`).join('')}
-      </select></td>
-    </tr>`;
+  var tot_deb = movsPendientes.reduce(function(a, m) { return a + (parseFloat(m.debito) || 0); }, 0);
+  var tot_cre = movsPendientes.reduce(function(a, m) { return a + (parseFloat(m.credito) || 0); }, 0);
+  document.getElementById('imp-summary').innerHTML =
+    '<div class="scard" style="flex:1"><div class="scard-label">Movimientos</div><div class="scard-val" style="color:var(--blue)">' + movsPendientes.length + '</div></div>' +
+    '<div class="scard" style="flex:1"><div class="scard-label">Ingresos</div><div class="scard-val green">$' + fmt(tot_cre) + '</div></div>' +
+    '<div class="scard" style="flex:1"><div class="scard-label">Egresos</div><div class="scard-val red">$' + fmt(tot_deb) + '</div></div>';
+  var catOpts = Object.keys(CATS).map(function(k) { return '<option value="' + k + '">' + k + '</option>'; }).join('');
+  document.getElementById('imp-tbody').innerHTML = movsPendientes.map(function(m, i) {
+    var deb = parseFloat(m.debito) || 0;
+    var cre = parseFloat(m.credito) || 0;
+    var opts = Object.keys(CATS).map(function(k) { return '<option value="' + k + '"' + (m.categoria === k ? ' selected' : '') + '>' + k + '</option>'; }).join('');
+    return '<tr' + (m._dup ? ' style="opacity:.45"' : '') + '>'
+      + '<td style="font-family:var(--mono);font-size:11px;white-space:nowrap">' + (m.fecha || '').slice(5) + '</td>'
+      + '<td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px" title="' + esc(m.descripcion || '') + '">' + esc(m.descripcion || '') + '</td>'
+      + '<td class="' + (deb > 0 ? 'td-deb' : 'td-cre') + '">' + (deb > 0 ? '-$' + fmt(deb) : '+$' + fmt(cre)) + '</td>'
+      + '<td><select class="cat-sel" onchange="movsPendientes[' + i + '].categoria=this.value">' + opts + '</select></td>'
+      + '</tr>';
   }).join('');
 }
 
-function confirmarImport(){
-  const nuevos=movsPendientes.map(m=>{
-    const deb=parseFloat(m.debito)||0;
-    const cre=parseFloat(m.credito)||0;
+function confirmarImport() {
+  var nuevos = movsPendientes.map(function(m) {
+    var deb = parseFloat(m.debito) || 0;
+    var cre = parseFloat(m.credito) || 0;
     return {
-      id:Date.now()+Math.random(),
-      tipo:cre>0?'ingreso':'egreso',
-      cuenta:impCuenta,
-      monto:cre>0?cre:deb,
-      desc:m.descripcion||m.desc||'',
-      catSel:m.categoria||m.cat||'Otros',
-      fecha:m.fecha||'',
-      nota:m.comprobante?'Comp: '+m.comprobante:'',
+      id: Date.now() + Math.random(),
+      tipo: cre > 0 ? 'ingreso' : 'egreso',
+      cuenta: impCuenta,
+      monto: cre > 0 ? cre : deb,
+      desc: m.descripcion || '',
+      catSel: m.categoria || 'Otros',
+      fecha: m.fecha || '',
+      nota: m.comprobante ? 'Comp: ' + m.comprobante : ''
     };
   });
-  movimientos=[...nuevos,...movimientos];
-  save();updateBalance();
-  document.getElementById('imp-preview').style.display='none';
-  document.getElementById('imp-done').style.display='block';
+  movimientos = nuevos.concat(movimientos);
+  save();
+  updateBalance();
+  document.getElementById('imp-preview').style.display = 'none';
+  document.getElementById('imp-done').style.display = 'block';
   setImpStep(4);
-  const ing=nuevos.filter(m=>m.tipo==='ingreso').reduce((a,m)=>a+m.monto,0);
-  const egr=nuevos.filter(m=>m.tipo==='egreso').reduce((a,m)=>a+m.monto,0);
-  document.getElementById('imp-done-msg').innerHTML=
-    `✅ <strong>${nuevos.length} movimientos importados</strong> — cuenta ${impCuenta}.<br>
-    Ingresos: <strong>$${fmt(ing)}</strong> · Egresos: <strong>$${fmt(egr)}</strong><br>
-    Ya están disponibles en el listado de movimientos.`;
+  var ing = nuevos.filter(function(m) { return m.tipo === 'ingreso'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+  var egr = nuevos.filter(function(m) { return m.tipo === 'egreso'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+  document.getElementById('imp-done-msg').innerHTML = '<strong>' + nuevos.length + ' movimientos importados</strong> - cuenta ' + impCuenta + '.<br>Ingresos: <strong>$' + fmt(ing) + '</strong> · Egresos: <strong>$' + fmt(egr) + '</strong>';
 }
 
-function resetImport(){
-  ['imp-upload','imp-preview','imp-done','imp-error','imp-loading'].forEach(id=>{
-    document.getElementById(id).style.display= id==='imp-upload'?'block':'none';
+function resetImport() {
+  ['imp-upload','imp-preview','imp-done','imp-error','imp-loading'].forEach(function(id) {
+    document.getElementById(id).style.display = id === 'imp-upload' ? 'block' : 'none';
   });
-  document.getElementById('imp-dup-alert').style.display='none';
-  document.getElementById('imp-no-key').style.display='none';
-  document.getElementById('file-input').value='';
-  dz.innerHTML='<div style="font-size:32px;margin-bottom:8px">📄</div><div style="font-size:14px;font-weight:500;color:var(--ink2)">Arrastrá el PDF o tocá para seleccionar</div><div style="font-size:12px;color:var(--ink3);margin-top:6px">Resumen mensual · Santander Argentina</div>';
-  setImpStep(1);movsPendientes=[];
+  document.getElementById('imp-dup-alert').style.display = 'none';
+  document.getElementById('imp-no-key').style.display = 'none';
+  document.getElementById('file-input').value = '';
+  dz.innerHTML = '<div style="font-size:28px;margin-bottom:8px">&#128196;</div><div style="font-size:14px;font-weight:500;color:var(--ink2)">Arrastra el PDF o toca para seleccionar</div><div style="font-size:12px;color:var(--ink3);margin-top:4px">Resumen mensual Santander Argentina</div>';
+  setImpStep(1);
+  movsPendientes = [];
 }
-function setImpStep(n){
-  ['imp-step1','imp-step2','imp-step3','imp-step4'].forEach((id,i)=>{
-    document.getElementById(id).className='step'+(i+1<n?' done':i+1===n?' active':'');
+function setImpStep(n) {
+  ['imp-step1','imp-step2','imp-step3','imp-step4'].forEach(function(id, i) {
+    document.getElementById(id).className = 'step' + (i + 1 < n ? ' done' : i + 1 === n ? ' active' : '');
   });
 }
 
-// ── RESUMEN ────────────────────────────────────────────────────────
-function buildMesOptions(){
-  const sel=document.getElementById('mes-select');
-  const meses=[...new Set(movimientos.map(m=>m.fecha.slice(0,7)))].sort().reverse();
-  const cur=sel.value;
-  sel.innerHTML='<option value="todos">Todos los períodos</option>';
-  meses.forEach(m=>{
-    const [y,mo]=m.split('-');
-    const lbl=new Date(y,mo-1).toLocaleDateString('es-AR',{month:'long',year:'numeric'});
-    sel.innerHTML+=`<option value="${m}"${cur===m?' selected':''}>${lbl}</option>`;
+function buildMesOptions(selId) {
+  var sel = document.getElementById(selId);
+  var meses = [];
+  var seen = {};
+  movimientos.forEach(function(m) { var k = m.fecha.slice(0,7); if (!seen[k]) { seen[k] = true; meses.push(k); } });
+  meses.sort().reverse();
+  var cur = sel.value;
+  sel.innerHTML = '<option value="todos">Todos los periodos</option>';
+  meses.forEach(function(m) {
+    var parts = m.split('-');
+    var lbl = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1).toLocaleDateString('es-AR', {month:'long', year:'numeric'});
+    sel.innerHTML += '<option value="' + m + '"' + (cur === m ? ' selected' : '') + '>' + lbl + '</option>';
   });
 }
-function renderResumen(){
-  const fm=document.getElementById('mes-select').value;
-  const data=fm==='todos'?movimientos:movimientos.filter(m=>m.fecha.startsWith(fm));
-  const ing=data.filter(m=>m.tipo==='ingreso').reduce((a,m)=>a+m.monto,0);
-  const egr=data.filter(m=>m.tipo==='egreso').reduce((a,m)=>a+m.monto,0);
-  const bal=ing-egr;
-  const margen=ing>0?Math.round(bal/ing*100):0;
 
-  // Cards resumen
-  document.getElementById('summary-cards').innerHTML=`
-    <div class="scard"><div class="scard-label">Ingresos</div><div class="scard-val green">$${fmt(ing)}</div></div>
-    <div class="scard"><div class="scard-label">Egresos</div><div class="scard-val red">$${fmt(egr)}</div></div>
-    <div class="scard"><div class="scard-label">Balance</div><div class="scard-val ${bal>=0?'green':'red'}">$${fmt(bal)}</div></div>
-    <div class="scard" style="display:${fm==='todos'?'none':'block'}"><div class="scard-label">Margen</div><div class="scard-val ${margen>=15?'green':margen>=0?'':'red'}">${margen}%</div></div>`;
+function renderResumen() {
+  var fm = document.getElementById('mes-select').value;
+  var data = fm === 'todos' ? movimientos : movimientos.filter(function(m) { return m.fecha.startsWith(fm); });
+  var ing = data.filter(function(m) { return m.tipo === 'ingreso'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+  var egr = data.filter(function(m) { return m.tipo === 'egreso'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+  var bal = ing - egr;
+  var margen = ing > 0 ? Math.round(bal / ing * 100) : 0;
 
-  // Por categoría
-  const byCat={};
-  data.forEach(m=>{if(!byCat[m.catSel])byCat[m.catSel]={i:0,e:0};byCat[m.catSel][m.tipo==='ingreso'?'i':'e']+=m.monto;});
-  const catRows=Object.entries(byCat).sort((a,b)=>(b[1].i+b[1].e)-(a[1].i+a[1].e)).map(([cat,v])=>{
-    const c=CATS[cat]||CATS['Otros'];const net=v.i-v.e;
-    return '<div class="row-between"><span style="font-size:13px">'+c.icon+' <span class="badge '+c.badge+'">'+cat+'</span></span>'
-      +'<span style="font-family:var(--mono);font-size:13px;font-weight:500;color:'+(net>=0?'var(--accent)':'var(--danger)')+'">$'+fmt(net)+'</span></div>';
-  }).join('');
-  document.getElementById('cat-breakdown').innerHTML='<div class="card-title">Por categoría</div>'+(catRows||'<div class="empty" style="padding:12px 0">Sin datos</div>');
-  const byCuenta={Personal:{i:0,e:0},SAS:{i:0,e:0}};
-  data.forEach(m=>{if(byCuenta[m.cuenta])byCuenta[m.cuenta][m.tipo==='ingreso'?'i':'e']+=m.monto;});
-  document.getElementById('cuenta-breakdown').innerHTML='<div class="card-title">Por cuenta</div>'+
-    Object.entries(byCuenta).map(([c,v])=>{const net=v.i-v.e;return '<div class="row-between">'
-      +'<span style="font-size:13px">'+(c==='SAS'?'🏢':'🏦')+' <strong>'+c+'</strong>'
-      +' <span style="font-size:11px;color:var(--ink3);font-family:var(--mono);margin-left:6px">ing $'+fmt(v.i)+' · egr $'+fmt(v.e)+'</span></span>'
-      +'<span style="font-family:var(--mono);font-size:13px;font-weight:500;color:'+(net>=0?'var(--accent)':'var(--danger)')+'">$'+fmt(net)+'</span></div>';}).join('');
+  document.getElementById('summary-cards').innerHTML =
+    '<div class="scard"><div class="scard-label">Ingresos</div><div class="scard-val green">$' + fmt(ing) + '</div></div>' +
+    '<div class="scard"><div class="scard-label">Egresos</div><div class="scard-val red">$' + fmt(egr) + '</div></div>' +
+    '<div class="scard"><div class="scard-label">Balance</div><div class="scard-val ' + (bal >= 0 ? 'green' : 'red') + '">$' + fmt(bal) + '</div></div>';
 
-  // CHARTS
-  renderCharts(data, fm);
-
-  // TABLA KPI
+  renderCharts(data);
   renderTablaKPI();
-
-  // INSIGHTS
   renderInsights(data, ing, egr, bal, margen);
+
+  var byCat = {};
+  data.forEach(function(m) {
+    if (!byCat[m.catSel]) byCat[m.catSel] = {i:0, e:0};
+    byCat[m.catSel][m.tipo === 'ingreso' ? 'i' : 'e'] += m.monto;
+  });
+  var catRows = Object.entries(byCat).sort(function(a, b) { return (b[1].i + b[1].e) - (a[1].i + a[1].e); }).map(function(entry) {
+    var cat = entry[0]; var v = entry[1];
+    var c = CATS[cat] || CATS['Otros'];
+    var net = v.i - v.e;
+    return '<div class="row-between"><span style="font-size:13px">' + c.icon + ' <span class="badge ' + c.badge + '">' + cat + '</span></span>' +
+      '<span style="font-family:var(--mono);font-size:13px;font-weight:500;color:' + (net >= 0 ? 'var(--accent)' : 'var(--danger)') + '">$' + fmt(net) + '</span></div>';
+  }).join('');
+  document.getElementById('cat-breakdown').innerHTML = '<div class="card-title">Por categoria</div>' + (catRows || '<div class="empty" style="padding:12px 0">Sin datos</div>');
+
+  var byCuenta = {Personal:{i:0,e:0}, SAS:{i:0,e:0}};
+  data.forEach(function(m) { if (byCuenta[m.cuenta]) byCuenta[m.cuenta][m.tipo === 'ingreso' ? 'i' : 'e'] += m.monto; });
+  document.getElementById('cuenta-breakdown').innerHTML = '<div class="card-title">Por cuenta</div>' +
+    Object.entries(byCuenta).map(function(entry) {
+      var c = entry[0]; var v = entry[1];
+      var net = v.i - v.e;
+      return '<div class="row-between"><span style="font-size:13px">' + (c === 'SAS' ? '🏢' : '🏦') + ' <strong>' + c + '</strong>' +
+        ' <span style="font-size:11px;color:var(--ink3);font-family:var(--mono);margin-left:6px">ing $' + fmt(v.i) + ' · egr $' + fmt(v.e) + '</span></span>' +
+        '<span style="font-family:var(--mono);font-size:13px;font-weight:500;color:' + (net >= 0 ? 'var(--accent)' : 'var(--danger)') + '">$' + fmt(net) + '</span></div>';
+    }).join('');
 }
 
-function renderCharts(data, fm){
-  // Destruir charts anteriores si existen
-  ['chart-ing-egr','chart-cat','chart-saldo'].forEach(id=>{
-    const canvas=document.getElementById(id);
-    if(!canvas)return;
-    const existing=Chart.getChart(canvas);
-    if(existing)existing.destroy();
+function renderCharts(data) {
+  if (typeof Chart === 'undefined') return;
+  ['chart-ing-egr','chart-cat','chart-saldo'].forEach(function(id) {
+    var canvas = document.getElementById(id);
+    if (!canvas) return;
+    var existing = Chart.getChart(canvas);
+    if (existing) existing.destroy();
   });
-
-  // Obtener meses únicos del dataset
-  const meses=[...new Set(movimientos.map(m=>m.fecha.slice(0,7)))].sort();
-  if(!meses.length)return;
-
-  const labels=meses.map(m=>{
-    const [y,mo]=m.split('-');
-    return new Date(y,mo-1).toLocaleDateString('es-AR',{month:'short',year:'2-digit'});
+  var mesesSet = {};
+  movimientos.forEach(function(m) { mesesSet[m.fecha.slice(0,7)] = true; });
+  var meses = Object.keys(mesesSet).sort();
+  if (!meses.length) return;
+  var grid = 'rgba(128,128,128,0.1)';
+  var fmtTick = function(v) {
+    if (Math.abs(v) >= 1000000) return '$' + (v/1000000).toFixed(1) + 'M';
+    if (Math.abs(v) >= 1000) return '$' + Math.round(v/1000) + 'K';
+    return '$' + v;
+  };
+  var labels = meses.map(function(m) {
+    var p = m.split('-');
+    return new Date(parseInt(p[0]), parseInt(p[1])-1).toLocaleDateString('es-AR', {month:'short', year:'2-digit'});
   });
-  const ingPorMes=meses.map(m=>movimientos.filter(x=>x.fecha.startsWith(m)&&x.tipo==='ingreso').reduce((a,x)=>a+x.monto,0));
-  const egrPorMes=meses.map(m=>movimientos.filter(x=>x.fecha.startsWith(m)&&x.tipo==='egreso').reduce((a,x)=>a+x.monto,0));
-  const balPorMes=ingPorMes.map((v,i)=>v-egrPorMes[i]);
+  var ingPorMes = meses.map(function(m) { return movimientos.filter(function(x) { return x.fecha.startsWith(m) && x.tipo === 'ingreso'; }).reduce(function(a, x) { return a + x.monto; }, 0); });
+  var egrPorMes = meses.map(function(m) { return movimientos.filter(function(x) { return x.fecha.startsWith(m) && x.tipo === 'egreso'; }).reduce(function(a, x) { return a + x.monto; }, 0); });
+  var balPorMes = ingPorMes.map(function(v, i) { return v - egrPorMes[i]; });
+  var acum = []; var acc = 0;
+  balPorMes.forEach(function(b) { acc += b; acum.push(acc); });
 
-  const acum=[];let acc=0;
-  balPorMes.forEach(b=>{acc+=b;acum.push(acc);});
-
-  const grid='rgba(128,128,128,0.1)';
-  const fmtTick=v=>{if(Math.abs(v)>=1000000)return '$'+(v/1000000).toFixed(1)+'M';if(Math.abs(v)>=1000)return '$'+Math.round(v/1000)+'K';return '$'+v;};
-
-  // Chart 1: barras + línea balance
-  new Chart(document.getElementById('chart-ing-egr'),{
-    type:'bar',
-    data:{labels,datasets:[
-      {label:'Ingresos',data:ingPorMes,backgroundColor:'#1D9E75',borderRadius:4},
-      {label:'Egresos',data:egrPorMes,backgroundColor:'#D85A30',borderRadius:4},
-      {label:'Balance',data:balPorMes,type:'line',borderColor:'#378ADD',backgroundColor:'rgba(55,138,221,0.05)',
-       borderDash:[5,3],pointRadius:4,pointBackgroundColor:'#378ADD',fill:false,tension:0.3}
+  new Chart(document.getElementById('chart-ing-egr'), {
+    type: 'bar',
+    data: {labels: labels, datasets: [
+      {label:'Ingresos', data:ingPorMes, backgroundColor:'#1D9E75', borderRadius:4},
+      {label:'Egresos', data:egrPorMes, backgroundColor:'#D85A30', borderRadius:4},
+      {label:'Balance', data:balPorMes, type:'line', borderColor:'#378ADD', backgroundColor:'rgba(55,138,221,0.05)', borderDash:[5,3], pointRadius:4, pointBackgroundColor:'#378ADD', fill:false, tension:0.3}
     ]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false}},
-      scales:{x:{grid:{color:grid},ticks:{autoSkip:false,maxRotation:45}},
-              y:{grid:{color:grid},ticks:{callback:fmtTick}}}}
+    options: {responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:grid}, ticks:{autoSkip:false, maxRotation:45}}, y:{grid:{color:grid}, ticks:{callback:fmtTick}}}}
   });
 
-  // Chart 2: donut categorías
-  const byCatEgr={};
-  data.filter(m=>m.tipo==='egreso').forEach(m=>{byCatEgr[m.catSel]=(byCatEgr[m.catSel]||0)+m.monto;});
-  const catLabels=Object.keys(byCatEgr).sort((a,b)=>byCatEgr[b]-byCatEgr[a]).slice(0,6);
-  const catVals=catLabels.map(k=>byCatEgr[k]);
-  const catColors=['#7F77DD','#D85A30','#E24B4A','#378ADD','#639922','#888780'];
-  const totalEgr=catVals.reduce((a,b)=>a+b,0);
-  const legend=document.getElementById('legend-cat');
-  if(legend){legend.innerHTML=catLabels.map((l,i)=>'<span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:'+catColors[i]+'"></span>'+l+'</span>').join('');}
-  new Chart(document.getElementById('chart-cat'),{
-    type:'doughnut',
-    data:{labels:catLabels,datasets:[{data:catVals,backgroundColor:catColors,borderWidth:2,borderColor:'transparent'}]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' $'+fmt(ctx.raw)+' ('+Math.round(ctx.raw/totalEgr*100)+'%)'}}}}
+  var byCatEgr = {};
+  data.filter(function(m) { return m.tipo === 'egreso'; }).forEach(function(m) { byCatEgr[m.catSel] = (byCatEgr[m.catSel] || 0) + m.monto; });
+  var catLabels = Object.keys(byCatEgr).sort(function(a,b) { return byCatEgr[b] - byCatEgr[a]; }).slice(0, 6);
+  var catVals = catLabels.map(function(k) { return byCatEgr[k]; });
+  var catColors = ['#7F77DD','#D85A30','#E24B4A','#378ADD','#639922','#888780'];
+  var totalEgr = catVals.reduce(function(a, b) { return a + b; }, 0);
+  var legend = document.getElementById('legend-cat');
+  if (legend) {
+    legend.innerHTML = catLabels.map(function(l, i) {
+      return '<span style="display:flex;align-items:center;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:' + catColors[i] + '"></span>' + l + '</span>';
+    }).join('');
+  }
+  new Chart(document.getElementById('chart-cat'), {
+    type: 'doughnut',
+    data: {labels:catLabels, datasets:[{data:catVals, backgroundColor:catColors, borderWidth:2, borderColor:'transparent'}]},
+    options: {responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:function(ctx) { return ' $' + fmt(ctx.raw) + ' (' + Math.round(ctx.raw/totalEgr*100) + '%)'; }}}}}
   });
 
-  // Chart 3: saldo acumulado
-  new Chart(document.getElementById('chart-saldo'),{
-    type:'line',
-    data:{labels,datasets:[{label:'Saldo',data:acum,borderColor:'#1D9E75',
-      backgroundColor:'rgba(29,158,117,0.08)',fill:true,pointRadius:4,
-      pointBackgroundColor:'#1D9E75',tension:0.3}]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false}},
-      scales:{x:{grid:{color:grid},ticks:{autoSkip:false,maxRotation:45}},
-              y:{grid:{color:grid},ticks:{callback:fmtTick}}}}
+  new Chart(document.getElementById('chart-saldo'), {
+    type: 'line',
+    data: {labels:labels, datasets:[{label:'Saldo', data:acum, borderColor:'#1D9E75', backgroundColor:'rgba(29,158,117,0.08)', fill:true, pointRadius:4, pointBackgroundColor:'#1D9E75', tension:0.3}]},
+    options: {responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}},
+      scales:{x:{grid:{color:grid}, ticks:{autoSkip:false, maxRotation:45}}, y:{grid:{color:grid}, ticks:{callback:fmtTick}}}}
   });
 }
 
-function renderTablaKPI(){
-  const meses=[...new Set(movimientos.map(m=>m.fecha.slice(0,7)))].sort();
-  const tabla=document.getElementById('tabla-kpi');
-  if(!tabla)return;
-  tabla.innerHTML='<thead><tr style="border-bottom:1px solid var(--border)">'
-    +'<th style="text-align:left;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Mes</th>'
-    +'<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Ingresos</th>'
-    +'<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Egresos</th>'
-    +'<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Balance</th>'
-    +'<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Margen</th>'
-    +'</tr></thead><tbody>';
-  meses.forEach(m=>{
-    const movMes=movimientos.filter(x=>x.fecha.startsWith(m));
-    const ing=movMes.filter(x=>x.tipo==='ingreso').reduce((a,x)=>a+x.monto,0);
-    const egr=movMes.filter(x=>x.tipo==='egreso').reduce((a,x)=>a+x.monto,0);
-    const bal=ing-egr;
-    const margen=ing>0?Math.round(bal/ing*100):0;
-    const [y,mo]=m.split('-');
-    const label=new Date(y,mo-1).toLocaleDateString('es-AR',{month:'long',year:'numeric'});
-    const balColor=bal>=0?'var(--accent)':'var(--danger)';
-    const mColor=margen>=15?'var(--accent)':margen>=0?'var(--amber)':'var(--danger)';
-    tabla.innerHTML+='<tr style="border-bottom:1px solid var(--border)">'
-      +'<td style="padding:8px;font-weight:500;font-size:12px">'+label+'</td>'
-      +'<td style="padding:8px;text-align:right;color:var(--accent);font-family:var(--mono);font-size:12px">$'+fmt(ing)+'</td>'
-      +'<td style="padding:8px;text-align:right;color:var(--danger);font-family:var(--mono);font-size:12px">$'+fmt(egr)+'</td>'
-      +'<td style="padding:8px;text-align:right;font-weight:500;font-family:var(--mono);font-size:12px;color:'+balColor+'">'+(bal>=0?'+':'')+'$'+fmt(bal)+'</td>'
-      +'<td style="padding:8px;text-align:right;font-family:var(--mono);font-size:12px;color:'+mColor+'">'+margen+'%</td>'
-      +'</tr>';
+function renderTablaKPI() {
+  var mesesSet = {};
+  movimientos.forEach(function(m) { mesesSet[m.fecha.slice(0,7)] = true; });
+  var meses = Object.keys(mesesSet).sort();
+  var tabla = document.getElementById('tabla-kpi');
+  if (!tabla) return;
+  tabla.innerHTML = '<thead><tr style="border-bottom:1px solid var(--border)">'
+    + '<th style="text-align:left;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Mes</th>'
+    + '<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Ingresos</th>'
+    + '<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Egresos</th>'
+    + '<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Balance</th>'
+    + '<th style="text-align:right;padding:8px;color:var(--ink2);font-weight:500;font-size:11px">Margen</th>'
+    + '</tr></thead><tbody>';
+  meses.forEach(function(m) {
+    var movMes = movimientos.filter(function(x) { return x.fecha.startsWith(m); });
+    var ing = movMes.filter(function(x) { return x.tipo === 'ingreso'; }).reduce(function(a, x) { return a + x.monto; }, 0);
+    var egr = movMes.filter(function(x) { return x.tipo === 'egreso'; }).reduce(function(a, x) { return a + x.monto; }, 0);
+    var bal = ing - egr;
+    var margen = ing > 0 ? Math.round(bal / ing * 100) : 0;
+    var parts = m.split('-');
+    var label = new Date(parseInt(parts[0]), parseInt(parts[1])-1).toLocaleDateString('es-AR', {month:'long', year:'numeric'});
+    var balColor = bal >= 0 ? 'var(--accent)' : 'var(--danger)';
+    var mColor = margen >= 15 ? 'var(--accent)' : margen >= 0 ? 'var(--amber)' : 'var(--danger)';
+    tabla.innerHTML += '<tr style="border-bottom:1px solid var(--border)">'
+      + '<td style="padding:8px;font-weight:500;font-size:12px">' + label + '</td>'
+      + '<td style="padding:8px;text-align:right;color:var(--accent);font-family:var(--mono);font-size:12px">$' + fmt(ing) + '</td>'
+      + '<td style="padding:8px;text-align:right;color:var(--danger);font-family:var(--mono);font-size:12px">$' + fmt(egr) + '</td>'
+      + '<td style="padding:8px;text-align:right;font-weight:500;font-family:var(--mono);font-size:12px;color:' + balColor + '">' + (bal >= 0 ? '+' : '') + '$' + fmt(bal) + '</td>'
+      + '<td style="padding:8px;text-align:right;font-family:var(--mono);font-size:12px;color:' + mColor + '">' + margen + '%</td>'
+      + '</tr>';
   });
-  tabla.innerHTML+='</tbody>';
+  tabla.innerHTML += '</tbody>';
 }
 
-function renderInsights(data,ing,egr,bal,margen){
-  const box=document.getElementById('insights-box');
-  if(!box)return;
-  const insights=[];
-  const gp=data.filter(m=>m.tipo==='egreso'&&m.catSel==='Gastos personales').reduce((a,m)=>a+m.monto,0);
-  const pctGP=egr>0?Math.round(gp/egr*100):0;
-  const imp=data.filter(m=>m.tipo==='egreso'&&m.catSel==='Impuestos').reduce((a,m)=>a+m.monto,0);
-  const inv=data.filter(m=>m.catSel==='Inversión personal').reduce((a,m)=>a+(m.tipo==='ingreso'?m.monto:-m.monto),0);
-
-  if(margen>=15)insights.push({e:'📈',t:'Margen del '+margen+'% — por encima del umbral saludable (15%). Buen resultado.'});
-  else if(margen>=0)insights.push({e:'⚠️',t:'Margen del '+margen+'% — por debajo del 15% recomendado para consultoras. Revisá la estructura de costos.'});
-  else insights.push({e:'🔴',t:'Balance negativo este período. Ingresaron $'+fmt(ing)+' y se gastaron $'+fmt(egr)+'.'});
-
-  if(pctGP>25)insights.push({e:'💡',t:'Los gastos personales representan el '+pctGP+'% de los egresos. Considerar separar más los gastos personales de los de la empresa.'});
-
-  if(imp>0)insights.push({e:'🏛',t:'Impuestos y retenciones: $'+fmt(imp)+'. Verificá con tu contador qué porcentaje es computable contra otros tributos.'});
-
-  if(inv>0)insights.push({e:'📊',t:'Plazo fijo activo por $'+fmt(inv)+'. Bien capitalizado fuera del flujo operativo.'});
-  else if(inv<0)insights.push({e:'📊',t:'Liquidación de plazo fijo: $'+fmt(Math.abs(inv))+' disponibles en el período.'});
-
-  if(!insights.length)insights.push({e:'ℹ️',t:'Importá más meses para ver análisis comparativos y tendencias.'});
-
-  box.innerHTML=insights.map(a=>'<div style="display:flex;gap:10px;align-items:flex-start">'
-    +'<span style="font-size:15px;flex-shrink:0">'+a.e+'</span>'
-    +'<span>'+a.t+'</span></div>').join('');
+function renderInsights(data, ing, egr, bal, margen) {
+  var box = document.getElementById('insights-box');
+  if (!box) return;
+  var insights = [];
+  var gp = data.filter(function(m) { return m.tipo === 'egreso' && m.catSel === 'Gastos personales'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+  var pctGP = egr > 0 ? Math.round(gp / egr * 100) : 0;
+  var imp = data.filter(function(m) { return m.tipo === 'egreso' && m.catSel === 'Impuestos'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+  var inv = data.filter(function(m) { return m.catSel === 'Inversion personal'; }).reduce(function(a, m) { return a + (m.tipo === 'ingreso' ? m.monto : -m.monto); }, 0);
+  if (margen >= 15) insights.push({e:'📈', t:'Margen del ' + margen + '% por encima del umbral saludable (15%). Buen resultado.'});
+  else if (margen >= 0) insights.push({e:'⚠️', t:'Margen del ' + margen + '% por debajo del 15% recomendado para consultoras. Revisa la estructura de costos.'});
+  else insights.push({e:'🔴', t:'Balance negativo este periodo. Ingresaron $' + fmt(ing) + ' y se gastaron $' + fmt(egr) + '.'});
+  if (pctGP > 25) insights.push({e:'💡', t:'Los gastos personales representan el ' + pctGP + '% de los egresos. Considera separar mas los gastos personales de los de la empresa.'});
+  if (imp > 0) insights.push({e:'🏛', t:'Impuestos y retenciones: $' + fmt(imp) + '. Verifica con tu contador que porcentaje es computable contra otros tributos.'});
+  if (inv > 0) insights.push({e:'📊', t:'Plazo fijo activo por $' + fmt(inv) + '. Bien capitalizado fuera del flujo operativo.'});
+  if (!insights.length) insights.push({e:'ℹ️', t:'Importa mas meses para ver analisis comparativos y tendencias.'});
+  box.innerHTML = insights.map(function(a) {
+    return '<div style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:15px;flex-shrink:0">' + a.e + '</span><span>' + a.t + '</span></div>';
+  }).join('');
 }
 
-// ── EXPORT CSV ─────────────────────────────────────────────────────
-function exportCSV(){
-  if(!movimientos.length){toast('Sin datos para exportar');return}
-  const h='Fecha,Tipo,Cuenta,Descripcion,Categoria,Importe,Nota\n';
-  const rows=movimientos.map(m=>[
-    m.fecha,m.tipo,m.cuenta,
-    `"${(m.desc||'').replace(/"/g,'""')}"`,
-    m.catSel,
-    m.tipo==='ingreso'?m.monto.toFixed(2):(-m.monto).toFixed(2),
-    `"${(m.nota||'').replace(/"/g,'""')}"`
-  ].join(',')).join('\n');
-  const blob=new Blob(['\uFEFF'+h+rows],{type:'text/csv;charset=utf-8;'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');a.href=url;a.download='pm_talent_'+new Date().toISOString().slice(0,10)+'.csv';
-  document.body.appendChild(a);a.click();document.body.removeChild(a);
-  toast('✓ CSV exportado');
-}
-
-// ── TABS ───────────────────────────────────────────────────────────
-function showTab(t){
-  ['nuevo','movimientos','importar','resumen','ia','config'].forEach(x=>{
-    document.getElementById('tab-'+x).style.display=x===t?'':'none';
+function getContextoFinanciero(fm) {
+  var data = fm === 'todos' ? movimientos : movimientos.filter(function(m) { return m.fecha.startsWith(fm); });
+  if (!data.length) return 'Sin datos para el periodo seleccionado.';
+  var ing = data.filter(function(m) { return m.tipo === 'ingreso'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+  var egr = data.filter(function(m) { return m.tipo === 'egreso'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+  var bal = ing - egr;
+  var margen = ing > 0 ? (bal / ing * 100).toFixed(1) : 0;
+  var byCat = {};
+  data.forEach(function(m) {
+    if (!byCat[m.catSel]) byCat[m.catSel] = {i:0, e:0};
+    byCat[m.catSel][m.tipo === 'ingreso' ? 'i' : 'e'] += m.monto;
   });
-  document.querySelectorAll('.tab').forEach((el,i)=>{
-    el.classList.toggle('active',['nuevo','movimientos','importar','resumen','ia','config'][i]===t);
-  });
-  if(t==='movimientos')renderMovimientos();
-  if(t==='resumen'){buildMesOptions();renderResumen();}
-  if(t==='ia')initIA();
-  if(t==='config')checkKeyStatus();
-}
-
-function toast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2500);
-}
-
-// ── IA FINANCIERA ──────────────────────────────────────────────────
-let chatHistory = [];
-
-function initIA(){
-  // Poblar selector de meses
-  const sel = document.getElementById('ia-mes-select');
-  const meses = [...new Set(movimientos.map(m=>m.fecha.slice(0,7)))].sort().reverse();
-  const cur = sel.value;
-  sel.innerHTML = '<option value="todos">Todos los períodos</option>';
-  meses.forEach(m=>{
-    const [y,mo] = m.split('-');
-    const lbl = new Date(y,mo-1).toLocaleDateString('es-AR',{month:'long',year:'numeric'});
-    sel.innerHTML += `<option value="${m}"${cur===m?' selected':''}>${lbl}</option>`;
-  });
-  // Sugerencias de preguntas
-  const sugs = [
-    '¿Cuál fue mi mejor mes?',
-    '¿Cuánto gasté en impuestos?',
-    '¿Qué porcentaje son gastos personales?',
-    '¿Cómo mejorar mi margen?',
-    '¿Tengo liquidez suficiente?',
-  ];
-  document.getElementById('sugerencias-chat').innerHTML = sugs.map(s=>
-    `<button onclick="preguntarSugerida('${s}')" style="font-size:11px;padding:5px 10px;border:1px solid var(--border);border-radius:16px;background:var(--surface2);color:var(--ink2);cursor:pointer;font-family:var(--sans)">${s}</button>`
-  ).join('');
-}
-
-function getContextoFinanciero(fm){
-  const data = fm==='todos' ? movimientos : movimientos.filter(m=>m.fecha.startsWith(fm));
-  if(!data.length) return 'Sin datos para el período seleccionado.';
-
-  const ing = data.filter(m=>m.tipo==='ingreso').reduce((a,m)=>a+m.monto,0);
-  const egr = data.filter(m=>m.tipo==='egreso').reduce((a,m)=>a+m.monto,0);
-  const bal = ing - egr;
-  const margen = ing > 0 ? (bal/ing*100).toFixed(1) : 0;
-
-  // Por categoría
-  const byCat = {};
-  data.forEach(m=>{
-    if(!byCat[m.catSel]) byCat[m.catSel] = {i:0,e:0};
-    byCat[m.catSel][m.tipo==='ingreso'?'i':'e'] += m.monto;
-  });
-
-  // Por mes
-  const meses = [...new Set(data.map(m=>m.fecha.slice(0,7)))].sort();
-  const porMes = meses.map(mes=>{
-    const movMes = data.filter(m=>m.fecha.startsWith(mes));
-    const i = movMes.filter(m=>m.tipo==='ingreso').reduce((a,m)=>a+m.monto,0);
-    const e = movMes.filter(m=>m.tipo==='egreso').reduce((a,m)=>a+m.monto,0);
-        return mes+': ingresos $'+Math.round(i/1000)+'K, egresos $'+Math.round(e/1000)+'K, balance '+(i-e>=0?'+':'')+' $'+Math.round((i-e)/1000)+'K';
+  var mesesSet = {};
+  data.forEach(function(m) { mesesSet[m.fecha.slice(0,7)] = true; });
+  var meses = Object.keys(mesesSet).sort();
+  var porMes = meses.map(function(mes) {
+    var movMes = data.filter(function(m) { return m.fecha.startsWith(mes); });
+    var i = movMes.filter(function(m) { return m.tipo === 'ingreso'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+    var e = movMes.filter(function(m) { return m.tipo === 'egreso'; }).reduce(function(a, m) { return a + m.monto; }, 0);
+    return mes + ': ingresos $' + Math.round(i/1000) + 'K, egresos $' + Math.round(e/1000) + 'K, balance ' + (i-e >= 0 ? '+' : '') + '$' + Math.round((i-e)/1000) + 'K';
   }).join('\n');
-  const catResumen = Object.entries(byCat)
-    .sort((a,b)=>(b[1].i+b[1].e)-(a[1].i+a[1].e))
-        .map(([cat,v])=>'  '+cat+': ingresos $'+Math.round(v.i/1000)+'K, egresos $'+Math.round(v.e/1000)+'K')
-    .join('\n');;
-
-  const periodo = fm==='todos' ? 'todos los períodos disponibles' : fm;
-
-  return `DATOS FINANCIEROS DE PM TALENT CONSULTING SAS
-Período: ${periodo}
-Total movimientos: ${data.length}
-
-RESUMEN GENERAL:
-- Ingresos totales: $${Math.round(ing/1000)}K
-- Egresos totales: $${Math.round(egr/1000)}K
-- Balance neto: ${bal>=0?'+':''}$${Math.round(bal/1000)}K
-- Margen neto: ${margen}%
-
-POR MES:
-${porMes}
-
-POR CATEGORÍA:
-${catResumen}
-
-CONTEXTO: Es una consultora de RRHH argentina (PM Talent Consulting SAS). 
-Tiene cuenta personal y cuenta empresa (SAS) en Santander Argentina.
-La dueña es Ana Paula Montes. Opera en Río Segundo, Córdoba.`;
+  var catResumen = Object.entries(byCat).sort(function(a, b) { return (b[1].i + b[1].e) - (a[1].i + a[1].e); }).map(function(entry) {
+    return '  ' + entry[0] + ': ingresos $' + Math.round(entry[1].i/1000) + 'K, egresos $' + Math.round(entry[1].e/1000) + 'K';
+  }).join('\n');
+  return 'DATOS FINANCIEROS DE PM TALENT CONSULTING SAS\nPeriodo: ' + fm + '\nTotal movimientos: ' + data.length
+    + '\n\nRESUMEN GENERAL:\n- Ingresos totales: $' + Math.round(ing/1000) + 'K\n- Egresos totales: $' + Math.round(egr/1000) + 'K'
+    + '\n- Balance neto: ' + (bal >= 0 ? '+' : '') + '$' + Math.round(bal/1000) + 'K\n- Margen neto: ' + margen + '%'
+    + '\n\nPOR MES:\n' + porMes + '\n\nPOR CATEGORIA:\n' + catResumen
+    + '\n\nCONTEXTO: Consultora de RRHH argentina. Duena: Ana Paula Montes. Rio Segundo, Cordoba.';
 }
 
-async function analizarMes(){
-  const apiKey = getAPIKey();
-  if(!apiKey){ toast('⚠ Configurá tu API Key en ⚙️ Config'); return; }
+function initIA() {
+  buildMesOptions('ia-mes-select');
+  var sugs = ['Cual fue mi mejor mes?', 'Cuanto gaste en impuestos?', 'Que porcentaje son gastos personales?', 'Como mejorar mi margen?', 'Tengo liquidez suficiente?'];
+  document.getElementById('sugerencias-chat').innerHTML = sugs.map(function(s) {
+    return '<button onclick="preguntarSugerida(\'' + s + '\')" style="font-size:11px;padding:5px 10px;border:1px solid var(--border);border-radius:16px;background:var(--surface2);color:var(--ink2);cursor:pointer;font-family:var(--sans)">' + s + '</button>';
+  }).join('');
+}
 
-  const fm = document.getElementById('ia-mes-select').value;
-  const contexto = getContextoFinanciero(fm);
-
+function analizarMes() {
+  var apiKey = getAPIKey();
+  if (!apiKey) { toast('Configura tu API Key en Config'); return; }
+  var fm = document.getElementById('ia-mes-select').value;
+  var contexto = getContextoFinanciero(fm);
   document.getElementById('ia-analisis').style.display = 'none';
   document.getElementById('ia-loading').style.display = 'block';
   document.getElementById('btn-analizar').disabled = true;
 
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 2000,
-        system: `Sos una asesora financiera experta en PyMEs y consultoras argentinas. 
-Analizás los datos financieros de PM Talent Consulting y generás informes claros, concretos y útiles.
-Usás pesos argentinos. Conocés el contexto inflacionario de Argentina.
-Tu análisis siempre tiene: 1) Resumen ejecutivo, 2) Puntos destacados, 3) Alertas o riesgos, 4) Recomendaciones concretas.
-Escribís en español argentino, de forma directa y sin vueltas. Usás emojis para hacer más visual el informe.`,
-        messages:[{
-          role:'user',
-          content: `Analizá estos datos financieros y generá un informe completo con resumen, alertas y recomendaciones concretas:
-
-${contexto}`
-        }]
-      })
-    });
-
-    const data = await response.json();
-    const texto = data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
-
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 2000,
+      system: 'Sos una asesora financiera experta en PyMEs y consultoras argentinas. Analizas los datos financieros de PM Talent Consulting y generas informes claros y utiles. Usas pesos argentinos. Tu analisis siempre tiene: 1) Resumen ejecutivo, 2) Puntos destacados, 3) Alertas o riesgos, 4) Recomendaciones concretas. Escribis en espanol argentino, de forma directa. Usas emojis para hacer mas visual el informe.',
+      messages: [{role: 'user', content: 'Analiza estos datos financieros y genera un informe completo:\n\n' + contexto}]
+    })
+  }).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    var texto = data.content.filter(function(b) { return b.type === 'text'; }).map(function(b) { return b.text; }).join('');
     document.getElementById('ia-loading').style.display = 'none';
     document.getElementById('ia-analisis').style.display = 'block';
     document.getElementById('ia-resultado').textContent = texto;
-
-    // Agregar al historial del chat
-    chatHistory = [{role:'user', content:'Analizá mis finanzas.\n\n'+contexto}, {role:'assistant', content:texto}];
-
-  } catch(err){
+    chatHistory = [{role:'user', content:'Analiza mis finanzas.\n\n' + contexto}, {role:'assistant', content:texto}];
+  }).catch(function(err) {
     document.getElementById('ia-loading').style.display = 'none';
-    toast('❌ Error: '+err.message);
-  }
-  document.getElementById('btn-analizar').disabled = false;
+    toast('Error: ' + err.message);
+  }).finally(function() {
+    document.getElementById('btn-analizar').disabled = false;
+  });
 }
 
-async function enviarChat(){
-  const apiKey = getAPIKey();
-  if(!apiKey){ toast('⚠ Configurá tu API Key en ⚙️ Config'); return; }
-
-  const input = document.getElementById('chat-input');
-  const pregunta = input.value.trim();
-  if(!pregunta) return;
+function enviarChat() {
+  var apiKey = getAPIKey();
+  if (!apiKey) { toast('Configura tu API Key en Config'); return; }
+  var input = document.getElementById('chat-input');
+  var pregunta = input.value.trim();
+  if (!pregunta) return;
   input.value = '';
-
-  const fm = document.getElementById('ia-mes-select').value;
-  const contexto = getContextoFinanciero(fm);
-
-  // Mostrar mensaje usuario
+  var fm = document.getElementById('ia-mes-select').value;
+  var contexto = getContextoFinanciero(fm);
   agregarMensajeChat('user', pregunta);
-
-  // Agregar a historial
-  if(!chatHistory.length){
-    chatHistory.push({role:'user', content:'Contexto financiero:
-'+contexto});
-    chatHistory.push({role:'assistant', content:'Entendido, tengo el contexto de tus finanzas. ¿En qué te puedo ayudar?'});
+  if (!chatHistory.length) {
+    chatHistory.push({role:'user', content:'Contexto financiero:\n' + contexto});
+    chatHistory.push({role:'assistant', content:'Entendido, tengo el contexto de tus finanzas. En que te puedo ayudar?'});
   }
-  chatHistory.push({role:'user', content: pregunta});
-
-  // Loading
-  const loadId = 'load-'+Date.now();
+  chatHistory.push({role:'user', content:pregunta});
+  var loadId = 'load-' + Date.now();
   agregarMensajeChat('assistant', '...', loadId);
 
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 1000,
-        system: `Sos una asesora financiera experta en PyMEs argentinas. 
-Respondés preguntas sobre las finanzas de PM Talent Consulting de forma clara y concisa.
-Usás pesos argentinos. Respondés en español argentino. Sos directa y útil.
-Siempre basás tus respuestas en los datos reales que te dieron.`,
-        messages: chatHistory
-      })
-    });
-
-    const data = await response.json();
-    const texto = data.content.filter(b=>b.type==='text').map(b=>b.text).join('');
-
-    // Reemplazar loading con respuesta
-    const loadEl = document.getElementById(loadId);
-    if(loadEl) loadEl.textContent = texto;
-
-    chatHistory.push({role:'assistant', content: texto});
-
-    // Scroll al final
-    const msgs = document.getElementById('chat-messages');
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 1000,
+      system: 'Sos una asesora financiera experta en PyMEs argentinas. Respondes preguntas sobre las finanzas de PM Talent Consulting de forma clara y concisa. Usas pesos argentinos. Respondes en espanol argentino.',
+      messages: chatHistory
+    })
+  }).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    var texto = data.content.filter(function(b) { return b.type === 'text'; }).map(function(b) { return b.text; }).join('');
+    var loadEl = document.getElementById(loadId);
+    if (loadEl) loadEl.textContent = texto;
+    chatHistory.push({role:'assistant', content:texto});
+    var msgs = document.getElementById('chat-messages');
     msgs.scrollTop = msgs.scrollHeight;
-
-  } catch(err){
-    const loadEl = document.getElementById(loadId);
-    if(loadEl) loadEl.textContent = '❌ Error al conectar con la IA.';
-  }
+  }).catch(function(err) {
+    var loadEl = document.getElementById(loadId);
+    if (loadEl) loadEl.textContent = 'Error al conectar con la IA.';
+  });
 }
 
-function agregarMensajeChat(rol, texto, id){
-  const msgs = document.getElementById('chat-messages');
-  const isUser = rol === 'user';
-  const div = document.createElement('div');
-  if(id) div.id = id;
-  div.style.cssText = `max-width:85%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.6;`
-    + (isUser
-      ? `align-self:flex-end;background:var(--ink);color:#fff;border-bottom-right-radius:4px;`
-      : `align-self:flex-start;background:var(--surface2);color:var(--ink);border-bottom-left-radius:4px;`);
+function agregarMensajeChat(rol, texto, id) {
+  var msgs = document.getElementById('chat-messages');
+  var div = document.createElement('div');
+  if (id) div.id = id;
+  div.className = rol === 'user' ? 'chat-msg-user' : 'chat-msg-ai';
   div.textContent = texto;
   msgs.appendChild(div);
   msgs.scrollTop = msgs.scrollHeight;
 }
 
-function preguntarSugerida(texto){
+function preguntarSugerida(texto) {
   document.getElementById('chat-input').value = texto;
   enviarChat();
+}
+
+function exportCSV() {
+  if (!movimientos.length) { toast('Sin datos para exportar'); return; }
+  var h = 'Fecha,Tipo,Cuenta,Descripcion,Categoria,Importe,Nota\n';
+  var rows = movimientos.map(function(m) {
+    return [m.fecha, m.tipo, m.cuenta, '"' + (m.desc || '').replace(/"/g, '""') + '"', m.catSel,
+      m.tipo === 'ingreso' ? m.monto.toFixed(2) : (-m.monto).toFixed(2),
+      '"' + (m.nota || '').replace(/"/g, '""') + '"'].join(',');
+  }).join('\n');
+  var blob = new Blob(['\uFEFF' + h + rows], {type:'text/csv;charset=utf-8;'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'pm_talent_' + new Date().toISOString().slice(0,10) + '.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  toast('CSV exportado');
+}
+
+function showTab(t) {
+  ['nuevo','movimientos','importar','resumen','ia','config'].forEach(function(x) {
+    document.getElementById('tab-' + x).style.display = x === t ? '' : 'none';
+  });
+  document.querySelectorAll('.tab').forEach(function(el, i) {
+    el.classList.toggle('active', ['nuevo','movimientos','importar','resumen','ia','config'][i] === t);
+  });
+  if (t === 'movimientos') renderMovimientos();
+  if (t === 'resumen') { buildMesOptions('mes-select'); renderResumen(); }
+  if (t === 'ia') initIA();
+  if (t === 'config') checkKeyStatus();
+}
+
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2500);
 }
 
 updateBalance();

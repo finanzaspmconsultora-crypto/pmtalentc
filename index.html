@@ -1104,9 +1104,7 @@ ${contexto}`
     document.getElementById('ia-resultado').textContent = texto;
 
     // Agregar al historial del chat
-    chatHistory = [{role:'user', content:'Analizá mis finanzas.
-
-'+contexto}, {role:'assistant', content:texto}];
+    chatHistory = [{role:'user', content:'Analizá mis finanzas.\n\n'+contexto}, {role:'assistant', content:texto}];
 
   } catch(err){
     document.getElementById('ia-loading').style.display = 'none';

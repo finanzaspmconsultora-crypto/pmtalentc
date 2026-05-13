@@ -338,10 +338,10 @@ tr:last-child td{border-bottom:none}
     <div class="row-between"><span style="font-size:13px">Sincronizacion en la nube</span><span style="font-size:11px;color:var(--amber);font-family:var(--mono)">Proximo</span></div>
   </div>
   <div class="card" style="margin-top:0">
-    <div class="card-title">Sincronizacion Google Sheets</div>
-    <p style="font-size:13px;color:var(--ink2);margin-bottom:12px;line-height:1.6">Tus datos se sincronizan con tu planilla de Google Sheets. Usalo para compartir datos entre el celu y la PC.</p>
-    <button class="submit-btn" onclick="cargarDesdeSheets()" style="margin-bottom:8px;background:var(--accent)">Cargar datos desde Sheets</button>
-    <button class="export-btn" onclick="sincronizarTodoASheets()">Subir todos los datos a Sheets</button>
+    <div class="card-title">Sincronizacion en la nube</div>
+    <p style="font-size:13px;color:var(--ink2);margin-bottom:12px;line-height:1.6">Tus datos se guardan en Supabase y son los mismos en el celu y la PC automaticamente.</p>
+    <button class="submit-btn" onclick="cargarDesdeSupabase()" style="margin-bottom:8px;background:var(--accent)">Cargar datos desde la nube</button>
+    <button class="export-btn" onclick="subirTodoASupabase()">Subir todos los datos a la nube</button>
   </div>
   <div class="card" style="margin-top:0">
     <div class="card-title">Zona peligrosa</div>
@@ -437,6 +437,7 @@ function guardar() {
   movimientos.unshift({id:Date.now(), tipo:tipo, cuenta:cuenta, monto:monto, desc:desc, catSel:catSel, fecha:fecha, nota:nota});
   save();
   updateBalance();
+  guardarMovEnNube(movimientos[0]);
   toast('Guardado');
   document.getElementById('monto').value = '';
   document.getElementById('desc').value = '';
@@ -1001,104 +1002,110 @@ function toast(msg) {
   setTimeout(function() { t.classList.remove('show'); }, 2500);
 }
 
-// ── GOOGLE SHEETS SYNC ────────────────────────────────────────────
-var SHEETS_ID = '11U1rURZsMt4T78oNeNGq5wWmIrb-4AAd8C9PQq5g9_4';
-var SHEETS_KEY = 'AIzaSyBvFvjmq-0mbroLlyYrh-QxluHxGIZQndc';
-var SHEETS_RANGE = 'Sheet1!A:H';
+// ── SUPABASE SYNC ────────────────────────────────────────────────
+var SB_URL =  + SUPABASE_URL + ;
+var SB_KEY =  + SUPABASE_KEY + ;
 var syncInProgress = false;
 
-function getSheetsURL(range) {
-  return 'https://sheets.googleapis.com/v4/spreadsheets/' + SHEETS_ID + '/values/' + range + '?key=' + SHEETS_KEY;
+function sbHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    'apikey': SB_KEY,
+    'Authorization': 'Bearer ' + SB_KEY,
+    'Prefer': 'return=minimal'
+  };
 }
 
-function getSheetsWriteURL() {
-  return 'https://sheets.googleapis.com/v4/spreadsheets/' + SHEETS_ID + '/values/' + SHEETS_RANGE + ':append?valueInputOption=RAW&key=' + SHEETS_KEY;
-}
-
-function cargarDesdeSheets() {
+function cargarDesdeSupabase() {
   if (syncInProgress) return;
   syncInProgress = true;
-  toast('Sincronizando con Google Sheets...');
-  fetch(getSheetsURL(SHEETS_RANGE))
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (!data.values || data.values.length <= 1) {
-        syncInProgress = false;
-        toast('Planilla vacia - empezando desde cero');
-        return;
-      }
-      var rows = data.values.slice(1);
-      var loaded = rows.filter(function(r) { return r[0]; }).map(function(r) {
-        return {
-          id: parseFloat(r[0]) || Date.now(),
-          fecha: r[1] || '',
-          tipo: r[2] || 'egreso',
-          cuenta: r[3] || 'Personal',
-          monto: parseFloat(r[4]) || 0,
-          desc: r[5] || '',
-          catSel: r[6] || 'Otros',
-          nota: r[7] || ''
-        };
-      });
-      movimientos = loaded;
-      save();
-      updateBalance();
+  toast('Sincronizando...');
+  fetch(SB_URL + '/rest/v1/movimientos?select=*&order=fecha.desc', {
+    headers: {'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY}
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (!Array.isArray(data) || !data.length) {
       syncInProgress = false;
-      toast('Sincronizado: ' + loaded.length + ' movimientos cargados');
-    })
-    .catch(function(err) {
-      syncInProgress = false;
-      toast('Error al sincronizar: ' + err.message);
-      console.error(err);
+      toast('Sin datos en la nube todavia');
+      return;
+    }
+    movimientos = data.map(function(r) {
+      return {
+        id: r.id,
+        fecha: r.fecha || '',
+        tipo: r.tipo || 'egreso',
+        cuenta: r.cuenta || 'Personal',
+        monto: parseFloat(r.monto) || 0,
+        desc: r.desc || '',
+        catSel: r.catsel || 'Otros',
+        nota: r.nota || ''
+      };
     });
+    save();
+    updateBalance();
+    syncInProgress = false;
+    toast(movimientos.length + ' movimientos sincronizados');
+  })
+  .catch(function(err) {
+    syncInProgress = false;
+    toast('Error sync: ' + err.message);
+    console.error(err);
+  });
 }
 
-function guardarEnSheets(mov) {
-  var apiKey = getAPIKey();
-  if (!apiKey) return;
-  var row = [[mov.id, mov.fecha, mov.tipo, mov.cuenta, mov.monto, mov.desc, mov.catSel, mov.nota || '']];
-  fetch('https://sheets.googleapis.com/v4/spreadsheets/' + SHEETS_ID + '/values/' + SHEETS_RANGE + ':append?valueInputOption=RAW',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + apiKey
-      },
-      body: JSON.stringify({values: row})
-    }
-  ).catch(function(err) { console.error('Error guardando en Sheets:', err); });
-}
-
-function sincronizarTodoASheets() {
-  var apiKey = getAPIKey();
-  if (!apiKey) { toast('Configura tu API Key de Anthropic primero'); return; }
-  if (!movimientos.length) { toast('No hay movimientos para sincronizar'); return; }
-  toast('Subiendo ' + movimientos.length + ' movimientos a Sheets...');
-  var values = [['id','fecha','tipo','cuenta','monto','desc','catSel','nota']].concat(
-    movimientos.map(function(m) {
-      return [m.id, m.fecha, m.tipo, m.cuenta, m.monto, m.desc, m.catSel, m.nota || ''];
-    })
-  );
-  fetch('https://sheets.googleapis.com/v4/spreadsheets/' + SHEETS_ID + '/values/' + SHEETS_RANGE + '?valueInputOption=RAW',
-    {
-      method: 'PUT',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({values: values})
-    }
-  ).then(function(r) {
-    if (r.ok) {
-      toast('Sincronizado correctamente en Google Sheets');
+function subirTodoASupabase() {
+  if (!movimientos.length) { toast('No hay movimientos para subir'); return; }
+  toast('Subiendo ' + movimientos.length + ' movimientos a la nube...');
+  var rows = movimientos.map(function(m) {
+    return {
+      id: m.id,
+      fecha: m.fecha,
+      tipo: m.tipo,
+      cuenta: m.cuenta,
+      monto: m.monto,
+      desc: m.desc,
+      catsel: m.catSel,
+      nota: m.nota || ''
+    };
+  });
+  fetch(SB_URL + '/rest/v1/movimientos', {
+    method: 'POST',
+    headers: Object.assign({}, sbHeaders(), {'Prefer': 'resolution=merge-duplicates,return=minimal'}),
+    body: JSON.stringify(rows)
+  })
+  .then(function(r) {
+    if (r.ok || r.status === 201) {
+      toast('Datos subidos correctamente a la nube');
     } else {
-      return r.json().then(function(e) { throw new Error(e.error ? e.error.message : 'Error ' + r.status); });
+      return r.json().then(function(e) { throw new Error(e.message || 'Error ' + r.status); });
     }
-  }).catch(function(err) {
+  })
+  .catch(function(err) {
     toast('Error: ' + err.message);
     console.error(err);
   });
 }
 
+function guardarMovEnNube(mov) {
+  fetch(SB_URL + '/rest/v1/movimientos', {
+    method: 'POST',
+    headers: Object.assign({}, sbHeaders(), {'Prefer': 'resolution=merge-duplicates,return=minimal'}),
+    body: JSON.stringify([{
+      id: mov.id,
+      fecha: mov.fecha,
+      tipo: mov.tipo,
+      cuenta: mov.cuenta,
+      monto: mov.monto,
+      desc: mov.desc,
+      catsel: mov.catSel,
+      nota: mov.nota || ''
+    }])
+  }).catch(function(err) { console.error('Error guardando en nube:', err); });
+}
+
 updateBalance();
-cargarDesdeSheets();
+cargarDesdeSupabase();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 </body>

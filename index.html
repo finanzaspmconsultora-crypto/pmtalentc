@@ -425,7 +425,7 @@ function guardar() {
   if (!monto || monto <= 0) { toast('Ingresa un importe valido'); return; }
   if (!desc) { toast('Agrega una descripcion'); return; }
   if (!catSel) { toast('Selecciona una categoria'); return; }
-  var mov = {id: Date.now(), tipo: tipo, cuenta: cuenta, monto: monto, desc: desc, catSel: catSel, fecha: fecha, nota: nota};
+  var mov = {id: Date.now() + Math.floor(Math.random()*1000), tipo: tipo, cuenta: cuenta, monto: monto, desc: desc, catSel: catSel, fecha: fecha, nota: nota};
   movimientos.unshift(mov);
   save();
   updateBalance();
@@ -981,9 +981,11 @@ function subirTodoASupabase() {
   var rows = movimientos.map(function(m) {
     return {id:m.id, fecha:m.fecha, tipo:m.tipo, cuenta:m.cuenta, monto:m.monto, desc:m.desc, catSel:m.catSel, nota:m.nota||''};
   });
-  var headers = sbHeaders();
-  headers['Prefer'] = 'resolution=merge-duplicates,return=minimal';
-  fetch(SB_URL + '/rest/v1/movimientos', {method:'POST', headers:headers, body:JSON.stringify(rows)})
+  // Eliminar todo primero, luego insertar limpio
+  fetch(SB_URL + '/rest/v1/movimientos?id=gt.0', {method:'DELETE', headers:sbHeaders()})
+  .then(function() {
+    return fetch(SB_URL + '/rest/v1/movimientos', {method:'POST', headers:sbHeaders(), body:JSON.stringify(rows)});
+  })
   .then(function(r) {
     if (r.ok || r.status === 201) { toast('Datos subidos correctamente a la nube'); }
     else { return r.json().then(function(e){throw new Error(e.message||'Error '+r.status);}); }
@@ -992,22 +994,18 @@ function subirTodoASupabase() {
 }
 
 function guardarMovEnNube(mov) {
-  var headers = sbHeaders();
-  headers['Prefer'] = 'resolution=merge-duplicates,return=minimal';
   fetch(SB_URL + '/rest/v1/movimientos', {
-    method:'POST', headers:headers,
+    method:'POST', headers:sbHeaders(),
     body:JSON.stringify([{id:mov.id,fecha:mov.fecha,tipo:mov.tipo,cuenta:mov.cuenta,monto:mov.monto,desc:mov.desc,catSel:mov.catSel,nota:mov.nota||''}])
   }).catch(function(err) { console.error('Error nube:', err); });
 }
 
 function subirMovimientosANube(lista) {
   if (!lista.length) return;
-  var headers = sbHeaders();
-  headers['Prefer'] = 'resolution=merge-duplicates,return=minimal';
   var rows = lista.map(function(m) {
     return {id:m.id,fecha:m.fecha,tipo:m.tipo,cuenta:m.cuenta,monto:m.monto,desc:m.desc,catSel:m.catSel,nota:m.nota||''};
   });
-  fetch(SB_URL + '/rest/v1/movimientos', {method:'POST', headers:headers, body:JSON.stringify(rows)})
+  fetch(SB_URL + '/rest/v1/movimientos', {method:'POST', headers:sbHeaders(), body:JSON.stringify(rows)})
   .catch(function(err) { console.error('Error nube:', err); });
 }
 

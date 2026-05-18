@@ -585,7 +585,7 @@ function mostrarPreviewImport() {
     }).join('');
     return '<tr' + (m._dup ? ' style="opacity:.45"' : '') + '>'
       + '<td style="font-family:var(--mono);font-size:11px;white-space:nowrap">' + (m.fecha || '').slice(5) + '</td>'
-      + '<td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px">' + esc(m.descripcion || '') + '</td>'
+      + '<td style="max-width:200px;font-size:11px;word-break:break-word;white-space:normal">' + esc(m.descripcion || '') + '</td>'
       + '<td class="' + (deb > 0 ? 'td-deb' : 'td-cre') + '">' + (deb > 0 ? '-$' + fmt(deb) : '+$' + fmt(cre)) + '</td>'
       + '<td><select class="cat-sel" onchange="movsPendientes[' + i + '].categoria=this.value">' + opts + '</select></td>'
       + '</tr>';

@@ -954,7 +954,12 @@ function exportCSV() {
 }
 
 function sbHeaders() {
-  return {'Content-Type':'application/json', 'apikey':SB_KEY, 'Authorization':'Bearer ' + SB_KEY, 'Prefer':'return=minimal'};
+  return {
+    'Content-Type':'application/json',
+    'apikey':SB_KEY,
+    'Authorization':'Bearer ' + SB_KEY,
+    'Prefer':'resolution=merge-duplicates'
+  };
 }
 
 function cargarDesdeSupabase() {
@@ -975,39 +980,72 @@ function cargarDesdeSupabase() {
   .catch(function(err) { toast('Error sync: ' + err.message); });
 }
 
+// ─── FUNCIONES SUPABASE CORREGIDAS ───────────────────────────────────────────
+// Usan upsert (resolution=merge-duplicates) y envio de a 1 registro
+// para evitar errores de PRIMARY KEY duplicada
+
 function subirTodoASupabase() {
   if (!movimientos.length) { toast('No hay movimientos para subir'); return; }
   toast('Subiendo ' + movimientos.length + ' movimientos...');
   var rows = movimientos.map(function(m) {
-    return {id:m.id, fecha:m.fecha, tipo:m.tipo, cuenta:m.cuenta, monto:m.monto, desc:m.desc, catSel:m.catSel, nota:m.nota||''};
+    return {id:m.id, fecha:m.fecha, tipo:m.tipo, cuenta:m.cuenta,
+      monto:m.monto, desc:m.desc, catSel:m.catSel, nota:m.nota||''};
   });
-  // Eliminar todo primero, luego insertar limpio
-  fetch(SB_URL + '/rest/v1/movimientos?id=gt.0', {method:'DELETE', headers:sbHeaders()})
-  .then(function() {
-    return fetch(SB_URL + '/rest/v1/movimientos', {method:'POST', headers:sbHeaders(), body:JSON.stringify(rows)});
-  })
-  .then(function(r) {
-    if (r.ok || r.status === 201) { toast('Datos subidos correctamente a la nube'); }
-    else { return r.json().then(function(e){throw new Error(e.message||'Error '+r.status);}); }
-  })
-  .catch(function(err) { toast('Error: ' + err.message); });
+  var ok = 0; var errores = 0;
+  var headers = sbHeaders();
+  function subirSiguiente(i) {
+    if (i >= rows.length) {
+      toast('Subidos: ' + ok + (errores > 0 ? ' | Errores: ' + errores : ''));
+      return;
+    }
+    fetch(SB_URL + '/rest/v1/movimientos', {
+      method:'POST', headers:headers, body:JSON.stringify([rows[i]])
+    })
+    .then(function(r) {
+      if (r.ok) ok++; else errores++;
+      setTimeout(function() { subirSiguiente(i + 1); }, 30);
+    })
+    .catch(function() {
+      errores++;
+      setTimeout(function() { subirSiguiente(i + 1); }, 30);
+    });
+  }
+  subirSiguiente(0);
 }
 
 function guardarMovEnNube(mov) {
   fetch(SB_URL + '/rest/v1/movimientos', {
-    method:'POST', headers:sbHeaders(),
-    body:JSON.stringify([{id:mov.id,fecha:mov.fecha,tipo:mov.tipo,cuenta:mov.cuenta,monto:mov.monto,desc:mov.desc,catSel:mov.catSel,nota:mov.nota||''}])
+    method:'POST',
+    headers: sbHeaders(),
+    body: JSON.stringify([{
+      id:mov.id, fecha:mov.fecha, tipo:mov.tipo, cuenta:mov.cuenta,
+      monto:mov.monto, desc:mov.desc, catSel:mov.catSel, nota:mov.nota||''
+    }])
   }).catch(function(err) { console.error('Error nube:', err); });
 }
 
 function subirMovimientosANube(lista) {
   if (!lista.length) return;
-  var rows = lista.map(function(m) {
-    return {id:m.id,fecha:m.fecha,tipo:m.tipo,cuenta:m.cuenta,monto:m.monto,desc:m.desc,catSel:m.catSel,nota:m.nota||''};
-  });
-  fetch(SB_URL + '/rest/v1/movimientos', {method:'POST', headers:sbHeaders(), body:JSON.stringify(rows)})
-  .catch(function(err) { console.error('Error nube:', err); });
+  var headers = sbHeaders();
+  function subirSiguiente(i) {
+    if (i >= lista.length) return;
+    var m = lista[i];
+    fetch(SB_URL + '/rest/v1/movimientos', {
+      method:'POST', headers:headers,
+      body: JSON.stringify([{
+        id:m.id, fecha:m.fecha, tipo:m.tipo, cuenta:m.cuenta,
+        monto:m.monto, desc:m.desc, catSel:m.catSel, nota:m.nota||''
+      }])
+    })
+    .then(function() { setTimeout(function() { subirSiguiente(i + 1); }, 30); })
+    .catch(function(err) {
+      console.error('Error nube mov ' + m.id + ':', err);
+      setTimeout(function() { subirSiguiente(i + 1); }, 30);
+    });
+  }
+  subirSiguiente(0);
 }
+// ─────────────────────────────────────────────────────────────────────────────
 
 function showTab(t) {
   ['nuevo','movimientos','importar','resumen','ia','config'].forEach(function(x) {

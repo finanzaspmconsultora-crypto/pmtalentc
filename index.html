@@ -126,11 +126,11 @@ tr:last-child td{border-bottom:none}
 </div>
 <div class="tabs">
   <div class="tab active" onclick="showTab('nuevo')">+ Nuevo</div>
-  <div class="tab" onclick="showTab('movimientos')">Movs</div>
-  <div class="tab" onclick="showTab('importar')">Importar</div>
-  <div class="tab" onclick="showTab('resumen')">Resumen</div>
-  <div class="tab" onclick="showTab('ia')">IA</div>
-  <div class="tab" onclick="showTab('config')">Config</div>
+  <div class="tab" onclick="showTab('movimientos')">📋 Movs</div>
+  <div class="tab" onclick="showTab('importar')">📤 Importar</div>
+  <div class="tab" onclick="showTab('resumen')">📊 Resumen</div>
+  <div class="tab" onclick="showTab('ia')">🤖 IA</div>
+  <div class="tab" onclick="showTab('config')">⚙️ Config</div>
 </div>
 <div class="main">
 
@@ -138,13 +138,13 @@ tr:last-child td{border-bottom:none}
 <div class="card">
   <div class="card-title">Tipo</div>
   <div class="type-toggle">
-    <button class="type-btn active-ingreso" id="btn-ing" onclick="setTipo('ingreso')">Ingreso</button>
-    <button class="type-btn" id="btn-egr" onclick="setTipo('egreso')">Egreso</button>
+    <button class="type-btn active-ingreso" id="btn-ing" onclick="setTipo('ingreso')">🔼 Ingreso</button>
+    <button class="type-btn" id="btn-egr" onclick="setTipo('egreso')">🔽 Egreso</button>
   </div>
   <div class="field"><label class="label">Cuenta</label>
     <div class="cuenta-toggle">
-      <button class="cuenta-btn sel" id="c-personal" onclick="setCuenta('Personal')">Personal</button>
-      <button class="cuenta-btn" id="c-sas" onclick="setCuenta('SAS')">SAS</button>
+      <button class="cuenta-btn sel" id="c-personal" onclick="setCuenta('Personal')">🏠 Personal</button>
+      <button class="cuenta-btn" id="c-sas" onclick="setCuenta('SAS')">🏢 SAS</button>
     </div>
   </div>
   <div class="field"><label class="label">Importe ($)</label>
@@ -155,18 +155,18 @@ tr:last-child td{border-bottom:none}
   </div>
   <div class="field"><label class="label">Categoria</label>
     <div class="cat-grid">
-      <button class="cat-btn" onclick="setCat(this,'Honorarios clientes')">Honorarios clientes</button>
-      <button class="cat-btn" onclick="setCat(this,'Honorarios propios')">Honorarios propios</button>
-      <button class="cat-btn" onclick="setCat(this,'Honorarios proveedores')">Hon. proveedores</button>
-      <button class="cat-btn" onclick="setCat(this,'Sueldos y cargas')">Sueldos y cargas</button>
-      <button class="cat-btn" onclick="setCat(this,'Estructura digital')">Estructura digital</button>
-      <button class="cat-btn" onclick="setCat(this,'Gastos operativos')">Gastos operativos</button>
-      <button class="cat-btn" onclick="setCat(this,'Gastos personales')">Gastos personales</button>
-      <button class="cat-btn" onclick="setCat(this,'Gastos casa')">Gastos casa</button>
-      <button class="cat-btn" onclick="setCat(this,'Inversion personal')">Inversion personal</button>
-      <button class="cat-btn" onclick="setCat(this,'Impuestos')">Impuestos</button>
-      <button class="cat-btn" onclick="setCat(this,'Proveedores')">Proveedores</button>
-      <button class="cat-btn" onclick="setCat(this,'Otros')">Otros</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios clientes')">🤝 Honorarios clientes</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios propios')">💼 Honorarios propios</button>
+      <button class="cat-btn" onclick="setCat(this,'Honorarios proveedores')">🧾 Hon. proveedores</button>
+      <button class="cat-btn" onclick="setCat(this,'Sueldos y cargas')">👥 Sueldos y cargas</button>
+      <button class="cat-btn" onclick="setCat(this,'Estructura digital')">💻 Estructura digital</button>
+      <button class="cat-btn" onclick="setCat(this,'Gastos operativos')">⚙️ Gastos operativos</button>
+      <button class="cat-btn" onclick="setCat(this,'Gastos personales')">🛍️ Gastos personales</button>
+      <button class="cat-btn" onclick="setCat(this,'Gastos casa')">🏡 Gastos casa</button>
+      <button class="cat-btn" onclick="setCat(this,'Inversion personal')">📈 Inversion personal</button>
+      <button class="cat-btn" onclick="setCat(this,'Impuestos')">🏛️ Impuestos</button>
+      <button class="cat-btn" onclick="setCat(this,'Proveedores')">📦 Proveedores</button>
+      <button class="cat-btn" onclick="setCat(this,'Otros')">📎 Otros</button>
     </div>
   </div>
   <div class="field"><label class="label">Fecha</label>
@@ -197,8 +197,8 @@ tr:last-child td{border-bottom:none}
     <div class="card">
       <div class="card-title">Cuenta a importar</div>
       <div class="cuenta-toggle">
-        <button class="cuenta-btn sel" id="imp-c-personal" onclick="setImpCuenta('Personal')">Personal</button>
-        <button class="cuenta-btn" id="imp-c-sas" onclick="setImpCuenta('SAS')">SAS</button>
+        <button class="cuenta-btn sel" id="imp-c-personal" onclick="setImpCuenta('Personal')">🏠 Personal</button>
+        <button class="cuenta-btn" id="imp-c-sas" onclick="setImpCuenta('SAS')">🏢 SAS</button>
       </div>
     </div>
     <div class="card">
